@@ -1,6 +1,6 @@
 # Windows 运行时拆分与预读：PR 中文草稿
 
-> 公开讨论稿，更新于 2026-09-15。尚未提交 Electron PR。已填入完整实体机 160 次正式启动结果；线上统计、热启动退化原因与最终兼容性结论仍待补。
+> 公开讨论稿，更新于 2026-09-16。尚未提交 Electron PR。已填入完整实体机 160 次正式启动结果；线上统计、热启动退化原因与最终兼容性结论仍待补。
 >
 > 建议标题：`perf: split and preread the Windows runtime`
 >
@@ -60,7 +60,29 @@
 
 ### 4. 技术方案与权衡
 
-#### 4.1 设计依据与已有实践
+#### 4.1 技术原理
+
+启动器与运行时分离后，启动性能可能受到两类机制影响：一是运行时页面的读取方式，二是杀毒软件在进程创建、文件访问与模块加载路径上的检查策略。前者有明确的 API 行为依据；后者取决于具体安全产品及其配置。当前 benchmark 测量两者与其他加载开销共同作用后的启动结果，尚未分离各机制的贡献。
+
+##### 4.1.1 预读：提前批量读取运行时页面
+
+大体积 EXE 或 DLL 被映射到进程地址空间，并不代表其所有页面已经驻留在物理内存中。启动执行访问尚未驻留的页面时，需要通过缺页处理取得数据；需要从磁盘读取时，分散且受执行顺序约束的访问可能形成多次等待。预读让程序在正式使用这些页面之前告诉系统即将访问的地址范围，使系统在条件允许时采用较大、并发的 I/O 请求，减少后续访问中的读盘等待。[PrefetchVirtualMemory 文档](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-prefetchvirtualmemory)。
+
+本实现先运行较小的启动 EXE，在显式加载主要运行时之前调用 Chromium 的 PreReadFile。其 Windows 路径以 READ_CODE_IMAGE 建立映像映射，将映射范围交给 PrefetchVirtualMemory，再执行 LoadLibraryExW 加载 main.dll。使用映像映射符合后续代码页面的使用方式，避免仅按普通数据文件读取造成额外的数据／映像映射。这一调用顺序依赖运行时已经拆分为可显式加载的 DLL；模块边界使启动器能够在主要运行时初始化前安排读取工作。[Chromium 实现](https://chromium.googlesource.com/chromium/src/+/5d637f3b235dae9d40ce8252cb88ff156a70f044/base/files/file_util_win.cc)。
+
+预读的价值取决于减少的后续读盘等待是否大于自身成本。HDD 对离散读取更敏感，因此批量读取可能带来更大的收益；热缓存下仍会执行映射和预取调用，也可能读取本次启动并不需要的页面。当前 API 提供的是受内存条件约束的预取提示，预取页面不会因此直接加入进程工作集。本实现同步等待该调用返回，其成本包含在进程创建到终点的测量中；本机 HDD 冷启动收益较大、热启动增加约 20 ms 的 READY 前耗时与上述机制相容，但不构成独立归因证据。
+
+##### 4.1.2 杀软策略：文件与模块边界对启动检查的影响
+
+杀毒软件的实时保护会监控文件访问及程序行为，相关检查可能增加文件读取、解析或进程启动路径上的等待。不同产品对进程主映像、加载的 DLL、扫描结果缓存和信任判断采用的策略可能不同，因此相同代码放在大 EXE 中，或分布在小 EXE 与主 DLL 中，可能表现出不同的启动成本。Microsoft Defender 的公开文档确认了实时访问保护，并提供按文件、进程、扫描次数和耗时分析性能的工具；这些资料并未保证 EXE 与 DLL 的扫描成本存在固定比例。[实时保护](https://learn.microsoft.com/en-us/defender-endpoint/configure-real-time-protection-microsoft-defender-antivirus)、[扫描性能分析](https://learn.microsoft.com/en-us/defender-endpoint/tune-performance-defender-antivirus)。
+
+针对本次拆分，一个需要考虑的机制是：如果某杀软在创建进程时对主 EXE 执行较重的同步检查，而对后续 DLL 加载采用不同的检查时机或能够复用已有结果，那么把主 EXE 从约 237.327 MiB 缩小为 2.957 MiB，可能减少进入启动器之前的等待。Electron 会创建多个进程，这种差异也可能影响后续子进程启动。此处是依赖策略的机制推断，扫描成本不一定与文件大小成正比，也不能假定每次创建进程都会完整重扫 EXE。
+
+主 DLL 仍可能在预读、映像映射或加载时被检查；如果相同扫描工作只是移到了 DLL 上，整体耗时未必减少。扫描缓存是否命中、文件是否变化、签名与信誉判断等还可能改变冷／热启动表现。因而，本 PR 的设计不依赖调整杀软设置；实际收益需在目标安全环境中评估。
+
+本次计时从原生进程创建时间开始，不声称覆盖用户点击到进程创建之前的全部检查。当前原始数据没有记录 EXE/DLL 的杀软扫描事件，也没有将扫描等待与磁盘缺页等待分离，因此本稿将杀软策略列为潜在影响机制，不把本机 32%／77% 的冷启动收益直接归因于杀软。如果后续需要量化其贡献，可以将安全产品提供的扫描记录与进程创建、DLL 加载时间线关联分析；Microsoft Defender 提供对应的性能记录与报告接口。[性能分析接口](https://learn.microsoft.com/en-us/defender-endpoint/performance-analyzer-reference)。
+
+#### 4.2 设计依据与已有实践
 
 “启动器与主要运行时分离，并在加载运行时前安排文件预读”已有产品实践。Windows Chrome 的 Chromium 实现使用 `chrome.exe` 启动器加载独立的主 DLL；`MainDllLoader` 的加载路径包含 `base::PreReadFile`，同步路径在 `LoadLibraryExW` 之前执行预读。本地对应 Chromium 版本还包含按渠道和实验分组选择异步预读的逻辑，因此这里借鉴的是模块拆分与预读思路，并非声称 Chrome 在所有版本、进程和配置中采用完全相同的策略。[Chromium 加载器源码](https://chromium.googlesource.com/chromium/src/+/5d637f3b235dae9d40ce8252cb88ff156a70f044/chrome/app/main_dll_loader_win.cc)、[EXE 启动入口](https://chromium.googlesource.com/chromium/src/+/5d637f3b235dae9d40ce8252cb88ff156a70f044/chrome/app/chrome_exe_main_win.cc)。
 
@@ -76,7 +98,7 @@
 
 这些实践说明方案有现实应用背景；本 PR 是否适合进入 Electron，仍由其兼容性、维护成本以及不同存储和冷热条件下的实际结果来支撑。本文不会将 Chrome、QQ 或抖音 PC 的使用情况写成对当前补丁的背书。
 
-#### 4.2 启动流程与模块边界
+#### 4.3 启动流程与模块边界
 
 ```text
 Windows 创建进程
@@ -91,7 +113,7 @@ Windows 创建进程
 
 拆分提供了运行时加载之前的执行位置。必须保证启动器不因直接导入运行时符号而在到达预读代码之前提前加载 `main.dll`。最终构建的依赖／导入表证据应与源代码说明一起提供。
 
-#### 4.3 导入库、导出转发与原生模块
+#### 4.4 导入库、导出转发与原生模块
 
 这里区分三个问题：启动器自身的 DLL 依赖、原生模块构建时使用的导入库，以及运行时从 EXE 查找导出符号的行为。
 
@@ -101,7 +123,7 @@ Windows 创建进程
 
 选择自动生成转发列表，可以避免手工同步大量符号；代价是增加构建生成步骤与 PE 导出解析逻辑。需要覆盖函数和数据符号、改名后的 EXE、正常与异常退出，以及正式原生模块构建链路。缺少证据的部分在验证表中保留为待确认，不笼统宣称全部 ABI 场景均已覆盖。
 
-#### 4.4 预读策略与失败路径
+#### 4.5 预读策略与失败路径
 
 当前启动器调用 `base::PreReadFile(runtime_path, is_executable=true, sequential=false)`，随后正常加载 DLL。仅在 `--type` 的值为空且环境中不存在 `ELECTRON_RUN_AS_NODE` 时预读；即使相关 Fuse 禁用了 RunAsNode，环境变量存在时也保守跳过预读。
 
@@ -111,13 +133,13 @@ Windows 创建进程
 
 目前选择同步的预加载前调用，路径简单且收益容易计入启动总耗时；其代价是热缓存条件下仍可能增加工作。是否改成更细的预读范围、条件或执行方式，应依据后续定位，不在本草稿中假定已有结论。
 
-#### 4.5 Fuse、沙箱、快照和分发
+#### 4.6 Fuse、沙箱、快照和分发
 
 Fuse 配置由启动器传入运行时，避免拆分后错误读取另一份配置；沙箱接口在启动器初始化后传入 `ElectronMain`。xcache 读取 Node 快照的位置随运行时移动到新模块。分发清单与符号产物需要同时覆盖 EXE 与 DLL。
 
 源代码入口：[启动器](https://github.com/zuohuiyang/electron/blob/bd4d45660daf451364a645cf6c8053732e1a7bf2/shell/app/electron_loader_win.cc)、[运行时入口](https://github.com/zuohuiyang/electron/blob/bd4d45660daf451364a645cf6c8053732e1a7bf2/shell/app/electron_main_win.cc)、[导出生成器](https://github.com/zuohuiyang/electron/blob/bd4d45660daf451364a645cf6c8053732e1a7bf2/script/generate-runtime-exports.py)。此处指协作检查点，精确被测源码使用第 6.2 节 HEAD 加冻结补丁；正式发布时再绑定最终两个 commit。
 
-#### 4.6 后续扩展：固定启动入口与版本化运行时目录
+#### 4.7 后续扩展：固定启动入口与版本化运行时目录
 
 运行时拆分也为后续的版本化安装布局提供基础：应用可以将启动 EXE 保持在固定路径，把主运行时 DLL 及其配套文件放入按版本号区分的目录，再由启动器选择要加载的版本。这样，更新运行时版本就不必同时改变应用 EXE 的路径。
 
