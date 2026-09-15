@@ -117,6 +117,14 @@ Fuse 配置由启动器传入运行时，避免拆分后错误读取另一份配
 
 源代码入口：[启动器](https://github.com/zuohuiyang/electron/blob/bd4d45660daf451364a645cf6c8053732e1a7bf2/shell/app/electron_loader_win.cc)、[运行时入口](https://github.com/zuohuiyang/electron/blob/bd4d45660daf451364a645cf6c8053732e1a7bf2/shell/app/electron_main_win.cc)、[导出生成器](https://github.com/zuohuiyang/electron/blob/bd4d45660daf451364a645cf6c8053732e1a7bf2/script/generate-runtime-exports.py)。此处指协作检查点，精确被测源码使用第 6.2 节 HEAD 加冻结补丁；正式发布时再绑定最终两个 commit。
 
+#### 4.6 后续扩展：固定启动入口与版本化运行时目录
+
+运行时拆分也为后续的版本化安装布局提供基础：应用可以将启动 EXE 保持在固定路径，把主运行时 DLL 及其配套文件放入按版本号区分的目录，再由启动器选择要加载的版本。这样，更新运行时版本就不必同时改变应用 EXE 的路径。
+
+对于目前将 EXE 一起放入版本目录的安装方案，每次升级都可能需要更新快捷方式目标和按程序路径配置的防火墙规则。固定 EXE 路径可以减少这类由路径变化引起的维护工作：快捷方式持续指向同一启动入口，基于该可执行文件路径的规则也无需仅因版本目录变化而重写。这个预期收益基于 Windows 快捷方式的目标路径和防火墙程序规则的路径匹配机制；不意味着升级时所有快捷方式属性或安全策略都无需检查。[Windows Shell 链接](https://learn.microsoft.com/zh-cn/windows/win32/shell/links)、[Windows 防火墙规则](https://learn.microsoft.com/zh-cn/windows/security/operating-system-security/network-security/windows-firewall/rules)。
+
+本 PR 完成的是启动器与运行时的边界拆分，当前实现仍从 EXE 同目录加载 `main.dll`，尚未实现上述目录布局。后续需要进一步处理版本选择、DLL 及资源定位、导出转发的模块解析，以及 EXE 与运行时版本匹配和更新／回滚流程。因此，这里将固定入口与版本目录作为可继续演进的方向，而非本次已经交付的安装能力。
+
 ### 5. 正确性与兼容性验证
 
 以下为已有记录摘要，不表示最终 PR 的全部 CI 已通过。正式提交前应绑定最终代码版本与验证产物，分别列出通过、失败和未执行项。
