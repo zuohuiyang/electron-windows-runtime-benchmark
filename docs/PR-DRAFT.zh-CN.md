@@ -261,4 +261,3 @@ Node.js 18 或更新版本，无额外依赖。复算程序逐字节核对原始
 - [#51602：渲染进程启动数据与 preload 缓存](https://github.com/electron/electron/pull/51602)：同时说明收益、首次生成成本和行为变化。
 
 本文是中文填充稿。发布前将较长细节放入 GitHub `<details>`，并使用本证据仓库的固定 commit 链接。下一步见 [HANDOFF.zh-CN.md](HANDOFF.zh-CN.md)。
-
