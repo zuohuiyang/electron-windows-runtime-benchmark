@@ -1,0 +1,53 @@
+﻿{
+    "elevated":  false,
+    "sample":  {
+                   "pair":  5,
+                   "variant":  "A",
+                   "runtime":  "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+                   "drive":  "C",
+                   "profile":  "C:\\ElectronBench\\host-warm-retry-20260915\\profiles\\prep-017-C-A",
+                   "id":  "prep-017-C-A",
+                   "seedProfile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A",
+                   "phase":  "warmup"
+               },
+    "profilePolicy":  "Independent clone of same frozen seed for every warmup and formal launch",
+    "idle":  [
+                 {
+                     "time":  "2026-09-15T09:41:45.9855192+08:00",
+                     "cpu":  27
+                 },
+                 {
+                     "time":  "2026-09-15T09:41:49.2737700+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-15T09:41:51.5380546+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-15T09:41:53.7967388+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-15T09:41:56.0562998+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-15T09:41:58.3231589+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-15T09:42:00.5928444+08:00",
+                     "cpu":  6
+                 },
+                 {
+                     "time":  "2026-09-15T09:42:02.8533122+08:00",
+                     "cpu":  3
+                 }
+             ],
+    "cache":  "Same-session launches,5 warmups per storage/variant; no OS reboot within warm batch",
+    "boot":  "2026-09-15T01:37:21.5000000Z",
+    "mode":  "warm",
+    "session":  1,
+    "user":  "autotest"
+}

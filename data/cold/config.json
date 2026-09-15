@@ -1,0 +1,732 @@
+{
+  "installedBoot": "2026-09-13T17:24:44.5000000Z",
+  "maxRestarts": 79,
+  "taskName": "Electron-Host-Callback80-20260914",
+  "profilePolicy": "Each sample receives a fresh clone of the corresponding frozen pilot profile; all clones prepared before initial reboot",
+  "samples": [
+    {
+      "pair": 1,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\001-C-A",
+      "id": "001-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 1,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\002-C-C",
+      "id": "002-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 1,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\003-E-C",
+      "id": "003-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 1,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\004-E-A",
+      "id": "004-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 2,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\005-E-A",
+      "id": "005-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 2,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\006-E-C",
+      "id": "006-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 2,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\007-C-C",
+      "id": "007-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 2,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\008-C-A",
+      "id": "008-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 3,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\009-C-A",
+      "id": "009-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 3,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\010-C-C",
+      "id": "010-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 3,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\011-E-C",
+      "id": "011-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 3,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\012-E-A",
+      "id": "012-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 4,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\013-E-A",
+      "id": "013-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 4,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\014-E-C",
+      "id": "014-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 4,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\015-C-C",
+      "id": "015-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 4,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\016-C-A",
+      "id": "016-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 5,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\017-C-A",
+      "id": "017-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 5,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\018-C-C",
+      "id": "018-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 5,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\019-E-C",
+      "id": "019-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 5,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\020-E-A",
+      "id": "020-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 6,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\021-E-A",
+      "id": "021-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 6,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\022-E-C",
+      "id": "022-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 6,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\023-C-C",
+      "id": "023-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 6,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\024-C-A",
+      "id": "024-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 7,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\025-C-A",
+      "id": "025-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 7,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\026-C-C",
+      "id": "026-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 7,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\027-E-C",
+      "id": "027-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 7,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\028-E-A",
+      "id": "028-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 8,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\029-E-A",
+      "id": "029-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 8,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\030-E-C",
+      "id": "030-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 8,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\031-C-C",
+      "id": "031-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 8,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\032-C-A",
+      "id": "032-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 9,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\033-C-A",
+      "id": "033-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 9,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\034-C-C",
+      "id": "034-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 9,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\035-E-C",
+      "id": "035-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 9,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\036-E-A",
+      "id": "036-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 10,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\037-E-A",
+      "id": "037-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 10,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\038-E-C",
+      "id": "038-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 10,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\039-C-C",
+      "id": "039-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 10,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\040-C-A",
+      "id": "040-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 11,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\041-C-A",
+      "id": "041-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 11,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\042-C-C",
+      "id": "042-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 11,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\043-E-C",
+      "id": "043-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 11,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\044-E-A",
+      "id": "044-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 12,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\045-E-A",
+      "id": "045-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 12,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\046-E-C",
+      "id": "046-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 12,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\047-C-C",
+      "id": "047-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 12,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\048-C-A",
+      "id": "048-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 13,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\049-C-A",
+      "id": "049-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 13,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\050-C-C",
+      "id": "050-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 13,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\051-E-C",
+      "id": "051-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 13,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\052-E-A",
+      "id": "052-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 14,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\053-E-A",
+      "id": "053-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 14,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\054-E-C",
+      "id": "054-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 14,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\055-C-C",
+      "id": "055-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 14,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\056-C-A",
+      "id": "056-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 15,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\057-C-A",
+      "id": "057-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 15,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\058-C-C",
+      "id": "058-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 15,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\059-E-C",
+      "id": "059-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 15,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\060-E-A",
+      "id": "060-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 16,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\061-E-A",
+      "id": "061-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 16,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\062-E-C",
+      "id": "062-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 16,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\063-C-C",
+      "id": "063-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 16,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\064-C-A",
+      "id": "064-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 17,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\065-C-A",
+      "id": "065-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 17,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\066-C-C",
+      "id": "066-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 17,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\067-E-C",
+      "id": "067-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 17,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\068-E-A",
+      "id": "068-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 18,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\069-E-A",
+      "id": "069-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 18,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\070-E-C",
+      "id": "070-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 18,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\071-C-C",
+      "id": "071-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 18,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\072-C-A",
+      "id": "072-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 19,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\073-C-A",
+      "id": "073-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    },
+    {
+      "pair": 19,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\074-C-C",
+      "id": "074-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 19,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\075-E-C",
+      "id": "075-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 19,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\076-E-A",
+      "id": "076-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 20,
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\077-E-A",
+      "id": "077-E-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A"
+    },
+    {
+      "pair": 20,
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "E",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\078-E-C",
+      "id": "078-E-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C"
+    },
+    {
+      "pair": 20,
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\079-C-C",
+      "id": "079-C-C",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+    },
+    {
+      "pair": 20,
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "drive": "C",
+      "profile": "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\080-C-A",
+      "id": "080-C-A",
+      "seedProfile": "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+    }
+  ],
+  "account": "MTIANYANG_PC\\autotest",
+  "endpoint": "Native process creation -> first callback entry for visible presented video; presentedFrames >= 1",
+  "user": "autotest",
+  "protocolVersion": "visible-video-callback-v1"
+}

@@ -1,0 +1,55 @@
+﻿{
+    "cache":  "Physical host reboot first launch; default Windows caching and prefetch; runtime drive varies",
+    "elevated":  false,
+    "user":  "autotest",
+    "boot":  "2026-09-14T02:29:01.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-14T10:31:03.8240170+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-14T10:31:06.1074177+08:00",
+                     "cpu":  7
+                 },
+                 {
+                     "time":  "2026-09-14T10:31:08.3811948+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-14T10:31:10.6691996+08:00",
+                     "cpu":  1
+                 },
+                 {
+                     "time":  "2026-09-14T10:31:12.9459370+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-14T10:31:15.2107390+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-14T10:31:17.4916404+08:00",
+                     "cpu":  6
+                 },
+                 {
+                     "time":  "2026-09-14T10:31:19.7682406+08:00",
+                     "cpu":  10
+                 },
+                 {
+                     "time":  "2026-09-14T10:31:22.0424335+08:00",
+                     "cpu":  4
+                 }
+             ],
+    "sample":  {
+                   "pair":  4,
+                   "variant":  "A",
+                   "runtime":  "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+                   "drive":  "C",
+                   "profile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\016-C-A",
+                   "id":  "016-C-A",
+                   "seedProfile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+               },
+    "os":  "10.0.26200",
+    "session":  1
+}

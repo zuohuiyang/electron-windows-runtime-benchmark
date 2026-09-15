@@ -1,0 +1,11 @@
+node_modules/
+*.exe
+*.dll
+*.obj
+*.lib
+*.mp4
+*.zip
+profiles/
+runtimes/
+runs/
+*.credentials*

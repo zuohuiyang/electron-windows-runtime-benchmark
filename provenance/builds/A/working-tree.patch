@@ -1,0 +1,56 @@
+diff --git a/script/lib/util.py b/script/lib/util.py
+index 6c60f7a1ff..1518d5a731 100644
+--- a/script/lib/util.py
++++ b/script/lib/util.py
+@@ -262,7 +262,7 @@ def get_chromium_buildtools_path_value():
+         [cmd, 'gclient'],
+         stderr=subprocess.DEVNULL, encoding='utf-8'
+       ).strip()
+-      return os.path.dirname(depot_tools_path)
++      return os.path.dirname(depot_tools_path.splitlines()[0])
+     except subprocess.CalledProcessError:
+       return None
+ 
+diff --git a/script/lib/utils.js b/script/lib/utils.js
+index f49d8a9a49..6373c3c52a 100644
+--- a/script/lib/utils.js
++++ b/script/lib/utils.js
+@@ -197,7 +197,9 @@ function getDepotToolsEnv() {
+     'python3',
+     [
+       '-c',
+-      '\'from lib.util import get_chromium_buildtools_path_value; print(get_chromium_buildtools_path_value() or "")\''
++      process.platform === 'win32'
++        ? '"from lib.util import get_chromium_buildtools_path_value; print(get_chromium_buildtools_path_value() or str())"'
++        : '\'from lib.util import get_chromium_buildtools_path_value; print(get_chromium_buildtools_path_value() or "")\''
+     ],
+     { env: depotToolsEnv, shell: true, encoding: 'utf8', cwd: path.join(ELECTRON_DIR, 'script') }
+   );
+diff --git a/script/node-spec-runner.js b/script/node-spec-runner.js
+index a461127c1d..7a7471c4b6 100644
+--- a/script/node-spec-runner.js
++++ b/script/node-spec-runner.js
+@@ -148,6 +148,11 @@ async function main() {
+     stdio: 'inherit'
+   });
+ 
++  testChild.on('error', (error) => {
++    console.error('Failed to start Node.js tests', error);
++    process.exit(1);
++  });
++
+   testChild.on('exit', (testCode) => {
+     restoreRewrites();
+ 
+@@ -158,8 +163,10 @@ async function main() {
+         .pipe(converterStream)
+         .pipe(fs.createWriteStream(path.resolve(JUNIT_DIR, 'nodejs.xml')))
+         .on('close', () => {
+-          process.exit(testCode);
++          process.exit(testCode ?? 1);
+         });
++    } else {
++      process.exit(testCode ?? 1);
+     }
+   });
+ }

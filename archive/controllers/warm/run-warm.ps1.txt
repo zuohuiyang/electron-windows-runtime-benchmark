@@ -1,0 +1,39 @@
+$ErrorActionPreference='Stop'
+$root=$PSScriptRoot;$node='C:\ElectronBench\host-callback-20x4-20260914\node.exe';$state=$null;$awake=$false
+function Stop-Check {if((Test-Path "$root\STOP") -or (Test-Path 'C:\ElectronBench\host-callback-20x4-20260914\STOP')){throw 'STOP requested'}}
+function Save-State {$script:state.updated=(Get-Date).ToUniversalTime().ToString('o');$tmp="$root\warm-state.next.json";$script:state|ConvertTo-Json -Depth 8|Set-Content $tmp -Encoding UTF8;[IO.File]::Replace($tmp,"$root\warm-state.json","$root\warm-state.previous.json")}
+function Run-Node([string[]]$Arguments){& $node @Arguments;if($LASTEXITCODE -ne 0){throw "Node failed: $($Arguments[0]) $($Arguments[1])"}}
+function Assert-Session {
+ Stop-Check;$session=(Get-Process -Id $PID).SessionId;$explorers=@(Get-Process explorer -ErrorAction SilentlyContinue)
+ if($session -eq 0 -or -not($explorers|Where-Object SessionId -eq $session) -or ($explorers|Where-Object SessionId -ne $session)){throw 'Require sole interactive test desktop'}
+ if([PilotDesktop]::Name() -ne 'Default'){throw 'Desktop locked'}
+ if(Get-Process electron,vmware-vmx -ErrorAction SilentlyContinue){throw 'Another Electron or VM process is running'}
+}
+try {
+ $state=Get-Content "$root\warm-state.json" -Raw|ConvertFrom-Json
+ if($state.status -in @('COMPLETE','FAILED','PAUSED_ENVIRONMENT','STOPPED','STAGED')){exit 0}
+ if($state.nextIndex -ne 0){throw 'Interrupted warm batch cannot resume across sessions; preserve it and prepare a new batch'}
+ if($env:USERNAME -ne 'autotest'){throw 'Expected autotest'}
+ if([Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'Measurement must not be elevated'}
+ $cfg=Get-Content "$root\config.json" -Raw|ConvertFrom-Json;$os=Get-CimInstance Win32_OperatingSystem;$boot=$os.LastBootUpTime.ToUniversalTime().ToString('o')
+ Add-Type -Path "$root\desktop.cs";. "$root\system-load.ps1";Assert-Session
+ if([PilotDesktop]::SetThreadExecutionState([uint32]2147483651) -eq 0){throw 'Wakefulness request failed'};$awake=$true
+ Run-Node @("$root\workflow.cjs",'verify');Run-Node @("$root\workflow.cjs",'pristine')
+ $state.boot=$boot;$state.status='RUNNING';Save-State
+ foreach($item in $cfg.actions){
+  Assert-Session
+  while(((Get-Date)-$os.LastBootUpTime).TotalSeconds -lt 120){Stop-Check;Start-Sleep -Seconds 2}
+  $log="$root\logs\idle-$($item.id).jsonl";$idle=Wait-BenchmarkIdle -LogPath $log -MaxWaitSeconds 1200 -CheckStop {Stop-Check}
+  if(-not $idle.Ready){$state.status='PAUSED_ENVIRONMENT';$state.error="CPU did not settle: $log";Save-State;exit 0}
+  Assert-Session
+  $dest="$root\results\$($item.id)";if(Test-Path "$dest-sample.json"){throw 'Existing sample cannot be overwritten'}
+  @{user=$env:USERNAME;elevated=$false;session=(Get-Process -Id $PID).SessionId;boot=$boot;idle=@($idle.Readings);mode='warm';sample=$item;profilePolicy='Independent clone of same frozen seed for every warmup and formal launch';cache='Same-session launches,5 warmups per storage/variant; no OS reboot within warm batch'}|ConvertTo-Json -Depth 12|Set-Content "$dest-context.json" -Encoding UTF8
+  $state.status='MEASURING';Save-State
+  Run-Node @("$root\harness\launch.cjs",$item.variant,$item.runtime,$item.profile,"$dest-sample.json")
+  Run-Node @("$root\workflow.cjs",'validate',$item.id)
+  $state.nextIndex++;$state.completed=@($state.completed)+$item.id;$state.status='SAMPLE_SAVED';Save-State
+ }
+ Run-Node @("$root\workflow.cjs",'verify');Run-Node @("$root\workflow.cjs",'report')
+ $state.status='COMPLETE';Save-State
+ try{Copy-Item "$root\RESULTS.txt" ([IO.Path]::Combine([Environment]::GetFolderPath('Desktop'),'Electron unified benchmark results.txt'));Start-Process "$env:SystemRoot\System32\notepad.exe" -ArgumentList "$root\RESULTS.txt"}catch{$_|Out-String|Set-Content "$root\notification-warning.txt"}
+}catch{if($state){$state.status=if(Test-Path "$root\STOP"){'STOPPED'}else{'FAILED'};$state.error=$_.Exception.Message;Save-State};$_|Out-String|Set-Content "$root\ATTENTION.txt";exit 1}finally{if($awake){[void][PilotDesktop]::SetThreadExecutionState([uint32]2147483648)}}

@@ -1,0 +1,115 @@
+diff --git a/script/lib/util.py b/script/lib/util.py
+index 6c60f7a1ff..1518d5a731 100644
+--- a/script/lib/util.py
++++ b/script/lib/util.py
+@@ -262,7 +262,7 @@ def get_chromium_buildtools_path_value():
+         [cmd, 'gclient'],
+         stderr=subprocess.DEVNULL, encoding='utf-8'
+       ).strip()
+-      return os.path.dirname(depot_tools_path)
++      return os.path.dirname(depot_tools_path.splitlines()[0])
+     except subprocess.CalledProcessError:
+       return None
+ 
+diff --git a/script/lib/utils.js b/script/lib/utils.js
+index f49d8a9a49..6373c3c52a 100644
+--- a/script/lib/utils.js
++++ b/script/lib/utils.js
+@@ -197,7 +197,9 @@ function getDepotToolsEnv() {
+     'python3',
+     [
+       '-c',
+-      '\'from lib.util import get_chromium_buildtools_path_value; print(get_chromium_buildtools_path_value() or "")\''
++      process.platform === 'win32'
++        ? '"from lib.util import get_chromium_buildtools_path_value; print(get_chromium_buildtools_path_value() or str())"'
++        : '\'from lib.util import get_chromium_buildtools_path_value; print(get_chromium_buildtools_path_value() or "")\''
+     ],
+     { env: depotToolsEnv, shell: true, encoding: 'utf8', cwd: path.join(ELECTRON_DIR, 'script') }
+   );
+diff --git a/script/node-spec-runner.js b/script/node-spec-runner.js
+index a461127c1d..7a7471c4b6 100644
+--- a/script/node-spec-runner.js
++++ b/script/node-spec-runner.js
+@@ -148,6 +148,11 @@ async function main() {
+     stdio: 'inherit'
+   });
+ 
++  testChild.on('error', (error) => {
++    console.error('Failed to start Node.js tests', error);
++    process.exit(1);
++  });
++
+   testChild.on('exit', (testCode) => {
+     restoreRewrites();
+ 
+@@ -158,8 +163,10 @@ async function main() {
+         .pipe(converterStream)
+         .pipe(fs.createWriteStream(path.resolve(JUNIT_DIR, 'nodejs.xml')))
+         .on('close', () => {
+-          process.exit(testCode);
++          process.exit(testCode ?? 1);
+         });
++    } else {
++      process.exit(testCode ?? 1);
+     }
+   });
+ }
+diff --git a/shell/common/electron_xcache_main.cc b/shell/common/electron_xcache_main.cc
+index 68414ee51e..2df231df0a 100644
+--- a/shell/common/electron_xcache_main.cc
++++ b/shell/common/electron_xcache_main.cc
+@@ -240,7 +240,7 @@ bool ParseBlobAt(std::string_view data, size_t offset, BlobInfo* info) {
+ }
+ 
+ // Every V8 snapshot blob for `version` in `data`: a bare blob file, or a
+-// binary that embeds one (the Node startup snapshot in electron / electron.exe
++// binary that embeds one (the Node startup snapshot in electron / main.dll
+ // / "Electron Framework").
+ std::vector<BlobInfo> FindBlobs(std::string_view data,
+                                 const std::string& version) {
+@@ -330,7 +330,7 @@ void Usage() {
+          "from: a bare blob\n"
+          "                      (v8_context_snapshot[.<arch>].bin) or a binary "
+          "embedding one\n"
+-         "                      (electron, electron.exe, 'Electron Framework' "
++         "                      (electron, main.dll, 'Electron Framework' "
+          "-> "
+          "its Node startup\n"
+          "                      snapshot). Any OS/arch; must match this tool's "
+diff --git a/spec/windows-runtime-spec.ts b/spec/windows-runtime-spec.ts
+index 98c6849f55..e8d2b9c8ad 100644
+--- a/spec/windows-runtime-spec.ts
++++ b/spec/windows-runtime-spec.ts
+@@ -86,4 +86,17 @@ ifdescribe(process.platform === 'win32')('Windows runtime DLL', function () {
+     expect(result.status).to.equal(193); // ERROR_BAD_EXE_FORMAT
+     expect(result.stderr).to.include('Unable to load Electron runtime');
+   });
++
++  it('reports a missing runtime entry point', () => {
++    const directory = path.join(tempDir, 'missing-entry-point');
++    fs.mkdirSync(directory);
++    const missingEntryExecutable = path.join(directory, 'electron.exe');
++    fs.copyFileSync(executable, missingEntryExecutable);
++    // Use a valid system DLL that does not export ElectronMain.
++    fs.copyFileSync(path.join(process.env.SystemRoot!, 'System32', 'version.dll'), path.join(directory, 'main.dll'));
++    const result = spawnSync(missingEntryExecutable, ['-v'], { encoding: 'utf8', timeout: 30000 });
++    expect(result.error).to.equal(undefined);
++    expect(result.status).to.equal(127); // ERROR_PROC_NOT_FOUND
++    expect(result.stderr).to.include('Unable to find Electron runtime entry point');
++  });
+ });
+diff --git a/spec/xcache-spec.ts b/spec/xcache-spec.ts
+index db2b6215cf..df791adff7 100644
+--- a/spec/xcache-spec.ts
++++ b/spec/xcache-spec.ts
+@@ -19,7 +19,9 @@ const xcache = path.join(outDir, process.platform === 'win32' ? 'electron_xcache
+ const snapshotHolder =
+   process.platform === 'darwin'
+     ? path.resolve(process.execPath, '../../Frameworks/Electron Framework.framework/Versions/A/Electron Framework')
+-    : process.execPath;
++    : process.platform === 'win32'
++      ? path.join(outDir, 'main.dll')
++      : process.execPath;
+ 
+ ifdescribe(fs.existsSync(xcache) && !process.env.IS_UBSAN)('electron_xcache', () => {
+   let tmp: string;

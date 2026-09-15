@@ -1,0 +1,85 @@
+﻿{
+    "elevated":  false,
+    "sample":  {
+                   "pair":  17,
+                   "variant":  "A",
+                   "runtime":  "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+                   "drive":  "C",
+                   "profile":  "C:\\ElectronBench\\host-warm-retry-20260915\\profiles\\warm-065-C-A",
+                   "id":  "warm-065-C-A",
+                   "seedProfile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A",
+                   "phase":  "measured"
+               },
+    "profilePolicy":  "Independent clone of same frozen seed for every warmup and formal launch",
+    "idle":  [
+                 {
+                     "time":  "2026-09-15T09:53:02.4415355+08:00",
+                     "cpu":  4
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:04.7111780+08:00",
+                     "cpu":  14
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:07.9743730+08:00",
+                     "cpu":  15
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:10.2598185+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:12.5336059+08:00",
+                     "cpu":  2
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:14.8015581+08:00",
+                     "cpu":  1
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:17.0887498+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:19.3482402+08:00",
+                     "cpu":  12
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:21.6106312+08:00",
+                     "cpu":  1
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:23.9009128+08:00",
+                     "cpu":  16
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:26.1778879+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:28.4590509+08:00",
+                     "cpu":  3
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:30.7174066+08:00",
+                     "cpu":  12
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:32.9821576+08:00",
+                     "cpu":  7
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:35.2487036+08:00",
+                     "cpu":  2
+                 },
+                 {
+                     "time":  "2026-09-15T09:53:37.5311230+08:00",
+                     "cpu":  6
+                 }
+             ],
+    "cache":  "Same-session launches,5 warmups per storage/variant; no OS reboot within warm batch",
+    "boot":  "2026-09-15T01:37:21.5000000Z",
+    "mode":  "warm",
+    "session":  1,
+    "user":  "autotest"
+}

@@ -1,0 +1,114 @@
+param([switch]$ValidateOnly)
+$ErrorActionPreference='Stop'
+$root=$PSScriptRoot
+$cfg=Get-Content -LiteralPath "$root\config.json" -Raw|ConvertFrom-Json
+if($ValidateOnly){
+ if($cfg.samples.Count -ne 80){throw 'Expected exactly 80 samples'}
+ & "$root\node.exe" "$root\pilot.cjs" verify
+ if($LASTEXITCODE -ne 0){throw 'Input verification failed'}
+ $cfg.samples|Format-Table id,drive,variant,runtime
+ exit 0
+}
+function Save-State {$script:state.updated=(Get-Date).ToUniversalTime().ToString('o');$tmp="$root\state.next.json";$script:state|ConvertTo-Json -Depth 12|Set-Content -LiteralPath $tmp -Encoding UTF8;if(Test-Path "$root\state.json"){[IO.File]::Replace($tmp,"$root\state.json","$root\state.previous.json")}else{[IO.File]::Move($tmp,"$root\state.json")}}
+function Stop-Check {if(Test-Path "$root\STOP"){throw 'STOP file requested cancellation'}}
+function Run-Node([string[]]$Arguments){& "$root\node.exe" @Arguments;if($LASTEXITCODE -ne 0){throw "Node step failed: $($Arguments[0]) $($Arguments[1])"}}
+function Assert-Session {
+ Stop-Check
+ $session=(Get-Process -Id $PID).SessionId
+ $explorers=@(Get-Process explorer -ErrorAction SilentlyContinue)
+ if(-not($explorers|Where-Object SessionId -eq $session)){throw 'Interactive Explorer required'}
+ if($explorers|Where-Object SessionId -ne $session){throw 'Another desktop session is open; stopped to avoid restarting that session'}
+ if(Get-Process electron,vmware-vmx -ErrorAction SilentlyContinue){throw 'Electron or VMware VM is already running'}
+ if([PilotDesktop]::Name() -ne 'Default'){throw 'Desktop is locked or unavailable; refusing invisible measurement'}
+}
+function Restart-Next {
+ Assert-Session
+ if($script:state.restarts -ge $cfg.maxRestarts){throw 'Automatic reboot limit reached'}
+ $script:state.restarts++;$script:state.status='WAITING_REBOOT';Save-State
+ # Timeout 0 deliberately avoids the implicit force-close behavior of /t > 0. Never use /f.
+ & "$env:SystemRoot\System32\shutdown.exe" /r /t 0
+ if($LASTEXITCODE -ne 0){throw 'Windows refused restart; state and data retained'}
+ for($i=0;$i -lt 12;$i++){Start-Sleep -Seconds 5}
+ throw 'Restart did not complete within 60 seconds; no automatic retry'
+}
+function Complete-Run {
+ Run-Node @("$root\pilot.cjs",'report')
+ $script:state.status='COMPLETE';Save-State
+ try{
+  Copy-Item -LiteralPath "$root\RESULTS.txt" -Destination ([IO.Path]::Combine([Environment]::GetFolderPath('Desktop'),'Electron overnight 80 results.txt'))
+  Start-Process -FilePath "$env:SystemRoot\System32\notepad.exe" -ArgumentList "$root\RESULTS.txt"
+ }catch{"Measurement COMPLETE; result notification failed: $($_.Exception.Message)"|Set-Content -LiteralPath "$root\notification-warning.txt" -Encoding UTF8}
+}
+$lock=$null;$transcript=$false;$state=$null;$keepAwake=$false
+try {
+ if($env:USERNAME -ne $cfg.user){throw 'Task must run as autotest'}
+ $principal=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){throw 'Measurement must not be elevated'}
+ if((Get-Process -Id $PID).SessionId -eq 0){throw 'Interactive session required'}
+ try{$lock=[IO.File]::Open("$root\runner.lock",[IO.FileMode]::OpenOrCreate,[IO.FileAccess]::ReadWrite,[IO.FileShare]::None)}catch [IO.IOException]{if(($_.Exception.HResult -band 65535) -eq 32){exit 0}else{throw}}
+ $state=Get-Content -LiteralPath "$root\state.json" -Raw|ConvertFrom-Json
+ if($state.status -in @('COMPLETE','FAILED','STOPPED')){exit 0}
+ $os=Get-CimInstance Win32_OperatingSystem;$boot=$os.LastBootUpTime.ToUniversalTime().ToString('o')
+ if($boot -eq $cfg.installedBoot -or $boot -eq $state.lastBoot){exit 0}
+ Start-Transcript -Path "$root\logs\run-$((Get-Date).ToString('yyyyMMdd-HHmmss')).log"|Out-Null;$transcript=$true
+ Add-Type -Path "$root\desktop.cs"
+ if([PilotDesktop]::SetThreadExecutionState([uint32]2147483651) -eq 0){throw 'Could not request temporary display/system wakefulness'}
+ $keepAwake=$true
+ $state.lastBoot=$boot;Save-State
+ 'Waiting up to 10 minutes for interactive desktop'|Set-Content -LiteralPath "$root\logs\desktop-wait.txt"
+ for($i=0;$i -lt 300;$i++){Stop-Check;if(([PilotDesktop]::Name() -eq 'Default') -and (Get-Process explorer -ErrorAction SilentlyContinue|Where-Object SessionId -eq (Get-Process -Id $PID).SessionId)){break};Start-Sleep -Seconds 2}
+ Assert-Session
+ if($state.nextIndex -eq $cfg.samples.Count){Complete-Run;exit 0}
+ if(-not $state.prepared){
+  throw 'Profiles must be frozen and verified during installation'
+  $state.status='PREPARING';Save-State
+  Run-Node @("$root\pilot.cjs",'verify')
+  foreach($item in $cfg.samples){
+   Stop-Check
+   $smoke="$root\results\prep-$($item.id).json"
+   Run-Node @("$root\harness\launch.cjs",$item.variant,$item.runtime,$item.profile,$smoke)
+   Run-Node @("$root\pilot.cjs",'smoke',$smoke)
+  }
+  Run-Node @("$root\pilot.cjs",'verify')
+  $state.prepared=$true;Save-State
+  Restart-Next
+ }else{
+  if($state.status -eq 'MEASURING'){throw 'Earlier measurement interrupted; refusing to replace it'}
+  $item=$cfg.samples[$state.nextIndex];if(-not $item){throw 'Invalid sample index'}
+  $dest="$root\results\$($item.id)"
+  if(Test-Path "$dest-sample.json"){throw 'Existing sample will not be overwritten'}
+  $state.status='SETTLING';Save-State
+  while(((Get-Date)-$os.LastBootUpTime).TotalSeconds -lt 120){Stop-Check;Start-Sleep -Seconds 2}
+  $stable=0;$idle=@();$deadline=(Get-Date).AddMinutes(4)
+  do{
+   Stop-Check
+   $counter=Get-CimInstance Win32_PerfFormattedData_PerfOS_Processor -Filter "Name='_Total'"
+   if($null -eq $counter -or $null -eq $counter.PercentProcessorTime){throw 'CPU performance counter unavailable'}
+   $cpu=[double]$counter.PercentProcessorTime
+   if($cpu -lt 0 -or $cpu -gt 100 -or [double]::IsNaN($cpu)){throw 'Invalid CPU performance counter'}
+   $idle+=@{time=(Get-Date).ToString('o');cpu=$cpu}
+   if($cpu -le 10){$stable++}else{$stable=0}
+   if($stable -lt 3){Start-Sleep -Seconds 2}
+  }while($stable -lt 3 -and (Get-Date) -lt $deadline)
+  if($stable -lt 3){throw 'CPU did not settle below 10% for three readings'}
+  Assert-Session
+  @{user=$env:USERNAME;session=(Get-Process -Id $PID).SessionId;elevated=$false;boot=$boot;os=$os.Version;idle=$idle;cache='Physical host reboot first launch; default Windows caching and prefetch; runtime drive varies';sample=$item}|ConvertTo-Json -Depth 10|Set-Content -LiteralPath "$dest-context.json" -Encoding UTF8
+  $state.status='MEASURING';Save-State
+  Run-Node @("$root\harness\launch.cjs",$item.variant,$item.runtime,$item.profile,"$dest-sample.json")
+  # Read/hash runtimes only AFTER the measured launch, never prewarm them on a measured boot.
+  Run-Node @("$root\pilot.cjs",'verify')
+  @{status='SUCCESS';inputsVerifiedAfter=$true}|ConvertTo-Json|Set-Content -LiteralPath "$dest-result.json" -Encoding UTF8
+  Run-Node @("$root\pilot.cjs",'validate',$item.id)
+  $state.nextIndex++;$state.completed=@($state.completed)+$item.id;$state.status='SAMPLE_SAVED';Save-State
+  if($state.nextIndex -eq $cfg.samples.Count){
+   Complete-Run
+  }else{Restart-Next}
+ }
+}catch{
+ $message=$_.Exception.Message
+ if($state){$state.status=if(Test-Path "$root\STOP"){'STOPPED'}else{'FAILED'};$state.error=$message;Save-State}
+ "Electron 80-sample run stopped. No further automatic reboot.`r`n$message`r`nResults: $root\results"|Set-Content -LiteralPath "$root\ATTENTION.txt" -Encoding UTF8
+ Start-Process -FilePath "$env:SystemRoot\System32\notepad.exe" -ArgumentList "$root\ATTENTION.txt"
+ exit 1
+}finally{if($keepAwake){[void][PilotDesktop]::SetThreadExecutionState([uint32]2147483648)};if($transcript){Stop-Transcript|Out-Null};if($lock){$lock.Dispose()}}
+

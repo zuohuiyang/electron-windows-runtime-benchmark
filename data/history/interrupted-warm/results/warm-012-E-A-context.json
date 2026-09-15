@@ -1,0 +1,53 @@
+﻿{
+    "elevated":  false,
+    "sample":  {
+                   "pair":  3,
+                   "variant":  "A",
+                   "runtime":  "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+                   "drive":  "E",
+                   "profile":  "C:\\ElectronBench\\host-unified-completion-20260915\\profiles\\warm-012-E-A",
+                   "id":  "warm-012-E-A",
+                   "seedProfile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\04-E-A",
+                   "phase":  "measured"
+               },
+    "profilePolicy":  "Independent clone of same frozen seed for every warmup and formal launch",
+    "idle":  [
+                 {
+                     "time":  "2026-09-15T02:02:08.5559546+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-15T02:02:10.8263700+08:00",
+                     "cpu":  15
+                 },
+                 {
+                     "time":  "2026-09-15T02:02:14.0945155+08:00",
+                     "cpu":  3
+                 },
+                 {
+                     "time":  "2026-09-15T02:02:16.3738457+08:00",
+                     "cpu":  12
+                 },
+                 {
+                     "time":  "2026-09-15T02:02:18.6338136+08:00",
+                     "cpu":  14
+                 },
+                 {
+                     "time":  "2026-09-15T02:02:20.8973466+08:00",
+                     "cpu":  10
+                 },
+                 {
+                     "time":  "2026-09-15T02:02:23.1871460+08:00",
+                     "cpu":  3
+                 },
+                 {
+                     "time":  "2026-09-15T02:02:25.4593013+08:00",
+                     "cpu":  0
+                 }
+             ],
+    "cache":  "Same-session launches,5 warmups per storage/variant; no OS reboot within warm batch",
+    "boot":  "2026-09-14T17:53:44.5000000Z",
+    "mode":  "warm",
+    "session":  1,
+    "user":  "autotest"
+}

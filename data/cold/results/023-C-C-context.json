@@ -1,0 +1,31 @@
+﻿{
+    "cache":  "Physical host reboot first launch; default Windows caching and prefetch; runtime drive varies",
+    "elevated":  false,
+    "user":  "autotest",
+    "boot":  "2026-09-14T02:48:56.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-14T10:50:59.4407473+08:00",
+                     "cpu":  7
+                 },
+                 {
+                     "time":  "2026-09-14T10:51:01.7141061+08:00",
+                     "cpu":  2
+                 },
+                 {
+                     "time":  "2026-09-14T10:51:03.9824731+08:00",
+                     "cpu":  0
+                 }
+             ],
+    "sample":  {
+                   "pair":  6,
+                   "variant":  "C",
+                   "runtime":  "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+                   "drive":  "C",
+                   "profile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\023-C-C",
+                   "id":  "023-C-C",
+                   "seedProfile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C"
+               },
+    "os":  "10.0.26200",
+    "session":  1
+}

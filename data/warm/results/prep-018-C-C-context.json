@@ -1,0 +1,41 @@
+﻿{
+    "elevated":  false,
+    "sample":  {
+                   "pair":  5,
+                   "variant":  "C",
+                   "runtime":  "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+                   "drive":  "C",
+                   "profile":  "C:\\ElectronBench\\host-warm-retry-20260915\\profiles\\prep-018-C-C",
+                   "id":  "prep-018-C-C",
+                   "seedProfile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\02-C-C",
+                   "phase":  "warmup"
+               },
+    "profilePolicy":  "Independent clone of same frozen seed for every warmup and formal launch",
+    "idle":  [
+                 {
+                     "time":  "2026-09-15T09:42:03.7053941+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-15T09:42:06.9731856+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-15T09:42:09.2475413+08:00",
+                     "cpu":  4
+                 },
+                 {
+                     "time":  "2026-09-15T09:42:11.5196573+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-15T09:42:13.7943470+08:00",
+                     "cpu":  0
+                 }
+             ],
+    "cache":  "Same-session launches,5 warmups per storage/variant; no OS reboot within warm batch",
+    "boot":  "2026-09-15T01:37:21.5000000Z",
+    "mode":  "warm",
+    "session":  1,
+    "user":  "autotest"
+}

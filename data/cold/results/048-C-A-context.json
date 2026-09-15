@@ -1,0 +1,59 @@
+﻿{
+    "cache":  "Physical host reboot first launch; default Windows caching and prefetch; runtime drive varies",
+    "elevated":  false,
+    "user":  "autotest",
+    "boot":  "2026-09-14T03:59:34.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-14T12:01:37.2007896+08:00",
+                     "cpu":  4
+                 },
+                 {
+                     "time":  "2026-09-14T12:01:39.4590349+08:00",
+                     "cpu":  5
+                 },
+                 {
+                     "time":  "2026-09-14T12:01:41.7370894+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-14T12:01:44.0218886+08:00",
+                     "cpu":  17
+                 },
+                 {
+                     "time":  "2026-09-14T12:01:46.2950731+08:00",
+                     "cpu":  5
+                 },
+                 {
+                     "time":  "2026-09-14T12:01:48.5602992+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-14T12:01:50.8478209+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-14T12:01:53.1194000+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-14T12:01:55.3919728+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-14T12:01:57.6733754+08:00",
+                     "cpu":  7
+                 }
+             ],
+    "sample":  {
+                   "pair":  12,
+                   "variant":  "A",
+                   "runtime":  "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+                   "drive":  "C",
+                   "profile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\profiles\\048-C-A",
+                   "id":  "048-C-A",
+                   "seedProfile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\01-C-A"
+               },
+    "os":  "10.0.26200",
+    "session":  1
+}

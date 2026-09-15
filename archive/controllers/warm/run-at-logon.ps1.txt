@@ -1,0 +1,30 @@
+$ErrorActionPreference='Stop';$root=$PSScriptRoot;$lock=$null
+function Save-Control {$script:control.updated=(Get-Date).ToUniversalTime().ToString('o');$tmp="$root\control.next.json";$script:control|ConvertTo-Json -Depth 8|Set-Content $tmp -Encoding UTF8;[IO.File]::Replace($tmp,"$root\control.json","$root\control.previous.json")}
+try {
+ $control=Get-Content "$root\control.json" -Raw|ConvertFrom-Json
+ if($control.status -in @('STAGED','COMPLETE','FAILED','PAUSED_ENVIRONMENT','STOPPED')){exit 0}
+ if(Test-Path "$root\STOP"){exit 0}
+ if([Security.Principal.WindowsIdentity]::GetCurrent().Name -ne "$env:COMPUTERNAME\autotest"){throw 'Expected autotest identity'}
+ $boot=(Get-CimInstance Win32_OperatingSystem).LastBootUpTime.ToUniversalTime().ToString('o');if($boot -eq $control.preparedBoot){exit 0}
+ try{$lock=[IO.File]::Open("$root\runner.lock",[IO.FileMode]::OpenOrCreate,[IO.FileAccess]::ReadWrite,[IO.FileShare]::None)}catch [IO.IOException]{if(($_.Exception.HResult -band 65535) -eq 32){exit 0}else{throw}}
+ $cold=Get-Content 'C:\ElectronBench\host-callback-20x4-20260914\state.json' -Raw|ConvertFrom-Json
+ if($cold.status -ne 'COMPLETE' -or $cold.nextIndex -ne 80){throw 'Completed cold evidence is required; cold runner is never invoked'}
+ Add-Type -Path "$root\desktop.cs"
+ for($i=0;$i -lt 300;$i++){
+  if(Test-Path "$root\STOP"){throw 'STOP requested'}
+  if(([PilotDesktop]::Name() -eq 'Default') -and (Get-Process explorer -ErrorAction SilentlyContinue|Where-Object SessionId -eq (Get-Process -Id $PID).SessionId)){break}
+  Start-Sleep -Seconds 2
+ }
+ $control.status='WARM_MEASUREMENT';Save-Control
+ # Progress is explicitly RUNNING until all80 warm samples and final checks finish.
+ try{Start-Process "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -WindowStyle Hidden -ArgumentList "-NoProfile -STA -ExecutionPolicy Bypass -File `"$root\progress.ps1`""}catch{$_|Out-String|Set-Content "$root\progress-warning.txt"}
+ & "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "$root\run-warm.ps1"
+ $warm=Get-Content "$root\warm-state.json" -Raw|ConvertFrom-Json
+ if($warm.status -ne 'COMPLETE'){throw "Warm batch stopped: $($warm.error)"}
+ $control.status='COMPLETE';Save-Control
+}catch{
+ if($control){$control.status='FAILED';$control.error=$_.Exception.Message;Save-Control}
+ $_|Out-String|Set-Content "$root\ATTENTION.txt" -Encoding UTF8
+ try{Start-Process "$env:SystemRoot\System32\notepad.exe" -ArgumentList "$root\ATTENTION.txt"}catch{}
+ exit 1
+}finally{if($lock){$lock.Dispose()}}

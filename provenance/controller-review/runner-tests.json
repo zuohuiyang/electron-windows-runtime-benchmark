@@ -1,0 +1,43 @@
+{
+    "root":  "C:\\ElectronBench\\host-warm-retry-20260915\\review\\runner-simulation-20260915-020913",
+    "syntheticOnly":  true,
+    "success":  true,
+    "results":  [
+                    {
+                        "status":  "COMPLETE",
+                        "case":  "complete",
+                        "launches":  100,
+                        "passed":  true
+                    },
+                    {
+                        "status":  "PAUSED_ENVIRONMENT",
+                        "case":  "idle-timeout",
+                        "launches":  0,
+                        "passed":  true
+                    },
+                    {
+                        "status":  "FAILED",
+                        "case":  "launch-fails",
+                        "launches":  1,
+                        "passed":  true
+                    },
+                    {
+                        "status":  "FAILED",
+                        "case":  "interrupted",
+                        "launches":  0,
+                        "passed":  true
+                    },
+                    {
+                        "status":  "STAGED",
+                        "case":  "staged",
+                        "launches":  0,
+                        "passed":  true
+                    },
+                    {
+                        "status":  "STOPPED",
+                        "case":  "stop",
+                        "launches":  0,
+                        "passed":  true
+                    }
+                ]
+}

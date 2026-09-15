@@ -1,0 +1,57 @@
+﻿{
+    "elevated":  false,
+    "sample":  {
+                   "pair":  3,
+                   "variant":  "C",
+                   "runtime":  "E:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+                   "drive":  "E",
+                   "profile":  "C:\\ElectronBench\\host-warm-retry-20260915\\profiles\\prep-011-E-C",
+                   "id":  "prep-011-E-C",
+                   "seedProfile":  "C:\\ElectronBench\\host-callback-20x4-20260914\\seed-profiles\\03-E-C",
+                   "phase":  "warmup"
+               },
+    "profilePolicy":  "Independent clone of same frozen seed for every warmup and formal launch",
+    "idle":  [
+                 {
+                     "time":  "2026-09-15T09:40:38.2483552+08:00",
+                     "cpu":  3
+                 },
+                 {
+                     "time":  "2026-09-15T09:40:40.5379503+08:00",
+                     "cpu":  1
+                 },
+                 {
+                     "time":  "2026-09-15T09:40:42.8164644+08:00",
+                     "cpu":  19
+                 },
+                 {
+                     "time":  "2026-09-15T09:40:46.0907521+08:00",
+                     "cpu":  1
+                 },
+                 {
+                     "time":  "2026-09-15T09:40:48.3633426+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-15T09:40:50.6354895+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-15T09:40:52.9085776+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-15T09:40:55.1806898+08:00",
+                     "cpu":  6
+                 },
+                 {
+                     "time":  "2026-09-15T09:40:57.4414419+08:00",
+                     "cpu":  0
+                 }
+             ],
+    "cache":  "Same-session launches,5 warmups per storage/variant; no OS reboot within warm batch",
+    "boot":  "2026-09-15T01:37:21.5000000Z",
+    "mode":  "warm",
+    "session":  1,
+    "user":  "autotest"
+}
