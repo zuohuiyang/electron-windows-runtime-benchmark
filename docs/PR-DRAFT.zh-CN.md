@@ -14,7 +14,7 @@
 
 目标是改善 Windows 应用启动，尤其是运行时文件需要从存储设备读取时的启动耗时。当前测量评估的是“拆分＋预读”的整体效果；未单独测量两项改动的贡献。主要兼容工作包括原生模块符号转发、EXE 改名、Fuse 传递、沙箱初始化、快照所在模块及 Windows 分发清单。
 
-计划保留一个 PR、两个 commit：第一项完成运行时拆分与必要的兼容改造、回归测试；第二项加入预读策略。不将本地环境诊断或无关测试工具修复混入产品改动。
+已整理为一个 PR、两个产品 commit（分支 `pr/windows-runtime-split`，签名暂缓）：第一项完成运行时拆分与必要的兼容改造、回归测试；第二项加入预读策略。不将本地环境诊断或无关测试工具修复混入产品改动。
 
 该方案源于抖音 PC 客户端的线上实践，并参考了 Windows Chromium 的运行时加载设计。
 
@@ -52,11 +52,11 @@
 | JS API | 本改动没有以新增或修改 JS API 为目标 | 不能仅据此宣称完全没有 breaking change；分发与模块边界也是兼容性的一部分 |
 | 原生模块 | EXE 提供转发导出，运行时在退出清理期间保持加载 | 对齐最终导入库、改名 EXE、函数／数据符号及常见原生模块验证 |
 | 预读成本 | 预读发生在进程创建之后，计入完整启动耗时；当前 SSD/HDD 热启动均存在回退 | 定位热启动回退，判断当前策略是否需要调整；不能预先承诺所有条件都更快 |
-| 二进制与资源代价 | EXE/DLL 边界发生变化 | 待整理总分发大小、符号包大小，以及有必要时的内存与实际磁盘读取量；不以单个 EXE 变小代替总大小比较 |
+| 二进制与资源代价 | 完整分发解压后 +2.826 MiB（+0.79%），ZIP +1.245 MiB（+0.83%） | 符号包、内存和实际磁盘读取量未测；见[体积对比](../reports/SIZE-AND-EXPORTS.zh-CN.md) |
 | 平台与架构 | 当前性能证据来自 Windows x64 | 不将本机结果外推到 Windows ARM64 或其他平台 |
 | 因果范围 | 本次比较基线与拆分＋预读整体版本 | 没有独立机制对照和完整磁盘轨迹，不能把全部收益单独归因于预读 |
 
-Breaking change 的最终结论待按实际分发和生态工具影响确认。若确认存在必须迁移的行为，应在正文、文档和 Release Notes 中明确说明，而不是仅放在折叠详情中。
+[迁移文档](https://github.com/zuohuiyang/electron/blob/pr/windows-runtime-split/docs/tutorial/windows-runtime-distribution.md)已说明新增 DLL、匹配版本更新、签名、Fuse 和符号处理。Breaking change 的最终发布标记待按实际分发和生态工具影响确认。若确认存在必须迁移的行为，应在正文、文档和 Release Notes 中明确说明，而不是仅放在折叠详情中。
 
 ### 4. 技术方案与权衡
 
@@ -95,6 +95,8 @@ Windows 创建进程
 
 这里区分三个问题：启动器自身的 DLL 依赖、原生模块构建时使用的导入库，以及运行时从 EXE 查找导出符号的行为。
 
+实际 Release 导出检查：基线 3240 个命名导出均保留，拆分版新增 ElectronMain；3207 个导出转发，34 个仍由 EXE 直接提供。直接导出包括 Cr_z_*、GetHandleVerifier、IsSandboxedProcess；不宣称 ordinal 或所有 ABI 场景已覆盖。见[原始 PE 证据](../reports/SIZE-AND-EXPORTS.zh-CN.md)。
+
 当前 `generate-runtime-exports.py` 读取运行时 PE 的命名导出，生成 EXE 的转发导出，将原符号转发到 `main.dll`，并保留既有导出定义中的名称约定。这样可以把主要实现移动到 DLL，同时保留原生模块通过 EXE 解析所需符号的路径；不是让所有模块改为直接链接 `main.dll`。
 
 选择自动生成转发列表，可以避免手工同步大量符号；代价是增加构建生成步骤与 PE 导出解析逻辑。需要覆盖函数和数据符号、改名后的 EXE、正常与异常退出，以及正式原生模块构建链路。缺少证据的部分在验证表中保留为待确认，不笼统宣称全部 ABI 场景均已覆盖。
@@ -104,6 +106,8 @@ Windows 创建进程
 当前启动器调用 `base::PreReadFile(runtime_path, is_executable=true, sequential=false)`，随后正常加载 DLL。仅在 `--type` 的值为空且环境中不存在 `ELECTRON_RUN_AS_NODE` 时预读；即使相关 Fuse 禁用了 RunAsNode，环境变量存在时也保守跳过预读。
 
 这避免每个带进程类型的子进程重复显式预读。预读失败不阻断正常加载；实际 DLL 加载或入口查找失败则记录错误并返回对应 Windows 错误。运行时通过 EXE 目录定位，并使用 `LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR | LOAD_LIBRARY_SEARCH_DEFAULT_DIRS`；保持运行时加载直至进程退出，覆盖原生模块析构阶段。
+
+源码检查确认 PreReadFile 使用 READ_CODE_IMAGE 映射及 PrefetchVirtualMemory；热缓存下仍有额外工作，因此预读是约 20 ms 热启动增加的主要怀疑原因，尚未独立计时确认占比。
 
 目前选择同步的预加载前调用，路径简单且收益容易计入启动总耗时；其代价是热缓存条件下仍可能增加工作。是否改成更细的预读范围、条件或执行方式，应依据后续定位，不在本草稿中假定已有结论。
 
@@ -119,7 +123,7 @@ Fuse 配置由启动器传入运行时，避免拆分后错误读取另一份配
 
 | 验证项 | 已有记录 | 最终提交状态 |
 | --- | --- | --- |
-| 两版构建、发布产物 | 已构建并用于测量 | 待绑定最终 PR 的精确源码及产物映射 |
+| 两版构建、发布产物 | 已构建并用于测量 | 已记录 HEAD＋补丁及[两 commit 的产品文件等价审计](../provenance/product-commit-audit.json)；新增迁移文档不影响二进制 |
 | Windows runtime 回归 | 五项定向通过；其中原四项已在完整套件通过 | 保留日志并确认最终提交覆盖 |
 | xcache | 三项回归通过 | 保留快照模块迁移证据 |
 | 正式分发包检查 | 七项通过，含分发启动及相关机制检查 | 保留分发包与哈希 |
@@ -129,7 +133,7 @@ Fuse 配置由启动器传入运行时，避免拆分后错误读取另一份配
 | NAN | 两版均记录相同链接错误 | 未通过，不由本 PR 顺带修复无关问题 |
 | 官方 PR CI、其他目标架构 | 本地记录不能代替 | 待执行／确认 |
 
-已有验证概况见 [VALIDATION.zh-CN.md](VALIDATION.zh-CN.md)。完整产品测试日志仍在原机器，尚未全部迁入本 benchmark 仓库。最终 PR 需附与最终代码对应的日志；只比较基线与拆分＋预读整体版本，不处理与本改动无关的产品问题。
+已有验证概况见 [VALIDATION.zh-CN.md](VALIDATION.zh-CN.md)。运行时、xcache、分发和 lint 的已有证据已迁入，见[兼容性说明](COMPATIBILITY.zh-CN.md)；其他完整产品测试日志仍在原机器。最终 PR 需附与最终代码对应的日志；只比较基线与拆分＋预读整体版本，不处理与本改动无关的产品问题。
 
 ### 6. Benchmark 详细数据与复现方法
 
@@ -167,7 +171,7 @@ Fuse 配置由启动器传入运行时，避免拆分后错误读取另一份配
 
 环境快照来自 [host-environment.json](../provenance/host-environment.json)，采集于 2026-09-14。最终冷／热批次在该同一主机完成，批次之间没有重新采集完整硬件清单。
 
-两版构建参数文件 SHA-256 均为 `8A518AC7891AF70789D0EFBDE96A31F22506575C546BB9EFEE6D83FCB2A7F235`，有效参数哈希均为 `F8B2B19BEACBC7AA2563FEC9853D19ED83F053B2290D2F7F5892D1BAFECFCA54`。完整构建时工作区补丁、参数和文件级产物哈希分别见 [基线清单](../provenance/builds/A/manifest.json) 与 [拆分＋预读清单](../provenance/builds/C/manifest.json)，对应目录包含 working-tree.patch。HEAD 加补丁才是被测源码；最终两 commit 与这些产物的映射仍需整理。
+两版构建参数文件 SHA-256 均为 `8A518AC7891AF70789D0EFBDE96A31F22506575C546BB9EFEE6D83FCB2A7F235`，有效参数哈希均为 `F8B2B19BEACBC7AA2563FEC9853D19ED83F053B2290D2F7F5892D1BAFECFCA54`。完整构建时工作区补丁、参数和文件级产物哈希分别见 [基线清单](../provenance/builds/A/manifest.json) 与 [拆分＋预读清单](../provenance/builds/C/manifest.json)，对应目录包含 working-tree.patch。HEAD 加补丁才是被测源码；对应[提交审计](../provenance/product-commit-audit.json)验证了产品源码等价，工具修复排除，文档新增。
 
 #### 6.3 冷启动：P50 / P90
 
@@ -232,7 +236,7 @@ Node.js 18 或更新版本，无额外依赖。复算程序逐字节核对原始
 | 原始文件哈希与构建参数／补丁 | [provenance](../provenance) |
 | 历史热启动退化和中断批次 | [data/history](../data/history) |
 
-仍待补：线上可公开统计；热启动退化定位；兼容性、体积与导入库证据；最终两个 commit 及对应产品测试日志；英文 PR 文稿。完整 20 次／条件的冷热矩阵已完成，不再列为待测。运行时二进制和原 profile 未公开，媒体从固定上游来源准备。
+仍待补：线上可公开统计；热启动退化定位；正式导入库与更多生态工具／架构覆盖；符号包等额外代价；最终签名、剩余测试状态与英文 PR 文稿。两个产品 commit、迁移文档、分发体积和已有定向验证证据已经整理。完整 20 次／条件的冷热矩阵已完成，不再列为待测。运行时二进制和原 profile 未公开，媒体从固定上游来源准备。
 
 ## Checklist
 

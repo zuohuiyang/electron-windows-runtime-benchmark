@@ -1,0 +1,45 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const { spawnSync } = require('node:child_process');
+const { createRequire } = require('node:module');
+const specRequire = createRequire('C:/electron/src/electron/spec/package.json');
+const { flipFuses, FuseV1Options, FuseVersion } = specRequire('@electron/fuses');
+const root = 'C:/electron/runtime-split-validation/dist-check-20260913-postfix';
+const results = [];
+function run(name, exe, args, env, expected, expectedText) {
+  const result = spawnSync(exe, args, { cwd: 'C:/electron/runtime-split-validation', env: { ...process.env, NODE_OPTIONS: '', NODE_PATH: '', ...env }, encoding: 'utf8', timeout: 30000 });
+  results.push({ name, status: result.status, stdout: result.stdout, stderr: result.stderr, error: result.error?.message });
+  fs.writeFileSync(path.join(root, 'smoke-results.json'), JSON.stringify(results, null, 2));
+  assert.ifError(result.error);
+  assert.equal(result.status, expected, name + ': ' + result.stderr);
+  if (expectedText) assert.ok(result.stdout.includes(expectedText), name + ': ' + result.stdout);
+}
+(async () => {
+  const exe = path.join(root, 'electron.exe');
+  run('version', exe, ['-v'], { ELECTRON_RUN_AS_NODE: '' }, 0, 'v');
+  const renamed = path.join(root, 'renamed electron.exe');
+  fs.copyFileSync(exe, renamed);
+  const addon = specRequire.resolve('@electron-ci/echo');
+  run('renamed-native-addon', renamed, ['-e', `const echo=require(${JSON.stringify(addon)}); if(echo('sync')!=='sync')process.exit(1); echo.async('async', v=>console.log(v));`], { ELECTRON_RUN_AS_NODE: '1' }, 0, 'async');
+  const fuse = path.join(root, 'fuses.exe');
+  fs.copyFileSync(exe, fuse);
+  run('fuse-before', fuse, ['-e', 'console.log("ok")'], { ELECTRON_RUN_AS_NODE: '1', NODE_OPTIONS: '-e 0' }, 9);
+  await flipFuses(fuse, { version: FuseVersion.V1, [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false });
+  run('fuse-after', fuse, ['-e', 'console.log("ok")'], { ELECTRON_RUN_AS_NODE: '1', NODE_OPTIONS: '-e 0' }, 0, 'ok');
+  for (const [kind, code] of [['missing',126], ['invalid',193]]) {
+    const dir = path.join(root, kind);
+    fs.mkdirSync(dir);
+    fs.copyFileSync(exe, path.join(dir, 'electron.exe'));
+    if (kind === 'invalid') fs.writeFileSync(path.join(dir, 'main.dll'), 'invalid PE image');
+    run(kind, path.join(dir, 'electron.exe'), ['-v'], { ELECTRON_RUN_AS_NODE: '' }, code);
+  }
+  const entryDir = path.join(root, 'missing-entry');
+  fs.mkdirSync(entryDir);
+  fs.copyFileSync(exe, path.join(entryDir, 'electron.exe'));
+  fs.copyFileSync(path.join(process.env.SystemRoot, 'System32', 'version.dll'), path.join(entryDir, 'main.dll'));
+  run('missing-entry', path.join(entryDir, 'electron.exe'), ['-v'], { ELECTRON_RUN_AS_NODE: '' }, 127);
+  assert.ok(results.at(-1).stderr.includes('Unable to find Electron runtime entry point'));
+  console.log('Distribution smoke checks passed: ' + results.length);
+})().catch(error => { console.error(error); process.exitCode=1; });
+

@@ -14,4 +14,4 @@
 | NAN | 两版相同链接错误，未通过 |
 | 官方 PR CI、其他架构 | 尚未执行／确认 |
 
-完整日志仍在原主机 `C:/electron/runtime-split-validation`。该仓库此次主要迁移 benchmark 证据；最终产品 PR 前仍须整理与最终两 commit 匹配的具体日志和测试状态。不修复与本改动无关的问题，也不将共同失败勾选为通过。
+运行时 5 项、xcache 3 项、分发 7 项及 lint 的已有日志／断言现已归档，见 [兼容性证据](COMPATIBILITY.zh-CN.md)。此次未新增执行这些产品测试。其余完整日志仍在原主机 `C:/electron/runtime-split-validation`。该仓库此次主要迁移 benchmark 证据；最终产品 PR 前仍须整理与最终两 commit 匹配的具体日志和测试状态。不修复与本改动无关的问题，也不将共同失败勾选为通过。

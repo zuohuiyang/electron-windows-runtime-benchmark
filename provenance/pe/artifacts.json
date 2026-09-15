@@ -1,0 +1,35 @@
+{
+  "tool": "Microsoft dumpbin 14.44.35207 (imports/exports), /nologo",
+  "artifacts": [
+    {
+      "variant": "A",
+      "name": "electron.exe",
+      "bytes": 248855040,
+      "sha256": "cd3650e8f24f970916089c1895f9cb0a391915c6d934e15dcff59b5c3818d058"
+    },
+    {
+      "variant": "A",
+      "name": "dist.zip",
+      "bytes": 157782145,
+      "sha256": "d490266a1930319ee2ef7ee1c7e2d1d225723c7a10eb74f46921fcc35edcf2cf"
+    },
+    {
+      "variant": "C",
+      "name": "electron.exe",
+      "bytes": 3100160,
+      "sha256": "7eb8a4ca224b6c350b780c51ac38f97ddd4b3a6ff45e73952f955cebfa9f624c"
+    },
+    {
+      "variant": "C",
+      "name": "main.dll",
+      "bytes": 248718336,
+      "sha256": "1d342660a31a2ab0c324d814a25bdfb1111cee66fa5d37fa4d16fc3950579a5a"
+    },
+    {
+      "variant": "C",
+      "name": "dist.zip",
+      "bytes": 159088024,
+      "sha256": "af5ff802017c8798ac20d13188418e8ed46a846e189a47ba040edaadc0853d8d"
+    }
+  ]
+}

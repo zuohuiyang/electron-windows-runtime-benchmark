@@ -2756,6 +2756,76 @@
       "path": "data/history/ssd-warm-v4/samples.jsonl",
       "bytes": 422021,
       "sha256": "0cd8131ec61622228f4b7deed4194d92ddf7c84a599f1637d9f410842c9cb332"
+    },
+    {
+      "path": "provenance/validation/runtime-five-cases.log",
+      "bytes": 864,
+      "sha256": "a05750ec15ca198a99a10e2d3b5307116f9a48cf4008737509636b09d3ddd69c"
+    },
+    {
+      "path": "provenance/validation/xcache-split-fix.log",
+      "bytes": 726,
+      "sha256": "7fb7d1e690e35954b06b0c8d7a66a06e8e8e3c8671efa0faeb32cf72df263f1d"
+    },
+    {
+      "path": "provenance/validation/lint-manifest.json",
+      "bytes": 1037,
+      "sha256": "e0ddb8c7b9c877001ed16a2afff36644533e55721fb27cadb92b4575d742ea31"
+    },
+    {
+      "path": "provenance/validation/lint.log",
+      "bytes": 15409,
+      "sha256": "f45b847bca47da0180d7af5e25f63077a63457c0a47e79376f471f72e36c9d0d"
+    },
+    {
+      "path": "provenance/validation/distribution-smoke.json",
+      "bytes": 1382,
+      "sha256": "a68ed5709fe6eca000facccc1b94ed40198019c0e8e211551541c4d55e4b7d37"
+    },
+    {
+      "path": "provenance/validation/distribution-smoke.cjs.txt",
+      "bytes": 3039,
+      "sha256": "f2ab04bd3c117c80a7f75476714dabe8a0284cb8abd54f74678db2f6be0374b3"
+    },
+    {
+      "path": "provenance/pe/A-exe-exports.txt",
+      "bytes": 281285,
+      "sha256": "d3bdbf658ce1e904397d638a1cf880e2ce2f5364fcb8b5ecebce3e09490b09fc"
+    },
+    {
+      "path": "provenance/pe/A-exe-imports.txt",
+      "bytes": 103664,
+      "sha256": "41d3ca432541fbff73fb9e88e861b98113c320f2eddfda7fa1030536c5b4f281"
+    },
+    {
+      "path": "provenance/pe/artifacts.json",
+      "bytes": 950,
+      "sha256": "49a91f69cbe6d78210e6355b75824990cb692068c464364bc9448ca13f4fb600"
+    },
+    {
+      "path": "provenance/pe/C-exe-exports.txt",
+      "bytes": 537822,
+      "sha256": "5186343023bf4e25103421a685e3314a1b9ce520f454373bb63df986590861e4"
+    },
+    {
+      "path": "provenance/pe/C-exe-imports.txt",
+      "bytes": 19391,
+      "sha256": "dcf4a5b7de179ad51ec84614f2e15f6b0d29a3c08833ee8943fa958594c3f30e"
+    },
+    {
+      "path": "provenance/pe/C-runtime-exports.txt",
+      "bytes": 281304,
+      "sha256": "8756206ec0c057ebd8454a1070e429dbc0a3e24feb21699287635a97a1c5b781"
+    },
+    {
+      "path": "provenance/pe/C-runtime-imports.txt",
+      "bytes": 101870,
+      "sha256": "2d888bec6bb7498db44df221db6b813a55ae0fb1a1ad1e4977c71fc4b54f6bc5"
+    },
+    {
+      "path": "provenance/product-commit-audit.json",
+      "bytes": 2111,
+      "sha256": "f4055ee473919b936328455e4fc4d00658cdbfb043503206f843b096c934d7b8"
     }
   ]
 }

@@ -1,0 +1,18 @@
+Triggering runners: main
+✓ Provisioned virtual printer: ElectronTestPDF
+
+Running: Main process specs
+Running: C:\electron\src\out\RuntimeSplit-Testing\electron.exe electron/spec --files spec/windows-runtime-spec.ts
+
+[24816:0913/100705.602:ERROR:ui\gl\direct_composition_support.cc:625] AMD VideoProcessorGetOutputExtension failed: 参数错误。 (0x80070057)
+Adding kill orphaned process for test suite: Windows runtime DLL
+ok 1 Windows runtime DLL resolves native addon exports after renaming the executable
+ok 2 Windows runtime DLL reads the fuse patched in the executable from the runtime DLL
+ok 3 Windows runtime DLL reports a missing runtime DLL
+ok 4 Windows runtime DLL reports an invalid runtime DLL
+ok 5 Windows runtime DLL reports a missing runtime entry point
+# tests 5
+# pass 5
+# fail 0
+1..5
+✓ Electron main process tests passed.
