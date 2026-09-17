@@ -1,106 +1,113 @@
-# Windows 运行时拆分与预读
+# Windows EXE 拆分与 DLL 预读
 
 ## Description of Change
 
 ### 1. 改动摘要
 
-将 Windows 版 Electron 的大体积 EXE 拆分为小型启动 EXE 和独立的 `main.dll`，并在加载 DLL 前进行预读，使 Windows 能够提前批量读取相关页面，减少后续加载和执行中因缺页而产生的读盘等待，从而改善启动性能。
+将 Windows 版 Electron 的大体积 EXE 拆分为小型启动 EXE 和独立的 `main.dll`，并在加载 DLL 前进行预读，减少后续加载和执行中因缺页而产生的读盘等待，从而改善启动性能。
 
 ### 2. 收益摘要
 
-本机 benchmark 以 APP READY 和用于模拟复杂 APP 启动的本地视频呈现回调为两个终点，冷启动 P50 在 SSD 上分别减少 88 ms（−26.5%）和 357 ms（−32.1%），在 HDD 上分别减少 5019 ms（−65.7%）和 13176 ms（−77.0%）。
+本机 benchmark 以 APP READY 和用于模拟复杂 APP 启动的本地视频呈现回调为两个终点，冷启动 P50 在 SSD 上分别减少 88 ms（−26.5%）和 357 ms（−32.1%），在 HDD 上分别减少 5019 ms（−65.7%）和 13176 ms（−77.0%）。但是热启动耗时略微劣化：APP READY 和视频呈现回调 P50 在 SSD 上分别增加 19 ms（+33.3%）和 16 ms（+8.1%），在 HDD 上分别增加 20 ms（+33.9%）和 15 ms（+7.3%）；不过，热启动本身耗时就很短，基线 APP READY 的 P50 约为 58 ms，视频呈现回调约为 203–204 ms，耗时的绝对增量也很小。
 
-但是热启动耗时略微劣化：APP READY 和视频呈现回调 P50 在 SSD 上分别增加 19 ms（+33.3%）和 16 ms（+8.1%），在 HDD 上分别增加 20 ms（+33.9%）和 15 ms（+7.3%）；不过，热启动本身耗时就很短，基线 APP READY 的 P50 约为 58 ms，视频呈现回调约为 203–204 ms，耗时的绝对增量也很小。
+我们一个拥有上千万用户的 C 端产品在线上的预读优化中，首刷时长 P50 从 6006 ms 降至 5822 ms，减少 184 ms（−3.1%，未区分冷、热启动）；另一项“文件拆分＋进程合并”优化的首刷 P50 减少 369 ms（−6.8%）、P90 减少 2378 ms（−15.0%），其中进程合并不属于本 PR，两项结果分别统计，不相加。
 
-我们一个拥有上千万用户的 C 端产品在线上采用运行时拆分与预读后也观察到启动收益，线上量化统计尚未公开。
-
-### 3. 兼容性、代价与已知限制
+### 3. 兼容性影响与体积变化
 
 - **分发兼容性**：新增与 EXE 同目录、匹配版本的 `main.dll`，自定义打包、签名和更新流程需要包含该文件。
 - **路径 API 行为变化**：Windows 上 `app.getPath('module')` 由 EXE 路径变为 `main.dll` 路径；需要启动 EXE 路径的代码应使用 `app.getPath('exe')` 或 `process.execPath`。
 - **体积代价**：完整分发解压后增加 2.8 MiB（+0.8%），ZIP 增加 1.2 MiB（+0.8%）。
-- **验证范围**：当前性能数据来自 Windows x64，改名 EXE 加载原生模块的用例已通过；正式导入库、更广泛 ABI 场景及其他架构尚未全面验证，详细状态见第 5 节。
 
 ### 4. 技术方案与权衡
 
 #### 4.1 技术原理
 
-启动器与运行时分离后，启动性能可能受到两类机制影响：一是运行时页面的读取方式，二是杀毒软件在进程创建、文件访问与模块加载路径上的检查策略。前者有明确的 API 行为依据；后者取决于具体安全产品及其配置。当前 benchmark 测量两者与其他加载开销共同作用后的启动结果，尚未分离各机制的贡献。
+EXE 拆分与 DLL 预读从两个方面改善启动速度：预读减少缺页带来的读盘等待，拆分则可能降低部分杀软检查造成的阻塞。
 
-##### 4.1.1 预读：提前批量读取运行时页面
+##### 4.1.1 预读：减少缺页带来的读盘等待
 
-大体积 EXE 或 DLL 被映射到进程地址空间，并不代表其所有页面已经驻留在物理内存中。启动执行访问尚未驻留的页面时，需要通过缺页处理取得数据；需要从磁盘读取时，分散且受执行顺序约束的访问可能形成多次等待。预读让程序在正式使用这些页面之前告诉系统即将访问的地址范围，使系统在条件允许时采用较大、并发的 I/O 请求，减少后续访问中的读盘等待。[PrefetchVirtualMemory 文档](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-prefetchvirtualmemory)。
+DLL 映射到进程地址空间后，尚未驻留内存的页面在执行时触发需要读盘的缺页，造成分散的 I/O 等待。本方案先启动小型 EXE，在加载 `main.dll` 前调用 Chromium 的 `PreReadFile`，通过 `PrefetchVirtualMemory` 提前批量预读 DLL 页面，减少后续加载和执行中的读盘等待。
 
-本实现先运行较小的启动 EXE，在显式加载主要运行时之前调用 Chromium 的 PreReadFile。其 Windows 路径以 READ_CODE_IMAGE 建立映像映射，将映射范围交给 PrefetchVirtualMemory，再执行 LoadLibraryExW 加载 main.dll。使用映像映射符合后续代码页面的使用方式，避免仅按普通数据文件读取造成额外的数据／映像映射。这一调用顺序依赖运行时已经拆分为可显式加载的 DLL；模块边界使启动器能够在主要运行时初始化前安排读取工作。[Chromium 实现](https://chromium.googlesource.com/chromium/src/+/5d637f3b235dae9d40ce8252cb88ff156a70f044/base/files/file_util_win.cc)。
+HDD 对分散读盘更敏感，因此预读可能带来更大收益；热启动时页面已有缓存，预读自身的开销则可能导致轻微劣化。
 
-预读的价值取决于减少的后续读盘等待是否大于自身成本。HDD 对离散读取更敏感，因此批量读取可能带来更大的收益；热缓存下仍会执行映射和预取调用，也可能读取本次启动并不需要的页面。当前 API 提供的是受内存条件约束的预取提示，预取页面不会因此直接加入进程工作集。本实现同步等待该调用返回，其成本包含在进程创建到终点的测量中；本机 HDD 冷启动收益较大、热启动增加约 20 ms 的 READY 前耗时与上述机制相容；各部分开销尚未通过独立计时区分。
+##### 4.1.2 杀软策略：EXE 与 DLL 的检查差异
 
-##### 4.1.2 杀软策略：文件与模块边界对启动检查的影响
-
-杀毒软件的实时保护会监控文件访问及程序行为，相关检查可能增加文件读取、解析或进程启动路径上的等待。不同产品对进程主映像、加载的 DLL、扫描结果缓存和信任判断采用的策略可能不同，因此相同代码放在大 EXE 中，或分布在小 EXE 与主 DLL 中，可能表现出不同的启动成本。Microsoft Defender 的公开文档确认了实时访问保护，并提供按文件、进程、扫描次数和耗时分析性能的工具；EXE 与 DLL 的实际扫描成本取决于安全产品及其配置。[实时保护](https://learn.microsoft.com/en-us/defender-endpoint/configure-real-time-protection-microsoft-defender-antivirus)、[扫描性能分析](https://learn.microsoft.com/en-us/defender-endpoint/tune-performance-defender-antivirus)。
-
-如果杀软在创建进程时对主 EXE 执行较重的同步检查，而对后续 DLL 加载采用不同的检查时机或能够复用已有结果，那么把主 EXE 从约 237.3 MiB 缩小为 3.0 MiB，可能减少进入启动器之前的等待。Electron 会创建多个进程，这种差异也可能影响后续子进程启动。这是依赖具体策略的机制推断；文件大小、扫描次数与扫描耗时之间的关系需由安全产品的记录确定。
-
-主 DLL 仍可能在预读、映像映射或加载时被检查；如果相同扫描工作只是移到了 DLL 上，整体耗时未必减少。扫描缓存是否命中、文件是否变化、签名与信誉判断等还可能改变冷／热启动表现。因而，本 PR 的设计不依赖调整杀软设置；实际收益需在目标安全环境中评估。
-
-本次计时从原生进程创建时间开始，进程创建之前的检查不在该计时范围内。原始数据没有记录 EXE/DLL 的杀软扫描事件，扫描等待与磁盘缺页等待的贡献尚未区分。量化杀软影响需要将扫描记录与进程创建、DLL 加载时间线关联分析；Microsoft Defender 提供对应的性能记录与报告接口。[性能分析接口](https://learn.microsoft.com/en-us/defender-endpoint/performance-analyzer-reference)。
+根据我个人过往的杀软开发经验，部分杀软对 EXE 启动的检查比对 DLL 加载更严格。由于长时间阻塞 DLL 加载可能导致程序无响应、影响用户体验，这些杀软通常会对 DLL 采用较轻的检查策略，并缩短阻塞时间。因此，将 Electron 主体代码从 EXE 移入 DLL，可能减少安全检查带来的启动等待，实际效果取决于所用杀软及其配置。
 
 #### 4.2 设计依据与已有实践
 
-“启动器与主要运行时分离，并在加载运行时前安排文件预读”已有产品实践。Windows Chrome 的 Chromium 实现使用 `chrome.exe` 启动器加载独立的主 DLL；`MainDllLoader` 的加载路径包含 `base::PreReadFile`，同步路径在 `LoadLibraryExW` 之前执行预读。所引用的 Chromium 版本还包含按渠道和实验分组选择异步预读的逻辑，具体预读方式会随版本和配置变化。[Chromium 加载器源码](https://chromium.googlesource.com/chromium/src/+/5d637f3b235dae9d40ce8252cb88ff156a70f044/chrome/app/main_dll_loader_win.cc)、[EXE 启动入口](https://chromium.googlesource.com/chromium/src/+/5d637f3b235dae9d40ce8252cb88ff156a70f044/chrome/app/chrome_exe_main_win.cc)。
+“将主体代码从启动 EXE 移入独立 DLL，并在加载 DLL 前安排文件预读”已有产品实践。Windows Chrome 的 Chromium 实现使用 `chrome.exe` 启动器加载独立的主 DLL；`MainDllLoader` 的加载路径包含 `base::PreReadFile`，在 `LoadLibraryExW` 之前执行预读。
 
-我们一个拥有上千万用户的 C 端产品采用了运行时拆分与预读，并在线上观察到启动收益。本改动将这一实践整理为 Electron 的通用实现，包含原生模块符号、Fuse、沙箱及分发等兼容处理。
+我们一个拥有上千万用户的 C 端产品采用了 EXE 拆分与 DLL 预读，并在线上观察到启动收益。该方案已在线上运行两年多，并被其他多个产品采用，其兼容性和稳定性已在这些产品的线上运行中得到验证。本改动将这一实践整理为 Electron 的通用实现。
 
-据提交团队了解，**QQ PC 客户端**也采用了类似思路；这项信息来自产品实践观察，尚无可引用的公开实现资料。本文的实现说明和量化结果分别以所链接的源码与本地 benchmark 为依据。
+另外，据我们观察，中国另一款拥有上千万用户、基于 Electron 的 C 端客户端——QQ PC 客户端也采用了类似方案。
 
-#### 4.3 启动流程与模块边界
-
-```text
+#### 4.3 启动流程
+```
 Windows 创建进程
   → electron.exe 启动器
   → 定位同目录 main.dll，初始化 SandboxInterfaceInfo
-  → 满足条件时预读 main.dll
+  → 主进程预读 main.dll
   → LoadLibraryExW 加载 main.dll
   → GetProcAddress 查找 ElectronMain
   → 传入启动参数、沙箱接口与 EXE 的 Fuse 配置
-  → Electron 运行时初始化 → APP READY → 页面与视频呈现
+  → Electron 初始化 → APP READY
+```
+#### 4.4 导出表兼容
+
+**导出表兼容是本方案的一个重点。** Electron 主体代码移入 `main.dll` 后，已有 Node addon 仍可能从 EXE 查找 Node 提供的函数；如果 EXE 不再导出这些函数，插件就会加载或调用失败。
+
+##### 4.4.1 背景：插件从 EXE 查找函数
+
+Node addon 需要调用 Node 提供的函数。Windows 上，典型的 node-gyp 插件通过 `node.lib` 链接，在导入信息中记录对 Node 宿主的依赖。在 Electron 中，插件构建使用延迟加载和 `win_delay_load_hook`，将对 Node 宿主的引用转向当前 EXE。以下是 `load_exe_hook` 的典型实现（node-gyp 10.2.0）：
+
+```cpp
+static FARPROC WINAPI load_exe_hook(unsigned int event, DelayLoadInfo* info) {
+  if (event != dliNotePreLoadLibrary)
+    return NULL;
+  if (_stricmp(info->szDll, HOST_BINARY) != 0)
+    return NULL;
+  return (FARPROC)GetModuleHandle(NULL);
+}
+
+decltype(__pfnDliNotifyHook2) __pfnDliNotifyHook2 = load_exe_hook;
 ```
 
-拆分提供了运行时加载之前的执行位置。启动器通过显式调用加载 `main.dll`，其导入目录中没有对该 DLL 的直接依赖，预读因此可以先于这次加载执行。实际 Release 产物的导入目录见[PE 证据](../reports/SIZE-AND-EXPORTS.zh-CN.md)。
+`GetModuleHandle(NULL)` 返回当前进程的 EXE 句柄，后续函数解析因此查询 EXE 的导出表，也使插件不必依赖 EXE 的固定文件名。
 
-#### 4.4 导入库、导出转发与原生模块
+##### 4.4.2 曾尝试的方案：改写插件的延迟导入表
 
-这里区分三个问题：启动器自身的 DLL 依赖、原生模块构建时使用的导入库，以及运行时从 EXE 查找导出符号的行为。
+我们曾在 Node 插件加载期间 hook `NtMapViewOfSection`，在 `.node` 文件映射到内存后、相关延迟导入解析前，将延迟导入描述中的 `node.exe` 改为 `main.dll`，使这类插件转向 DLL 查找函数。流程如下：
 
-实际 Release 导出检查：基线 3240 个命名导出均保留，拆分版新增 ElectronMain；3207 个导出转发，34 个仍由 EXE 直接提供。直接导出包括 Cr_z_*、GetHandleVerifier、IsSandboxedProcess；本项检查覆盖命名导出，未验证 ordinal 稳定性或全部 ABI 场景。见[原始 PE 证据](../reports/SIZE-AND-EXPORTS.zh-CN.md)。
+```text
+Node 开始加载 addon → 安装 NtMapViewOfSection hook → LoadLibrary
+  → addon 映射完成 → 将延迟导入中的 node.exe 改为 main.dll
+  → 后续解析相关函数时从 main.dll 获取地址
+```
 
-当前 `generate-runtime-exports.py` 读取运行时 PE 的命名导出，生成 EXE 的转发导出，将原符号转发到 `main.dll`，并保留既有导出定义中的名称约定。这样可以把主要实现移动到 DLL，同时保留原生模块通过 EXE 解析所需符号的路径，沿用其现有链接方式。
+这个方案看似比较优雅，我们也在线上使用了一段时间，但后来另一款产品接入这一方案时，发现它无法兼容 napi-rs 插件：改写延迟导入表只能覆盖依赖该机制的插件，无法兼容直接从 EXE 查找函数的方式。以 napi-rs 2.16.17 的 Windows 实现为例，`napi-sys` 通过 `libloading::os::windows::Library::this()` 取得宿主 EXE，再用 `host.get()` 按名称查找 Node-API 函数。其 libloading 0.8 系列的对应 Windows 路径使用 `GetModuleHandleExW(0, NULL, ...)` 和 `GetProcAddress`，不经过上述 `node.exe` 延迟导入表。因此，即使改写了延迟导入表，这类插件仍会直接查询 EXE 的导出表。
 
-自动生成转发列表省去了大量符号的手工同步，代价是增加构建生成步骤与 PE 导出解析逻辑。已有测试覆盖改名 EXE 加载原生模块；函数和数据符号的完整 ABI、跨模块生命周期及正式原生模块构建链路仍有未覆盖场景。
+##### 4.4.3 最终方案：EXE 导出表转发
 
-#### 4.5 预读策略与失败路径
+本方案在 EXE 中保留原有导出名称，通过 Windows PE 的导出转发机制，将移入 DLL 的函数指向 `main.dll` 中的实现。这样，无论插件通过延迟加载钩子取得 EXE 句柄，还是像上述 napi-rs 实现一样直接查找 EXE 导出，都可以沿用原来的函数查找方式，无需为此次拆分改写插件的导入表。
 
-当前启动器调用 `base::PreReadFile(runtime_path, is_executable=true, sequential=false)`，随后正常加载 DLL。仅在 `--type` 的值为空且环境中不存在 `ELECTRON_RUN_AS_NODE` 时预读；即使相关 Fuse 禁用了 RunAsNode，环境变量存在时也保守跳过预读。
+```text
+addon 延迟加载钩子 ──┐
+                    ├→ EXE 导出表 → 转发到 main.dll 中的实现
+napi-rs 动态查找 ────┘
+```
 
-这避免每个带进程类型的子进程重复显式预读。预读失败不阻断正常加载；实际 DLL 加载或入口查找失败则记录错误并返回对应 Windows 错误。运行时通过 EXE 目录定位，并使用 `LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR | LOAD_LIBRARY_SEARCH_DEFAULT_DIRS`；保持运行时加载直至进程退出，覆盖原生模块析构阶段。
+`generate-runtime-exports.py` 从 `main.dll` 的 PE 命名导出自动生成转发列表，避免手工维护大量符号。
 
-源码检查确认 PreReadFile 使用 READ_CODE_IMAGE 映射及 PrefetchVirtualMemory；热缓存下仍有额外工作，因此预读是约 20 ms 热启动增加的主要怀疑原因，尚未独立计时确认占比。
+#### 4.5 Fuse、沙箱、快照和分发
 
-当前采用同步预读，加载流程简单，代价是热缓存条件下仍会增加工作。预读范围、触发条件和执行方式是后续优化的可调整点。
+Fuse 配置由启动器传入 `main.dll`，避免拆分后错误读取另一份配置；沙箱接口在启动器初始化后传入 `ElectronMain`。xcache 改为从 `main.dll` 读取 Node 快照。Windows 分发清单包含 `main.dll`，符号生成目标同时覆盖 EXE 与 DLL。
 
-#### 4.6 Fuse、沙箱、快照和分发
+#### 4.6 后续扩展：固定启动入口与按版本组织的 DLL 目录
 
-Fuse 配置由启动器传入运行时，避免拆分后错误读取另一份配置；沙箱接口在启动器初始化后传入 `ElectronMain`。xcache 读取 Node 快照的位置随运行时移动到新模块。Windows 分发清单包含 `main.dll`，符号生成目标同时覆盖 EXE 与 DLL。
+EXE 拆分为按版本组织安装目录提供了基础：启动 EXE 保持固定路径，`main.dll` 及其配套文件放入版本号目录，由启动器选择加载。这样升级时无需改变 EXE 路径，也可避免因路径变化而反复修改快捷方式和按程序路径配置的防火墙规则。
 
-源代码入口：[启动器](https://github.com/zuohuiyang/electron/blob/4ce68cfbef/shell/app/electron_loader_win.cc)、[运行时入口](https://github.com/zuohuiyang/electron/blob/4ce68cfbef/shell/app/electron_main_win.cc)、[导出生成器](https://github.com/zuohuiyang/electron/blob/4ce68cfbef/script/generate-runtime-exports.py)。链接对应整理后的产品提交；被测构建的 HEAD、工作区补丁与产品源码映射见第 6.2 节。
-
-#### 4.7 后续扩展：固定启动入口与版本化运行时目录
-
-运行时拆分也为后续的版本化安装布局提供基础：应用可以将启动 EXE 保持在固定路径，把主运行时 DLL 及其配套文件放入按版本号区分的目录，再由启动器选择要加载的版本。这样，更新运行时版本就不必同时改变应用 EXE 的路径。
-
-对于目前将 EXE 一起放入版本目录的安装方案，每次升级都可能需要更新快捷方式目标和按程序路径配置的防火墙规则。固定 EXE 路径可以减少这类由路径变化引起的维护工作：快捷方式持续指向同一启动入口，基于该可执行文件路径的规则也无需仅因版本目录变化而重写。这个预期收益针对 Windows 快捷方式的目标路径和防火墙程序规则的路径匹配，其他属性和策略仍按安装方案处理。[Windows Shell 链接](https://learn.microsoft.com/zh-cn/windows/win32/shell/links)、[Windows 防火墙规则](https://learn.microsoft.com/zh-cn/windows/security/operating-system-security/network-security/windows-firewall/rules)。
-
-本 PR 完成的是启动器与运行时的边界拆分，当前实现仍从 EXE 同目录加载 `main.dll`，尚未实现上述目录布局。后续需要进一步处理版本选择、DLL 及资源定位、导出转发的模块解析，以及 EXE 与运行时版本匹配和更新／回滚流程。固定入口与版本目录属于后续扩展方向。
+本 PR 仍从 EXE 同目录加载 `main.dll`，尚未实现上述布局。
 
 ### 5. 正确性与兼容性验证
 
@@ -109,7 +116,7 @@ Fuse 配置由启动器传入运行时，避免拆分后错误读取另一份配
 | 验证项 | 结果 | 证据与范围 |
 | --- | --- | --- |
 | 两版构建、发布产物 | 已构建并用于测量 | HEAD、补丁及[产品文件等价审计](../provenance/product-commit-audit.json)已记录 |
-| Windows runtime 回归 | 五项定向通过 | [改名 EXE、Fuse 和加载错误路径](../provenance/validation/runtime-five-cases.log) |
+| Windows EXE/DLL 拆分回归 | 五项定向通过 | [改名 EXE、Fuse 和加载错误路径](../provenance/validation/runtime-five-cases.log) |
 | xcache | 三项回归通过 | [Node snapshot、script cache、function cache](../provenance/validation/xcache-split-fix.log) |
 | 分发包检查 | 七项通过 | [分发测试结果](../provenance/validation/distribution-smoke.json)；故意构造的错误场景返回预期非零码 |
 | Lint | 完整运行退出 0，有文档警告；新增迁移文档检查通过 | [完整日志](../provenance/validation/lint.log)及[源码哈希](../provenance/validation/lint-manifest.json) |
@@ -132,7 +139,7 @@ Fuse 配置由启动器传入运行时，避免拆分后错误读取另一份配
 | 视频回调（业务讨论中的“首帧”） | 进程创建 → 首次收到可见视频呈现回调的入口时间；不是物理屏幕扫描输出，也不保证回调对应视频第一帧 |
 | 冷启动 | 本文特指实体机独立系统重启、登录并等待环境就绪后，首次启动被测 Electron；保留 Windows 默认缓存／预取行为，缓存是否全部清空未单独测量 |
 | 热启动 | 同一系统会话中，在预热后反复创建新 Electron 进程；不是复用同一 Electron 进程 |
-| SSD / HDD | Electron 运行时及其分发文件所在磁盘；系统、网页、视频和配置目录均在 SSD |
+| SSD / HDD | Electron EXE、DLL 及其配套分发文件所在磁盘；系统、网页、视频和配置目录均在 SSD |
 
 因此完整矩阵是 **2 种存储 × 2 种冷热条件 × 2 个终点 = 8 个指标组合**，每个组合比较基线与拆分＋预读。每次启动可同时取得两个终点，不需要为两项终点各做一轮独立采样。
 
@@ -192,7 +199,7 @@ P50、P90 均从原始值重新计算，采用排序后的线性插值，零基�
 
 原生辅助程序使用 `GetProcessTimes` 读取目标进程创建时间，以 `GetSystemTimePreciseAsFileTime` 和 `QueryPerformanceCounter` 建立 FILETIME/QPC 对应。渲染进程在视频呈现回调入口保存时间，随后执行 20 次 IPC 往返以建立渲染时钟与主进程 QPC 的映射。时钟映射不确定度与前后锚点漂移分别限制在 2 ms 以内；这两项阈值约束时钟映射，不衡量物理屏幕显示误差。
 
-统一回调协议同时校验窗口／页面可见、窗口未最小化、视频未暂停、720p 尺寸、帧计数正整数、无网络请求、时钟一致性及退出状态。启动前不读取目标运行时做哈希；完整性准备在初始重启前完成，正式样本结束后再核验，以免测量前的完整文件读取直接改变条件。
+统一回调协议同时校验窗口／页面可见、窗口未最小化、视频未暂停、720p 尺寸、帧计数正整数、无网络请求、时钟一致性及退出状态。启动前不读取被测 Electron 二进制文件做哈希；完整性准备在初始重启前完成，正式样本结束后再核验，以免测量前的完整文件读取直接改变条件。
 
 #### 6.6 复现流程
 
@@ -221,7 +228,33 @@ Node.js 18 或更新版本，无额外依赖。复算程序逐字节核对原始
 | 原始文件哈希与构建参数／补丁 | [provenance](../provenance) |
 | 历史热启动退化和中断批次 | [data/history](../data/history) |
 
-证据仓库包含完整正式样本、热身记录和复算代码。运行时二进制与原 profile 未分发；复算使用归档数据，重新采集时从固定上游来源准备媒体，并生成适用于测试账户的 profile。
+证据仓库包含完整正式样本、热身记录和复算代码。被测 Electron 二进制文件与原 profile 未分发；复算使用归档数据，重新采集时从固定上游来源准备媒体，并生成适用于测试账户的 profile。
+
+#### 6.8 线上收益详细数据
+
+我们一个拥有上千万用户的 C 端产品在线上分别实施了预读优化和“文件拆分＋进程合并”优化。两项统计对应不同的改动范围，分别展示。
+
+**预读优化。** 首刷时长总体数据不区分冷、热启动，冷启首刷另行统计。
+
+| 线上指标 | 改动前 | 改动后 | 变化 |
+| --- | ---: | ---: | ---: |
+| 首刷时长 P50（不区分冷、热启动） | 6006 ms | 5822 ms | −184 ms（−3.1%） |
+| 冷启首刷时长 P50 | 7461 ms | 7384 ms | −77 ms（−1.0%） |
+| 主窗口打开耗时 | 1493 ms | 1367 ms | −126 ms（−8.5%） |
+| 推荐页 LCP P50 | 未提供 | 未提供 | −0.7% |
+
+冷启首刷时长 P50 按机型分组，低端机、中端机、高端机分别减少 5.1%、2.3%、1.1%。
+
+**文件拆分＋进程合并。** 这项优化还将原有两个进程合并为一个进程，线上首刷收益如下：
+
+| 线上指标 | 变化 |
+| --- | ---: |
+| 首刷时长 P50 | −369 ms（−6.8%） |
+| 首刷时长 P90 | −2378 ms（−15.0%） |
+
+进程合并不属于本 PR；这组数据反映文件拆分与进程合并的共同效果，不能单独归因于 EXE 拆分，也不与预读收益相加。本 PR 的“EXE 拆分＋DLL 预读”整体效果由前述本机 benchmark 对照测量。
+
+以上数据来自团队提供的线上统计截图；相对变化沿用原统计结果并保留一位小数，预读组绝对变化由图中毫秒值相减得到。主窗口打开耗时未标注分位数。线上“首刷”及冷启动的统计口径独立于本地 benchmark，不与本地视频呈现回调数据合并统计。
 
 ## Checklist
 
@@ -235,4 +268,4 @@ Node.js 18 或更新版本，无额外依赖。复算程序逐字节核对原始
 
 ## Release Notes
 
-改进了 Windows 应用在部分冷启动场景下的启动速度，将运行时移至独立的 `main.dll` 并在浏览器进程启动时预读。自定义分发流程需包含该 DLL。
+改进了 Windows 应用在部分冷启动场景下的启动速度，将 Electron 主体代码移至独立的 `main.dll` 并在浏览器进程启动时预读。自定义分发流程需包含该 DLL。
