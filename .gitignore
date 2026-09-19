@@ -9,3 +9,5 @@ profiles/
 runtimes/
 runs/
 *.credentials*
+
+/benchmark/reports/summary.json

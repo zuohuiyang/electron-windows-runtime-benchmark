@@ -1,5 +1,5 @@
 {
-  "description": "Source evidence is copied byte for byte except explicitly documented transformations. Raw sample/context/result files have no edits. sha256 hashes the exported file; originalSha256 is present only when sanitized.",
+  "description": "源文件除明确记录的转换外均按原始字节保存。原始 sample/context/result 文件未编辑。sha256 对应当前归档文件；经过脱敏或翻译的文件另存 originalSha256。",
   "files": [
     {
       "path": "benchmark/data/cold/results/001-C-A-sample.json",
@@ -2237,11 +2237,6 @@
       "sha256": "66cc91d1ed8dff6c27cc0634b0f6c8f8f9649e2602a8a539b176381e6d5a6f8b"
     },
     {
-      "path": "benchmark/provenance/completion-audit.json",
-      "bytes": 2583,
-      "sha256": "9c619a8476bb70392e101aa2184e2e464ec33c03046b1645a73950e6e7eda8a9"
-    },
-    {
       "path": "benchmark/provenance/host-environment.json",
       "bytes": 1179,
       "sha256": "30b22855fbacd9d27247f77452001eb5e10d3f15dc53ec47ab7db78ef890afa0"
@@ -2314,8 +2309,11 @@
     },
     {
       "path": "tests/harness/MEDIA.md",
-      "bytes": 1411,
-      "sha256": "3c024afd25554c255f5b6f4b8de3a8af99a41301df9ee6c0444acf78d9363bd1"
+      "bytes": 1458,
+      "sha256": "d32d63e1919a1c3127a40b36142906b8c73de5bd02e42282ec6ca2e02e4ce661",
+      "originalSha256": "3c024afd25554c255f5b6f4b8de3a8af99a41301df9ee6c0444acf78d9363bd1",
+      "originalBytes": 1411,
+      "transformation": "将媒体说明翻译为中文；视频来源、版本、哈希和测量参数不变。"
     },
     {
       "path": "tests/harness/app/clock.cjs",
@@ -2346,11 +2344,6 @@
       "path": "tests/harness/app/video.js",
       "bytes": 2122,
       "sha256": "3ea9754bcf2541f045f038c6d187c78206820d7f7e93f9ed6fcf66a5885b841a"
-    },
-    {
-      "path": "benchmark/provenance/product-commit-audit.json",
-      "bytes": 2111,
-      "sha256": "f4055ee473919b936328455e4fc4d00658cdbfb043503206f843b096c934d7b8"
     }
   ]
 }

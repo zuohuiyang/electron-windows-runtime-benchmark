@@ -1,19 +1,17 @@
-# Electron Windows runtime benchmark
+# Electron Windows EXE 拆分与 DLL 预读基准测试
 
-Evidence and measurement source for the proposed Windows runtime split + preread change. **No Electron PR has been opened yet.** The draft is currently written in Chinese.
+本仓库保存 Electron Windows EXE 拆分与 DLL 预读方案的测量代码、原始数据和复现说明。
 
-**Results:** on this physical Windows host, cold-start visible-video callback P50 decreased by **32.06% on SSD** and **77.01% on HDD**. Warm-start P50 increased by **8.06% / 7.30%** respectively. Both the benefit and regression are retained. This is one machine and one local-video workload, not a general performance guarantee.
+**测试结果：**在本台 Windows 实体机上，冷启动视频呈现回调耗时的 P50 在 SSD 和 HDD 上分别减少 **32.06%** 和 **77.01%**；热启动则分别增加 **8.06%** 和 **7.30%**。数据同时保留了冷启动收益和热启动退化。这些结果来自一台机器上的本地视频测试，不能保证其他应用或设备也有相同表现。
 
 ## 目录结构
 
 ```text
 tests/       测试代码：计时程序、本地测试页面、复算脚本和校验测试
 benchmark/   本机环境和数据：原始样本、构建信息、哈希清单和统计结果
-doc/         文档：PR 中文草稿、测试方法和第三方材料说明
+doc/         文档：测试方法与复现说明
 README.md    仓库说明与运行入口
 ```
-
-第三方材料及使用范围见 [NOTICE.md](doc/NOTICE.md)。
 
 ## 从另一台机器继续
 
@@ -26,7 +24,7 @@ node --test tests/scripts/analyze.test.cjs
 
 需要 Node.js 18 或更新版本，无 npm 依赖。上述命令在任何平台复算归档数据，不启动 Electron，不安装任务，不重启。`tests/package.json` 的 `private` 仅防止误发 npm，GitHub 仓库公开。
 
-阅读 [方法说明](doc/METHODOLOGY.zh-CN.md) 和 [PR 中文草稿](doc/PR-DRAFT.zh-CN.md)。本仓库中的草稿是后续协作的主版本。
+测试方法与复现步骤见 [方法说明](doc/METHODOLOGY.zh-CN.md)。
 
 ## 材料入口
 
@@ -46,4 +44,12 @@ node --test tests/scripts/analyze.test.cjs
 
 运行时、浏览器配置目录、登录凭据和自动登录工具不随仓库分发。视频按固定 Chromium 版本自行准备，见 [MEDIA.md](tests/harness/MEDIA.md)；媒体本身不在此仓库。仓库提供单次测量入口，不包含批量采样控制器或跨机器自动安装器。
 
-整理后的两个产品 commit 在 [pr/windows-runtime-split](https://github.com/zuohuiyang/electron/tree/pr/windows-runtime-split)，签名暂缓；旧分支保留。被测源码必须按构建清单的 **HEAD + 工作区补丁** 还原，不能用该分支的最新 HEAD 代替。
+被测源码须按构建清单的 **HEAD + 工作区补丁** 还原。
+
+## 材料与许可说明
+
+Electron / Chromium 的构建补丁、引用源码和媒体素材沿用各自的上游许可。新编写的基准测试代码尚未选定独立许可证，公开访问不等于授予使用许可。
+
+原始测量记录保留原始字节，其中的本机路径和账户名称仅用于追溯来源。两份 `effective-args.txt` 的工具链 PATH 已脱敏；哈希清单记录原始与公开文件的哈希，以及媒体说明的翻译记录。哈希用于校验归档内容，不能独立证明测量时的物理条件。
+
+复算会生成 `benchmark/reports/summary.json`，该文件不纳入版本控制；可直接阅读的统计表保留在 `benchmark/reports/RESULTS.zh-CN.md`。

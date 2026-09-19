@@ -90,7 +90,7 @@ if (require.main === module) {
   const result = analyze();
   fs.mkdirSync(path.join(root, 'benchmark/reports'), { recursive: true });
   fs.writeFileSync(path.join(root, 'benchmark/reports/summary.json'), JSON.stringify(result, null, 2) + '\n');
-  fs.writeFileSync(path.join(root, 'benchmark/reports/RESULTS.zh-CN.md'), '# 最终实体机 benchmark\n\n每条件、每版本 n=20；160 次正式启动，20 次热身不计入。单位 ms。负值更快，正值更慢。\n\n' + table(result.stats) + '\n\n冷启动视频回调 P50：SSD −32.06%，HDD −77.01%。热启动存在退化：视频回调 P50 SSD +8.06%、HDD +7.30%；APP READY 增加约 19–20 ms，具体机制尚待定位。\n\n冷启动指重启后首次启动，保留 Windows 默认缓存；热启动在同一会话中预热后启动新进程。结果仅代表本机、本应用。终点为首次收到可见视频呈现回调，不保证对应解码第一帧或物理屏幕输出。详见 [方法](../../doc/METHODOLOGY.zh-CN.md)。\n');
+  fs.writeFileSync(path.join(root, 'benchmark/reports/RESULTS.zh-CN.md'), '# 最终实体机基准测试结果\n\n每条件、每版本 n=20；160 次正式启动，20 次热身不计入。单位 ms。负值更快，正值更慢。\n\n' + table(result.stats) + '\n\n冷启动视频回调 P50：SSD −32.06%，HDD −77.01%。热启动存在退化：视频回调 P50 SSD +8.06%、HDD +7.30%；APP READY 增加约 19–20 ms，具体机制尚待定位。\n\n冷启动指重启后首次启动，保留 Windows 默认缓存；热启动在同一会话中预热后启动新进程。结果仅代表本机、本应用。终点为首次收到可见视频呈现回调，不保证对应解码第一帧或物理屏幕输出。详见 [方法](../../doc/METHODOLOGY.zh-CN.md)。\n');
   console.log('Verified original evidence hashes and 180 launches; recomputed 160 formal samples / 8 comparisons, matching the recorded report.');
 }
 module.exports = { analyze, quantile, validateSample, table };
