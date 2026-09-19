@@ -2,9 +2,9 @@
 
 ## 已执行实验
 
-同一台 Ryzen 9 7950X / Windows 11 主机，运行时位于 Samsung 990 PRO NVMe SSD 或 ST4000VX000 SATA HDD。系统、页面、媒体、配置目录与日志均在 SSD。完整硬件见 [环境快照](../provenance/host-environment.json)。默认 GPU 路径；GPU 功能 enabled 不等于逐帧硬解证据。
+同一台 Ryzen 9 7950X / Windows 11 主机，运行时位于 Samsung 990 PRO NVMe SSD 或 ST4000VX000 SATA HDD。系统、页面、媒体、配置目录与日志均在 SSD。完整硬件见 [环境快照](../benchmark/provenance/host-environment.json)。默认 GPU 路径；GPU 功能 enabled 不等于逐帧硬解证据。
 
-两个版本分别为基线 A、拆分＋预读 C。每种存储各 20 对，10 对 AC、10 对 CA，存储先后交替。顺序预先固定在 `data/cold/config.json` 和 `data/warm/config.json`，不按收益更换顺序或增加样本。
+两个版本分别为基线 A、拆分＋预读 C。每种存储各 20 对，10 对 AC、10 对 CA，存储先后交替。顺序预先固定在 `benchmark/data/cold/config.json` 和 `benchmark/data/warm/config.json`，不按收益更换顺序或增加样本。
 
 冷启动：80 次正式启动，每次来自独立系统重启后的首次被测 Electron 启动。保留 Windows 默认缓存／预取，不声称硬盘控制器等所有缓存被清空。冷启动 001–076 使用 4 分钟 CPU 空闲超时；其后的环境暂停发生在启动 Electron 之前，没有伪造计时样本。077–080 使用 20 分钟超时和额外系统负载诊断。CPU 门槛始终为连续 3 次总 CPU ≤10%，间隔 2 秒。
 
@@ -16,11 +16,11 @@
 
 ## 计时和有效性
 
-起点为 Windows 原生进程创建。`harness/clock-anchor.cc` 使用 GetProcessTimes、GetSystemTimePreciseAsFileTime 与 QueryPerformanceCounter；主进程使用 process.getCreationTime / hrtime，渲染进程回调入口保存时间，随后 20 次 IPC 时钟交换对齐。
+起点为 Windows 原生进程创建。`tests/harness/clock-anchor.cc` 使用 GetProcessTimes、GetSystemTimePreciseAsFileTime 与 QueryPerformanceCounter；主进程使用 process.getCreationTime / hrtime，渲染进程回调入口保存时间，随后 20 次 IPC 时钟交换对齐。
 
 - APP READY：`app.whenReady().then(...)` 回调开始记录的时间，相对于进程创建。
 - 视频：设置 src 前注册 requestVideoFrameCallback，第一次收到可见视频呈现回调的入口时间，相对于进程创建。不是保证解码第一帧，也不是物理屏幕扫描输出。
-- 页面包含本地 SVG 图标和 1280×720 静音视频，不访问网络。视频来源、版本和哈希见 [MEDIA.md](../harness/MEDIA.md)。
+- 页面包含本地 SVG 图标和 1280×720 静音视频，不访问网络。视频来源、版本和哈希见 [MEDIA.md](../tests/harness/MEDIA.md)。
 - 校验进程退出、stderr、窗口／页面可见、未最小化、视频未暂停、720p 尺寸、presentedFrames 为正整数、网络请求为零；时钟不确定度和漂移分别不超过 2 ms。
 
 正式 160 次中 152 次首次回调 presentedFrames=1，5 次为 2、2 次为 3、1 次为 4；按事先约定全部保留。最大记录时钟不确定度约 0.09215 ms，漂移为零；不将此等同于真实屏幕输出误差。
@@ -35,14 +35,14 @@
 
 ## 离线复算
 
-在任意平台执行 README 中两个 Node 命令。程序逐字节检查 SOURCE-FILES.json，重新验证 180 次最终批次启动、数量、冷启动唯一 boot、热启动同一 boot、配对顺序，从原始事件复算 8 组 P50/P90 并与运行结束保存的统计比对。只生成 `reports/`，不调用 Windows 自动化或 Electron。
+在任意平台执行 README 中两个 Node 命令。程序逐字节检查 SOURCE-FILES.json，重新验证 180 次最终批次启动、数量、冷启动唯一 boot、热启动同一 boot、配对顺序，从原始事件复算 8 组 P50/P90 并与运行结束保存的统计比对。只生成 `benchmark/reports/`，不调用 Windows 自动化或 Electron。
 
 ## 在新机器重新采集
 
-1. 根据 `provenance/builds` 的 HEAD 和 patch 还原源码；先 `git apply --check`，再应用对应补丁。按固定依赖与 args.gn 构建正式分发，保存实际源码、参数、工具链和产物哈希。与原二进制不一致的新构建必须作为新实验标识。
-2. 在 Windows x64 MSVC Developer Command Prompt 中运行 `harness/build-clock-anchor.cmd`。从 MEDIA.md 固定的 Chromium checkout 复制指定 fixture 到 `harness/app/local-video.mp4`，验证 SHA-256；不替换媒体。
+1. 根据 `benchmark/provenance/builds` 的 HEAD 和 patch 还原源码；先 `git apply --check`，再应用对应补丁。按固定依赖与 args.gn 构建正式分发，保存实际源码、参数、工具链和产物哈希。与原二进制不一致的新构建必须作为新实验标识。
+2. 在 Windows x64 MSVC Developer Command Prompt 中运行 `tests/harness/build-clock-anchor.cmd`。从 MEDIA.md 固定的 Chromium checkout 复制指定 fixture 到 `tests/harness/app/local-video.mp4`，验证 SHA-256；不替换媒体。
 3. 为本机准备 A/C 在两种存储上的运行时路径。将页面和配置均放到 SSD。以实际普通测试账户做初始 smoke；冻结每条件的 seed，事先克隆全部正式／热身目录，检查 root、Network、SharedDictionary 的所有权与授权权限，再用独立 smoke 克隆做实际启动校验。
-4. 底层单次启动入口为 `node harness/launch.cjs A <electron.exe> <new-profile-directory> <new-output.json>`，或将 A 换成 C。这只是测量入口，不能代替 CPU、桌面、重启顺序和文件完整性控制。启动前须有匹配的媒体与本机编译的辅助程序。
+4. 底层单次启动入口为 `node tests/harness/launch.cjs A <electron.exe> <new-profile-directory> <new-output.json>`，或将 A 换成 C。这只是测量入口，不能代替 CPU、桌面、重启顺序和文件完整性控制。启动前须有匹配的媒体与本机编译的辅助程序。
 5. 依据本节协议与固定顺序准备新实验控制器。本仓库不包含批量采样控制器或跨机器自动采集安装器；新机器应先配置并审查控制器，做真实预检，冻结新实验后再启动。
 6. 冷启动每次重启、热启动单会话预热后启动新进程；记录所有上下文和失败。环境不满足时暂停，技术失败时保留证据，不能删慢样本、自动替补或按收益提前停止。
 

@@ -3,13 +3,13 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { analyze, validateSample, quantile } = require('./analyze.cjs');
-const read = p => JSON.parse(fs.readFileSync(path.join(__dirname, '..', p), 'utf8').replace(/^\uFEFF/, ''));
+const read = p => JSON.parse(fs.readFileSync(path.join(__dirname, '../..', p), 'utf8').replace(/^\uFEFF/, ''));
 test('all archived samples reproduce the recorded eight comparisons', () => {
   const r = analyze(); assert.equal(r.rows.length, 160); assert.equal(r.stats.length, 8);
 });
 test('reject invalid endpoint, network traffic, clock error, profile mismatch and duplicate cold boot', () => {
-  const expected = read('data/cold/config.json').samples[0];
-  const base = 'data/cold/results/' + expected.id;
+  const expected = read('benchmark/data/cold/config.json').samples[0];
+  const base = 'benchmark/data/cold/results/' + expected.id;
   const raw = read(base + '-sample.json'), ctx = read(base + '-context.json'), result = read(base + '-result.json');
   for (const change of [r => r.stderr = 'unexpected failure', r => r.events.find(e => e.event === 'first-video-frame').frame.presentedFrames = 0,
     r => r.events.find(e => e.event === 'first-video-frame').endpoint = 'old-endpoint',
