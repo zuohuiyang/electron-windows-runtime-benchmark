@@ -1,1 +1,0 @@
-{"success":true,"syntheticOnly":true,"fixture":"C:\\ElectronBench\\host-warm-retry-20260915\\review\\synthetic-report-1789409353136","checks":["160 formal samples,8 matrix comparisons,20 each; warmup excluded","Warm same-boot samples accepted","Wrong profile rejected","stderr rejected","Later-frame callback retained","Wrong endpoint rejected"]}

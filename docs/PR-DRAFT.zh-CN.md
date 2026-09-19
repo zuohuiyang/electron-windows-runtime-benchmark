@@ -116,16 +116,16 @@ EXE 拆分为按版本组织安装目录提供了基础：启动 EXE 保持固�
 | 验证项 | 结果 | 证据与范围 |
 | --- | --- | --- |
 | 两版构建、发布产物 | 已构建并用于测量 | HEAD、补丁及[产品文件等价审计](../provenance/product-commit-audit.json)已记录 |
-| Windows EXE/DLL 拆分回归 | 五项定向通过 | [改名 EXE、Fuse 和加载错误路径](../provenance/validation/runtime-five-cases.log) |
-| xcache | 三项回归通过 | [Node snapshot、script cache、function cache](../provenance/validation/xcache-split-fix.log) |
-| 分发包检查 | 七项通过 | [分发测试结果](../provenance/validation/distribution-smoke.json)；故意构造的错误场景返回预期非零码 |
-| Lint | 完整运行退出 0，有文档警告；新增迁移文档检查通过 | [完整日志](../provenance/validation/lint.log)及[源码哈希](../provenance/validation/lint-manifest.json) |
+| Windows EXE/DLL 拆分回归 | 五项定向通过 | 改名 EXE、Fuse 和加载错误路径 |
+| xcache | 三项回归通过 | Node snapshot、script cache、function cache |
+| 分发包检查 | 七项通过 | 故意构造的错误场景返回预期非零码 |
+| Lint | 完整运行退出 0，有文档警告；新增迁移文档检查通过 | 历史工作区包含后续排除的工具修复 |
 | Electron 完整套件 | 一轮 4,154 项中 4,096 通过、58 失败；后续失败复验部分恢复 | 全套尚未通过，完整日志未全部公开 |
 | Node 全范围诊断 | 两版各 5,412 项；拆分＋预读版本 220 失败、基线 221 失败，220 项共同失败 | 属诊断配置结果，与官方默认验收配置不同 |
 | NAN | 两版相同链接错误，未通过 | 已有基线对照 |
 | 官方 PR CI、其他目标架构 | 尚未验证 | 当前本地证据以 Windows x64 为主 |
 
-验证概况和原始材料索引见 [VALIDATION.zh-CN.md](VALIDATION.zh-CN.md) 与[兼容性说明](COMPATIBILITY.zh-CN.md)。
+上述为已有验证结果摘要；本 benchmark 仓库不保存产品兼容性测试日志。
 
 ### 6. Benchmark 详细数据与复现方法
 
@@ -191,7 +191,7 @@ EXE 拆分为按版本组织安装目录提供了基础：启动 EXE 保持固�
 
 两个存储的 APP READY 配对结果均为 20/20 次更慢。视频回调 SSD 19/20、HDD 18/20 对更慢。额外耗时主要集中在 READY 前，尚未进行分段归因。
 
-旧 SSD 热启动每版本 30 次，视频 P50 回退 +7.2%；其 profile 与严格第一帧规则不同，作为历史记录保留。后续被账户切换打断的 13 次正式热启动也单独保存；最终批次使用重新准备的独立样本，与历史批次分开统计。
+旧 SSD 热启动每版本 30 次，视频 P50 回退 +7.2%；其 profile 与严格第一帧规则不同，不纳入最终统计。后续被账户切换打断的 13 次正式热启动也未纳入最终统计；最终批次使用重新准备的独立样本，与历史批次分开统计。
 
 #### 6.5 统计与计时方法
 
@@ -214,7 +214,7 @@ node --test scripts/analyze.test.cjs
 
 Node.js 18 或更新版本，无额外依赖。复算程序逐字节核对原始文件哈希，校验最终 180 次启动（含热身）的有效性、80 次冷启动独立 boot、热启动同一 boot、配对顺序及各组数量，重新生成 [summary.json](../reports/summary.json) 和 [P50/P90 表](../reports/RESULTS.zh-CN.md)，并核对原执行完成报告。
 
-重新采集的环境、工具编译、固定媒体、seed 克隆、权限预检、空闲规则和停止规则见 [METHODOLOGY.zh-CN.md](METHODOLOGY.zh-CN.md)。原执行控制器以 .txt 归档，复用时需要适配本机路径和运行环境；单次测量入口为 harness/launch.cjs。
+重新采集的环境、工具编译、固定媒体、seed 克隆、权限预检、空闲规则和停止规则见 [METHODOLOGY.zh-CN.md](METHODOLOGY.zh-CN.md)。单次测量入口为 harness/launch.cjs；本仓库不包含批量采样控制器，新机器需按方法说明准备采样流程。
 
 #### 6.7 证据索引
 
@@ -224,9 +224,7 @@ Node.js 18 或更新版本，无额外依赖。复算程序逐字节核对原始
 | 当前全部热启动与热身 sample/context、批次完成状态 | [data/warm](../data/warm) |
 | 执行完成时的原统计 | [recorded-summary.json](../data/recorded-summary.json) |
 | 计时辅助程序、页面、图标与视频回调代码 | [harness](../harness) |
-| 原执行控制器 | [archive/controllers](../archive/controllers) |
 | 原始文件哈希与构建参数／补丁 | [provenance](../provenance) |
-| 历史热启动退化和中断批次 | [data/history](../data/history) |
 
 证据仓库包含完整正式样本、热身记录和复算代码。被测 Electron 二进制文件与原 profile 未分发；复算使用归档数据，重新采集时从固定上游来源准备媒体，并生成适用于测试账户的 profile。
 
