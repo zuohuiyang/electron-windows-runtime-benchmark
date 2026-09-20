@@ -20,7 +20,7 @@ function setup(t) {
  const cfg={sid,user:'test-user',electron:'target.exe',node:process.execPath,runKeyName:'ElectronBenchmark',count:2,warmups:1,samples,installedBoot:'2026-09-01T00:00:00.0000000Z'};
  write(path.join(root,'config.json'),cfg);
  write(path.join(root,'state.json'),{status:'PREPARED',nextIndex:0,lastBoot:'',warmBoot:'',restarts:0,error:'',updated:''});
- const fixture=path.resolve(__dirname,'../../benchmark/data/cold/results/001-C-A-sample.json');
+ const fixture=path.resolve(__dirname,'../../data/data/cold/results/001-C-A-sample.json');
  fs.writeFileSync(path.join(root,'harness/launch.cjs'),`const fs=require('fs');const row=JSON.parse(fs.readFileSync(${JSON.stringify(fixture)},'utf8').replace(/^\\uFEFF/,''));fs.writeFileSync(process.argv[5],JSON.stringify(row));`);
  fs.writeFileSync(path.join(root,'runner/system-load.ps1'),'function Wait-BenchmarkIdle { return [pscustomobject]@{Ready=$true;Readings=@(@{cpu=0},@{cpu=0},@{cpu=0})} }');
  let script=fs.readFileSync(path.join(__dirname,'control.ps1'),'utf8');

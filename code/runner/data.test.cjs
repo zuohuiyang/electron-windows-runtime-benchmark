@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { validateRun, report, inventory, plan } = require('./data.cjs');
-const source = path.resolve(__dirname, '../../benchmark/data/cold');
+const source = path.resolve(__dirname, '../../data/data/cold');
 const read = p => JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,''));
 const write = (p, v) => fs.writeFileSync(p, JSON.stringify(v));
 function experiment(t) {

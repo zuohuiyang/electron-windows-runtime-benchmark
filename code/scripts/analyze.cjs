@@ -12,7 +12,7 @@ const quantile = (values, p) => {
   return a[lo] + (a[Math.ceil(i)] - a[lo]) * (i - lo);
 };
 function verifyArchive() {
-  for (const file of read('benchmark/provenance/SOURCE-FILES.json').files) {
+  for (const file of read('data/provenance/SOURCE-FILES.json').files) {
     const bytes = fs.readFileSync(path.join(root, file.path));
     assert.equal(bytes.length, file.bytes, file.path);
     assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), file.sha256, file.path);
@@ -26,9 +26,9 @@ function validateSample(raw, context, result, expected, boots) {
 }
 function analyze() {
   verifyArchive();
-  const cold = read('benchmark/data/cold/config.json').samples;
-  const warm = read('benchmark/data/warm/config.json').actions;
-  const coldState = read('benchmark/data/cold/state.json'), warmState = read('benchmark/data/warm/state.json');
+  const cold = read('data/data/cold/config.json').samples;
+  const warm = read('data/data/warm/config.json').actions;
+  const coldState = read('data/data/cold/state.json'), warmState = read('data/data/warm/state.json');
   assert.equal(coldState.status, 'COMPLETE'); assert.equal(coldState.nextIndex, 80);
   assert.equal(warmState.status, 'COMPLETE'); assert.equal(warmState.nextIndex, 100);
   assert.deepEqual(warmState.completed, warm.map(a => a.id));
@@ -37,7 +37,7 @@ function analyze() {
     assert.equal(new Set(items.map(a => a.id)).size, items.length);
     assert.equal(new Set(items.map(a => a.profile)).size, items.length);
     for (const a of items) {
-      const base = `benchmark/data/${temperature}/results/${a.id}`;
+      const base = `data/data/${temperature}/results/${a.id}`;
       const raw = read(base + '-sample.json'), context = read(base + '-context.json');
       // The original warm controller recorded integrity once for the entire batch,
       // not a synthetic per-launch result file. COMPLETE + recorded summary attest
@@ -77,7 +77,7 @@ function analyze() {
       for (const p of ['p50', 'p90']) s[p + 'Change'] = { ms: s.C[p] - s.A[p], percent: (s.C[p] / s.A[p] - 1) * 100 };
       stats.push(s);
     }
-  assert.deepEqual(stats, read('benchmark/data/recorded-summary.json').stats, 'Recomputed values differ from the run-completion report');
+  assert.deepEqual(stats, read('data/data/recorded-summary.json').stats, 'Recomputed values differ from the run-completion report');
   return { formalLaunches: 160, warmupLaunches: 20, coldIndependentBoots: 80, warmBoots: [...warmBoots], stats, rows };
 }
 function table(stats) {
@@ -88,9 +88,9 @@ function table(stats) {
 }
 if (require.main === module) {
   const result = analyze();
-  fs.mkdirSync(path.join(root, 'benchmark/reports'), { recursive: true });
-  fs.writeFileSync(path.join(root, 'benchmark/reports/summary.json'), JSON.stringify(result, null, 2) + '\n');
-  fs.writeFileSync(path.join(root, 'benchmark/reports/RESULTS.zh-CN.md'), '# 最终实体机基准测试结果\n\n每条件、每版本 n=20；160 次正式启动，20 次热身不计入。单位 ms。负值更快，正值更慢。\n\n' + table(result.stats) + '\n\n冷启动视频回调 P50：SSD −32.06%，HDD −77.01%。热启动存在退化：视频回调 P50 SSD +8.06%、HDD +7.30%；APP READY 增加约 19–20 ms。\n\n冷启动指重启后首次启动，保留 Windows 默认缓存；热启动在同一会话中预热后启动新进程。结果仅代表本机、本应用。终点为首次收到可见视频呈现回调，不保证对应解码第一帧或物理屏幕输出。详见 [方法](../../doc/METHODOLOGY.zh-CN.md)。\n');
+  fs.mkdirSync(path.join(root, 'data/reports'), { recursive: true });
+  fs.writeFileSync(path.join(root, 'data/reports/summary.json'), JSON.stringify(result, null, 2) + '\n');
+  fs.writeFileSync(path.join(root, 'data/reports/RESULTS.zh-CN.md'), '# 最终实体机基准测试结果\n\n每条件、每版本 n=20；160 次正式启动，20 次热身不计入。单位 ms。负值更快，正值更慢。\n\n' + table(result.stats) + '\n\n冷启动视频回调 P50：SSD −32.06%，HDD −77.01%。热启动存在退化：视频回调 P50 SSD +8.06%、HDD +7.30%；APP READY 增加约 19–20 ms。\n\n冷启动指重启后首次启动，保留 Windows 默认缓存；热启动在同一会话中预热后启动新进程。结果仅代表本机、本应用。终点为首次收到可见视频呈现回调，不保证对应解码第一帧或物理屏幕输出。详见 [方法](../../doc/METHODOLOGY.zh-CN.md)。\n');
   console.log('Verified original evidence hashes and 180 launches; recomputed 160 formal samples / 8 comparisons, matching the recorded report.');
 }
 module.exports = { analyze, quantile, validateSample, table };

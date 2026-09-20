@@ -10,4 +10,4 @@ runtimes/
 runs/
 *.credentials*
 
-/benchmark/reports/summary.json
+/data/reports/summary.json

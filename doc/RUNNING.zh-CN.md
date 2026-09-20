@@ -3,7 +3,7 @@
 在 Windows x64 上，用当前测试账户的**非管理员 PowerShell** 执行：
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tests\run.ps1 -ElectronPath "D:\build\electron" -DiskSSD "C:\ElectronBench" -DiskHDD "E:\ElectronBench"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\code\run.ps1 -ElectronPath "D:\build\electron" -DiskSSD "C:\ElectronBench" -DiskHDD "E:\ElectronBench"
 ```
 
 脚本将完整产物复制到两块不同的物理磁盘，每盘完成 **5 次热身、20 次热启动和 20 次冷启动**，共 90 次启动，其中 80 次为正式样本。每次同时记录 APP READY 和视频呈现回调，因此最终得到 **8 组统计**。冷启动阶段共重启 40 次。脚本会设置当前用户登录后自动续跑；运行提示和报告同时提供中文、英文。
@@ -13,7 +13,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tests\run.ps1 -Electro
 若要完整对比基线和改动版，再提供基线产物：
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tests\run.ps1 -ElectronPath "D:\build\changed" -BaselinePath "D:\build\baseline" -DiskSSD "C:\ElectronBench" -DiskHDD "E:\ElectronBench"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\code\run.ps1 -ElectronPath "D:\build\changed" -BaselinePath "D:\build\baseline" -DiskSSD "C:\ElectronBench" -DiskHDD "E:\ElectronBench"
 ```
 
 这会自动部署四个路径，完成 **160 次正式启动＋20 次热身**，输出 **16 组终点统计**，以及每个磁盘、冷热条件和终点的 **8 组 P50/P90 差值及百分比**。A 表示基线，C 表示改动版；只提供一个产物时，A 仅为测量标识。两个版本不需要分别手动运行。
@@ -47,10 +47,10 @@ CPU 在 20 分钟内未达到要求时，会保存占用进程、服务、磁盘
 
 ```powershell
 # 自定义样本数；每种冷热条件各 10 次，热身 3 次
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tests\run.ps1 -ElectronPath "D:\electron\electron.exe" -Count 10 -Warmups 3
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\code\run.ps1 -ElectronPath "D:\electron\electron.exe" -Count 10 -Warmups 3
 
 # 仅准备，每个部署路径执行两次启动预检；不安装登录启动项、不正式采样、不重启
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tests\run.ps1 -ElectronPath "D:\electron\electron.exe" -PrepareOnly
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\code\run.ps1 -ElectronPath "D:\electron\electron.exe" -PrepareOnly
 ```
 
 默认输出位于 `%LOCALAPPDATA%\ElectronBench\runs\<时间和唯一标识>`，开始时会显示实际路径。也可使用 `-OutputDirectory` 指定新目录；应将配置、页面和日志放在 SSD 上，保持它们的存储位置一致。输出不能位于 Electron 分发目录内。
@@ -75,7 +75,7 @@ node .\runner\data.cjs report .
 
 ## 与仓库已有数据的关系
 
-新采集文件保存在独立输出目录，不修改 `benchmark/data/`。使用输出目录里的 `runner/data.cjs report` 复算新实验；历史数据专用的 `tests/scripts/analyze.cjs` 仍仅分析原归档。新实验独立初始化配置、冻结构建和顺序，不与历史样本合并。
+新采集文件保存在独立输出目录，不修改 `data/data/`。使用输出目录里的 `runner/data.cjs report` 复算新实验；历史数据专用的 `code/scripts/analyze.cjs` 仍仅分析原归档。新实验独立初始化配置、冻结构建和顺序，不与历史样本合并。
 
 省略两个磁盘参数时，仍支持在传入的原始 EXE 路径上测单路径的冷热数据。部署副本和原始记录在完成或停止后均保留，供检查与复算。
 
@@ -83,4 +83,4 @@ node .\runner\data.cjs report .
 
 使用 `-WorkflowOnly` 可允许两个目标目录位于同一物理磁盘，并允许高 CPU 负载（保留实际负载记录）；报告和 JSON 会明确标记为流程验证，不能作为 SSD/HDD 性能对比。建议用 `-Count 1 -Warmups 1` 验证部署、热启动、逐次重启、自动登录续跑和汇总。
 
-虚拟机未安装 C++ 工具链时，可在 Windows x64 构建环境中先运行 `tests/harness/build-clock-anchor.cmd`，再用 `-ClockHelperPath "C:\tools\clock-anchor.exe"` 提供辅助程序。它应由本仓库源码编译，脚本会检查能否启动并将其哈希纳入输入快照。
+虚拟机未安装 C++ 工具链时，可在 Windows x64 构建环境中先运行 `code/harness/build-clock-anchor.cmd`，再用 `-ClockHelperPath "C:\tools\clock-anchor.exe"` 提供辅助程序。它应由本仓库源码编译，脚本会检查能否启动并将其哈希纳入输入快照。
