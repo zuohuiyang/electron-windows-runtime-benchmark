@@ -6,8 +6,6 @@ This repository contains benchmark code, raw measurements, and results collected
 
 The code and documentation were developed and organized with assistance from GPT-6 Astra.
 
-The video fixture is included; no video download is required.
-
 ## Run the benchmark
 
 Use Windows x64 with Node.js 18+ and C++ build tools. Configure automatic login for the test account, save your work, and close other applications. From the repository directory, run the following in a **non-administrator PowerShell**, replacing the build and disk paths:

@@ -12,6 +12,10 @@
 )
 $ErrorActionPreference='Stop'
 function Say($zh,$en){Write-Host "$zh / $en"}
+function Copy-BenchmarkTree([string]$Source,[string]$Destination){
+ & $node (Join-Path $PSScriptRoot 'runner\copy-tree.cjs') $Source $Destination
+ if($LASTEXITCODE -ne 0){throw '目录复制失败，已停止准备 / Directory copy failed; preparation stopped'}
+}
 function Save-Json($file,$value){$value|ConvertTo-Json -Depth 20|Set-Content -LiteralPath $file -Encoding UTF8}
 $identity=[Security.Principal.WindowsIdentity]::GetCurrent()
 $principal=[Security.Principal.WindowsPrincipal]::new($identity)
@@ -29,7 +33,7 @@ if(($root+'\').StartsWith($runtimeDir,[StringComparison]::OrdinalIgnoreCase)){th
 $runKey='HKCU:\Software\Microsoft\Windows\CurrentVersion\Run'
 if(Get-ItemProperty -LiteralPath $runKey -Name ElectronBenchmark -ErrorAction SilentlyContinue){throw '已有自动采样任务，请先停止 / An automatic benchmark is already registered; stop it first'}
 New-Item -ItemType Directory -Path $root|Out-Null
-foreach($name in @('harness','runner')){Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $root -Recurse}
+foreach($name in @('harness','runner')){Copy-BenchmarkTree (Join-Path $PSScriptRoot $name) (Join-Path $root $name)}
 foreach($name in @('results','logs','profiles')){New-Item -ItemType Directory -Path (Join-Path $root $name)|Out-Null}
 Say "输出目录：$root" "Output directory: $root"
 # Compile the native clock helper in the experiment copy, without modifying PATH permanently.
@@ -60,7 +64,7 @@ if($LASTEXITCODE -ne 0){throw '计时程序编译失败 / Clock helper compilati
 $media=Join-Path $root 'harness\app\local-video.mp4'
 $mediaHash='BCB75D3DB0A1A5056F4CD5C770CECCDB4CAE920F21ABB8139B29CD9AD39E3857'
 if(-not(Test-Path -LiteralPath $media)){throw '仓库视频素材缺失，请重新获取完整仓库 / Bundled video missing; obtain a complete checkout'}
-Say '使用仓库内视频素材，无需下载' 'Using the bundled video; no download required'
+Say '校验视频素材' 'Verifying video fixture'
 if((Get-FileHash -LiteralPath $media -Algorithm SHA256).Hash -ne $mediaHash){throw '视频哈希不匹配 / Video hash mismatch'}
 $boot=(Get-CimInstance Win32_OperatingSystem).LastBootUpTime.ToUniversalTime().ToString('o')
 $targets=@()
@@ -90,10 +94,8 @@ if($DiskSSD){
    $targetDir=Join-Path $deployment $product.variant
    $sourceDir=Split-Path $product.source -Parent
    if(($targetDir+'\').StartsWith($sourceDir.TrimEnd('\')+'\',[StringComparison]::OrdinalIgnoreCase) -or ($root+'\').StartsWith($sourceDir.TrimEnd('\')+'\',[StringComparison]::OrdinalIgnoreCase)){throw '部署和输出目录不能在源目录内 / Deployment and output cannot be inside source'}
-   if(Get-ChildItem -LiteralPath $sourceDir -Recurse -Force|Where-Object { $_.Attributes -band [IO.FileAttributes]::ReparsePoint }){throw '产物包含链接目录或文件 / Product contains reparse points'}
    if(Test-Path -LiteralPath $targetDir){throw '部署目录已存在 / Deployment already exists'}
-   New-Item -ItemType Directory -Path $targetDir|Out-Null
-   Get-ChildItem -LiteralPath $sourceDir -Force|ForEach-Object {Copy-Item -LiteralPath $_.FullName -Destination $targetDir -Recurse -Force}
+   Copy-BenchmarkTree $sourceDir $targetDir
    $targets+=@{id=$id;storage=($storageType+' ('+$volume+')');diskNumber=$disk.Number;diskModel=$disk.FriendlyName;variant=$product.variant;source=$product.source;runtime=(Join-Path $targetDir ([IO.Path]::GetFileName($product.source)))}
   }
  }
@@ -113,9 +115,9 @@ Say '使用当前账户实际启动预检并初始化配置' 'Preflighting a rea
 if($LASTEXITCODE -ne 0){throw '启动预检失败，未设置自动运行 / Preflight failed; automatic startup was not installed'}
 $raw=Get-Content -LiteralPath (Join-Path $root ('preflight-'+$target.id+'.json')) -Raw|ConvertFrom-Json
 if(-not $raw.valid -or $raw.stderr){throw '启动预检结果无效 / Invalid preflight result'}
-foreach($sample in @($samples|Where-Object target -eq $target.id)){Copy-Item -LiteralPath $seed -Destination $sample.profile -Recurse}
+foreach($sample in @($samples|Where-Object target -eq $target.id)){Copy-BenchmarkTree $seed $sample.profile}
 $preflightCopy=Join-Path $root ('profiles\preflight-copy-'+$target.id)
-Copy-Item -LiteralPath $seed -Destination $preflightCopy -Recurse
+Copy-BenchmarkTree $seed $preflightCopy
 & $node (Join-Path $root 'harness\launch.cjs') $target.variant $target.runtime $preflightCopy (Join-Path $root ('preflight-copy-'+$target.id+'.json'))
 if($LASTEXITCODE -ne 0){throw '复制配置的实际启动失败，未设置自动运行 / Cloned-profile launch failed; automatic startup was not installed'}
 $copyRaw=Get-Content -LiteralPath (Join-Path $root ('preflight-copy-'+$target.id+'.json')) -Raw|ConvertFrom-Json
