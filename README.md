@@ -19,21 +19,27 @@ README.md    仓库说明与运行入口
 git clone https://github.com/zuohuiyang/electron-windows-runtime-benchmark.git
 cd electron-windows-runtime-benchmark
 node tests/scripts/analyze.cjs
-node --test tests/scripts/analyze.test.cjs
+npm --prefix tests test
 ```
 
 需要 Node.js 18 或更新版本，无 npm 依赖。上述命令从仓库中的原始记录重新计算统计结果并执行校验，不会启动 Electron 或采集新数据。
 
 ## 在另一台机器上复现测试
 
-按[方法说明](doc/METHODOLOGY.zh-CN.md#在另一台机器上复现测试)准备 Windows 测试环境、被测 Electron 构建和视频素材，再重新采集数据。仓库提供单次启动测量程序；批量采样、重启和环境检查需要另行配置。
+在测试账户的非管理员 PowerShell 中指定 Electron 产物目录和两块磁盘：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tests\run.ps1 -ElectronPath "D:\build\electron" -DiskSSD "C:\ElectronBench" -DiskHDD "E:\ElectronBench"
+```
+
+脚本将完整产物复制到两块不同的物理磁盘，按固定顺序交替测试。每盘默认 5 次热身、20 次热启动和 20 次冷启动，共 80 次正式启动、10 次热身，输出 8 组终点统计。每次冷启动前重启一次。增加 `-BaselinePath "D:\build\baseline"` 后，自动完成两个版本在两块磁盘上的 160 次正式启动、20 次热身，并输出 16 组统计及 8 组对比。脚本设置当前用户登录后自动续跑，完成后移除启动项。**执行前请保存工作、关闭其他应用，并提前配置当前用户自动登录。**详细环境要求、仅准备模式和停止方法见[运行说明](doc/RUNNING.zh-CN.md)。
 
 ## 材料入口
 
 | 内容 | 入口 |
 |---|---|
 | 最终 P50 / P90 表 | [RESULTS.zh-CN.md](benchmark/reports/RESULTS.zh-CN.md) |
-| 方法、样本量、限制、重新测量 | [METHODOLOGY.zh-CN.md](doc/METHODOLOGY.zh-CN.md) |
+| 历史实验方法、样本量和限制 | [METHODOLOGY.zh-CN.md](doc/METHODOLOGY.zh-CN.md) |
 | 计时程序与本地 HTML / SVG 图标 / 视频回调 | [tests/harness](tests/harness) |
 | 80 次冷启动、80 次热启动、20 次热身原始记录 | [benchmark/data](benchmark/data) |
 | 构建参数、源码补丁、运行时文件哈希 | [benchmark/provenance/builds](benchmark/provenance/builds) |
@@ -44,7 +50,7 @@ node --test tests/scripts/analyze.test.cjs
 
 冷启动的 80 次记录来自不同的系统重启；热启动 100 次（含热身）来自同一会话。每种存储与冷热条件下，每个版本均有 20 次正式样本；两项终点来自同一次启动。统计范围仅包括仓库收录的批次。
 
-Electron 二进制文件、浏览器配置目录、登录凭据和自动登录工具不随仓库分发。视频按固定 Chromium 版本自行准备，见 [MEDIA.md](tests/harness/MEDIA.md)；媒体本身不在此仓库。仓库提供单次测量入口，不包含批量采样控制器或跨机器自动安装器。
+Electron 二进制文件、浏览器配置目录、登录凭据和自动登录工具不随仓库分发。视频按固定 Chromium 版本自行准备，见 [MEDIA.md](tests/harness/MEDIA.md)；媒体本身不在此仓库。完整采样入口为 `tests/run.ps1`，单次测量入口为 `tests/harness/launch.cjs`。
 
 被测源码须按构建清单的 **HEAD + 工作区补丁** 还原。
 

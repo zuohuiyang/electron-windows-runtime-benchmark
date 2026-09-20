@@ -1,11 +1,11 @@
 const assert=require('node:assert/strict');
-exports.validate=(row,context,result,expected,boots)=>{
+exports.validate=(row,context,result,expected,boots,options={})=>{
  assert.equal(row.variant,expected.variant);assert.equal(row.valid,true);assert.equal(row.code,0);assert(!row.error&&!row.timedOut);
  assert(!/Failed to grant sandbox access|Encountered error while migrating network context/i.test(row.stderr||''),'Sandbox permission error');assert.equal(result.status,'SUCCESS');assert.equal(result.inputsVerifiedAfter,true);
  assert(context.session>0);assert.equal(context.elevated,false);assert(context.user);
  assert(!boots.has(context.boot),'duplicate boot');boots.add(context.boot);
  assert(row.parentSpawnEpochMs-Date.parse(context.boot)>=120000);
- assert(context.idle.length>=3&&context.idle.slice(-3).every(r=>r.cpu<=10));
+ assert(context.idle.length>=3&&context.idle.slice(-3).every(r=>Number.isFinite(r.cpu)&&r.cpu>=0&&r.cpu<=(options.workflowOnly?100:10)));
  const frames=row.events.filter(e=>e.event==='first-video-frame');assert.equal(frames.length,1);
  const f=frames[0];assert.equal(f.pid,row.pid);assert(Number.isInteger(f.frame.presentedFrames)&&f.frame.presentedFrames>=1);assert.equal(f.endpoint,'first-observed-visible-video-callback-v1');assert.equal(f.frame.width,1280);assert.equal(f.frame.height,720);assert.equal(f.frame.visibility,'visible');assert.equal(f.frame.paused,false);
  assert.equal(f.frame.clockSamples.length,20);assert(f.clock.uncertaintyMs<=2);assert(Math.abs(f.clock.clockDriftMs)<=2);
