@@ -2312,11 +2312,11 @@
     },
     {
       "path": "code/harness/MEDIA.md",
-      "bytes": 1492,
-      "sha256": "2cf31a519fac5dd107c3e82a4a12953ad65dc99a6ab0418f6d48c218c9ae78d0",
+      "bytes": 1378,
+      "sha256": "1ed40d3def942fc97be2e91e37f5bb062f00b2b6df825293de64d3cb291a1381",
       "originalSha256": "3c024afd25554c255f5b6f4b8de3a8af99a41301df9ee6c0444acf78d9363bd1",
       "originalBytes": 1411,
-      "transformation": "将媒体说明翻译为中文，并修正不可访问的下载版本链接；新链接的视频 SHA-256 与历史素材一致，测量参数不变。"
+      "transformation": "中文媒体说明；改为随仓库附带原视频和上游许可，媒体哈希及测量参数不变。"
     },
     {
       "path": "code/harness/app/clock.cjs",
@@ -2347,6 +2347,16 @@
       "path": "code/harness/app/video.js",
       "bytes": 2122,
       "sha256": "3ea9754bcf2541f045f038c6d187c78206820d7f7e93f9ed6fcf66a5885b841a"
+    },
+    {
+      "path": "code/harness/app/local-video.mp4",
+      "bytes": 715963,
+      "sha256": "bcb75d3db0a1a5056f4cd5c770ceccdb4cae920f21abb8139b29cd9ad39e3857"
+    },
+    {
+      "path": "code/harness/CHROMIUM-LICENSE",
+      "bytes": 1536,
+      "sha256": "368cca1106be99d39ecd32a38d8305585d802a475effb66380b91ffc9bcf709b"
     }
   ]
 }

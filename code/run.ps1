@@ -59,12 +59,8 @@ else{
 if($LASTEXITCODE -ne 0){throw '计时程序编译失败 / Clock helper compilation failed'}
 $media=Join-Path $root 'harness\app\local-video.mp4'
 $mediaHash='BCB75D3DB0A1A5056F4CD5C770CECCDB4CAE920F21ABB8139B29CD9AD39E3857'
-if(-not(Test-Path -LiteralPath $media)){
- Say '下载固定版本视频素材' 'Downloading the pinned video fixture'
- $uri='https://chromium.googlesource.com/chromium/src/+/8e2a2b41b398770e21040625a2748c6533c23933/media/test/data/bear-1280x720.mp4?format=TEXT'
- $response=Invoke-WebRequest -UseBasicParsing -Uri $uri
- [IO.File]::WriteAllBytes($media,[Convert]::FromBase64String([string]$response.Content))
-}
+if(-not(Test-Path -LiteralPath $media)){throw '仓库视频素材缺失，请重新获取完整仓库 / Bundled video missing; obtain a complete checkout'}
+Say '使用仓库内视频素材，无需下载' 'Using the bundled video; no download required'
 if((Get-FileHash -LiteralPath $media -Algorithm SHA256).Hash -ne $mediaHash){throw '视频哈希不匹配 / Video hash mismatch'}
 $boot=(Get-CimInstance Win32_OperatingSystem).LastBootUpTime.ToUniversalTime().ToString('o')
 $targets=@()

@@ -11,3 +11,5 @@ runs/
 *.credentials*
 
 /data/reports/summary.json
+
+!code/harness/app/local-video.mp4

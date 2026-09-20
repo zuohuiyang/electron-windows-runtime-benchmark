@@ -42,7 +42,7 @@
 新实验可使用[自动采样入口](RUNNING.zh-CN.md)，指定产物、可选基线及两块磁盘，自动部署并交替采样。下文描述历史实验的方法；新实验的顺序和配置单独冻结归档。
 
 1. 根据 `data/provenance/builds` 的 HEAD 和补丁还原源码；先 `git apply --check`，再应用对应补丁。按固定依赖与 args.gn 构建正式分发，保存实际源码、参数、工具链和产物哈希。与原二进制不一致的新构建必须作为新实验标识。
-2. 在 Windows x64 MSVC 开发者命令提示符中运行 `code/harness/build-clock-anchor.cmd`。从 MEDIA.md 固定的 Chromium 源码目录复制指定素材到 `code/harness/app/local-video.mp4`，验证 SHA-256；不替换媒体。
+2. 在 Windows x64 MSVC 开发者命令提示符中运行 `code/harness/build-clock-anchor.cmd`。使用仓库自带的 `code/harness/app/local-video.mp4`，按 MEDIA.md 校验 SHA-256；不替换媒体。
 3. 为本机准备 A/C 在两种存储上的运行时路径。将页面和配置均放到 SSD。以实际普通测试账户做启动预检；保存并固定每种条件的初始配置，事先克隆全部正式／热身目录，检查配置根目录、Network、SharedDictionary 的所有权与授权权限，再用独立的预检配置副本做实际启动校验。
 4. 底层单次启动入口为 `node code/harness/launch.cjs A <electron.exe> <new-profile-directory> <new-output.json>`，或将 A 换成 C。这只是测量入口，不能代替 CPU、桌面、重启顺序和文件完整性控制。启动前须有匹配的媒体与本机编译的辅助程序。
 5. 使用自动入口的 `-BaselinePath` 参数配置两个版本，并指定两块磁盘。先完成实际启动预检并冻结输入及顺序，再开始新实验。
