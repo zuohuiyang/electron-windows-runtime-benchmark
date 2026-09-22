@@ -1,0 +1,68 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-21T20:28:28.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-22T04:47:01.7470538+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:04.0283462+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:06.2981335+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:09.5699712+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:11.8426994+08:00",
+                     "cpu":  16
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:14.1092402+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:16.3994602+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:18.6753596+08:00",
+                     "cpu":  33
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:20.9482585+08:00",
+                     "cpu":  5
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:23.2382710+08:00",
+                     "cpu":  10
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:25.5229658+08:00",
+                     "cpu":  8
+                 }
+             ],
+    "sample":  {
+                   "id":  "warm-019-hdd-A",
+                   "phase":  "warm",
+                   "round":  19,
+                   "target":  "hdd-A",
+                   "storage":  "HDD (E:\\)",
+                   "variant":  "A",
+                   "runtime":  "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-019-hdd-A"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

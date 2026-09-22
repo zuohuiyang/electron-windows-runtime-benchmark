@@ -1,0 +1,44 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-21T20:28:28.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-22T04:34:37.2070517+08:00",
+                     "cpu":  4
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:39.4874982+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:42.7682739+08:00",
+                     "cpu":  7
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:45.0464967+08:00",
+                     "cpu":  7
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:47.3173889+08:00",
+                     "cpu":  9
+                 }
+             ],
+    "sample":  {
+                   "id":  "warm-002-hdd-A",
+                   "phase":  "warm",
+                   "round":  2,
+                   "target":  "hdd-A",
+                   "storage":  "HDD (E:\\)",
+                   "variant":  "A",
+                   "runtime":  "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-002-hdd-A"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

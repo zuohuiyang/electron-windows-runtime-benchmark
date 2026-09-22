@@ -66,6 +66,7 @@ try{
  }
  Start-Transcript -Path (Join-Path $root ('logs\run-'+(Get-Date -Format 'yyyyMMdd-HHmmss')+'.log'))|Out-Null;$transcript=$true
  Add-Type -Path (Join-Path $PSScriptRoot 'desktop.cs')
+ Add-Type -Path (Join-Path $PSScriptRoot 'priority.cs')
  [void][PilotDesktop]::SetThreadExecutionState([uint32]2147483651);$awake=$true
  $os=Get-CimInstance Win32_OperatingSystem
  $boot=$os.LastBootUpTime.ToUniversalTime().ToString('o')
@@ -96,7 +97,9 @@ try{
   $idle=Wait-BenchmarkIdle -LogPath ($prefix+'-idle.jsonl') -MaxWaitSeconds 1200 -MaxCpuPercent $cpuLimit -CheckStop {Check-Stop}
   if(-not $idle.Ready){throw '系统繁忙超时，占用进程已记录 / Idle wait timed out; process diagnostics saved'}
   Assert-Desktop
-  @{user=$cfg.user;sid=$identity.User.Value;session=(Get-Process -Id $PID).SessionId;elevated=$false;boot=$boot;idle=@($idle.Readings);sample=$item}|ConvertTo-Json -Depth 20|Set-Content -LiteralPath ($prefix+'-context.json') -Encoding UTF8
+  $priority=@{cpu=[BenchmarkPriority]::Cpu();io=[BenchmarkPriority]::Query(33);memory=[BenchmarkPriority]::Query(39)}
+  @{user=$cfg.user;sid=$identity.User.Value;session=(Get-Process -Id $PID).SessionId;elevated=$false;boot=$boot;idle=@($idle.Readings);controllerPriority=$priority;sample=$item}|ConvertTo-Json -Depth 20|Set-Content -LiteralPath ($prefix+'-context.json') -Encoding UTF8
+  if($priority.cpu -ne 'Normal' -or $priority.io -ne 2 -or $priority.memory -ne 5){throw '控制器优先级异常，已记录并停止 / Unexpected controller priority; recorded and stopped'}
   $state.lastBoot=$boot;$state.status='MEASURING';Save-State
   Write-Host "正在测量：$($item.id) / Measuring: $($item.id)"
   & $cfg.node (Join-Path $root 'harness\launch.cjs') $item.variant $item.runtime $item.profile ($prefix+'-sample.json')
@@ -108,7 +111,7 @@ try{
   Node-Step validate
   $state.nextIndex++;$state.status='SAMPLE_SAVED';Save-State
   Check-Stop
-  if($item.phase -eq 'cold' -and $state.nextIndex -lt $cfg.samples.Count){Restart-Next}
+  if($item.phase -eq 'cold' -and $state.nextIndex -lt $cfg.samples.Count -and $cfg.samples[$state.nextIndex].phase -eq 'cold'){Restart-Next}
  }
  Node-Step report
  $state.status='COMPLETE';Save-State;Remove-Startup

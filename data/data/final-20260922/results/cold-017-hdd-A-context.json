@@ -1,0 +1,52 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-21T19:52:44.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-22T03:54:46.1162367+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-22T03:54:49.5128113+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-22T03:54:51.7961318+08:00",
+                     "cpu":  10
+                 },
+                 {
+                     "time":  "2026-09-22T03:54:54.0643161+08:00",
+                     "cpu":  14
+                 },
+                 {
+                     "time":  "2026-09-22T03:54:56.3357534+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-22T03:54:58.6183269+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-22T03:55:00.8852312+08:00",
+                     "cpu":  0
+                 }
+             ],
+    "sample":  {
+                   "id":  "cold-017-hdd-A",
+                   "phase":  "cold",
+                   "round":  17,
+                   "target":  "hdd-A",
+                   "storage":  "HDD (E:\\)",
+                   "variant":  "A",
+                   "runtime":  "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-017-hdd-A"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

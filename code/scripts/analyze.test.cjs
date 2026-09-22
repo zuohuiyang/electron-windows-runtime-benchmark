@@ -8,8 +8,8 @@ test('all archived samples reproduce the recorded eight comparisons', () => {
   const r = analyze(); assert.equal(r.rows.length, 160); assert.equal(r.stats.length, 8);
 });
 test('reject invalid endpoint, network traffic, clock error, profile mismatch and duplicate cold boot', () => {
-  const expected = read('data/data/cold/config.json').samples[0];
-  const base = 'data/data/cold/results/' + expected.id;
+  const expected = read('data/data/final-20260922/config.json').samples[0];
+  const base = 'data/data/final-20260922/results/' + expected.id;
   const raw = read(base + '-sample.json'), ctx = read(base + '-context.json'), result = read(base + '-result.json');
   for (const change of [r => r.stderr = 'unexpected failure', r => r.events.find(e => e.event === 'first-video-frame').frame.presentedFrames = 0,
     r => r.events.find(e => e.event === 'first-video-frame').endpoint = 'old-endpoint',

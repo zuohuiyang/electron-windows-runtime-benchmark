@@ -1,0 +1,1855 @@
+{
+  "version": 2,
+  "count": 20,
+  "electron": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+  "samples": [
+    {
+      "id": "cold-001-ssd-A",
+      "phase": "cold",
+      "round": 1,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-001-ssd-A"
+    },
+    {
+      "id": "cold-001-ssd-C",
+      "phase": "cold",
+      "round": 1,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-001-ssd-C"
+    },
+    {
+      "id": "cold-001-hdd-A",
+      "phase": "cold",
+      "round": 1,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-001-hdd-A"
+    },
+    {
+      "id": "cold-001-hdd-C",
+      "phase": "cold",
+      "round": 1,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-001-hdd-C"
+    },
+    {
+      "id": "cold-002-hdd-C",
+      "phase": "cold",
+      "round": 2,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-002-hdd-C"
+    },
+    {
+      "id": "cold-002-hdd-A",
+      "phase": "cold",
+      "round": 2,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-002-hdd-A"
+    },
+    {
+      "id": "cold-002-ssd-C",
+      "phase": "cold",
+      "round": 2,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-002-ssd-C"
+    },
+    {
+      "id": "cold-002-ssd-A",
+      "phase": "cold",
+      "round": 2,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-002-ssd-A"
+    },
+    {
+      "id": "cold-003-ssd-A",
+      "phase": "cold",
+      "round": 3,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-003-ssd-A"
+    },
+    {
+      "id": "cold-003-ssd-C",
+      "phase": "cold",
+      "round": 3,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-003-ssd-C"
+    },
+    {
+      "id": "cold-003-hdd-A",
+      "phase": "cold",
+      "round": 3,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-003-hdd-A"
+    },
+    {
+      "id": "cold-003-hdd-C",
+      "phase": "cold",
+      "round": 3,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-003-hdd-C"
+    },
+    {
+      "id": "cold-004-hdd-C",
+      "phase": "cold",
+      "round": 4,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-004-hdd-C"
+    },
+    {
+      "id": "cold-004-hdd-A",
+      "phase": "cold",
+      "round": 4,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-004-hdd-A"
+    },
+    {
+      "id": "cold-004-ssd-C",
+      "phase": "cold",
+      "round": 4,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-004-ssd-C"
+    },
+    {
+      "id": "cold-004-ssd-A",
+      "phase": "cold",
+      "round": 4,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-004-ssd-A"
+    },
+    {
+      "id": "cold-005-ssd-A",
+      "phase": "cold",
+      "round": 5,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-005-ssd-A"
+    },
+    {
+      "id": "cold-005-ssd-C",
+      "phase": "cold",
+      "round": 5,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-005-ssd-C"
+    },
+    {
+      "id": "cold-005-hdd-A",
+      "phase": "cold",
+      "round": 5,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-005-hdd-A"
+    },
+    {
+      "id": "cold-005-hdd-C",
+      "phase": "cold",
+      "round": 5,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-005-hdd-C"
+    },
+    {
+      "id": "cold-006-hdd-C",
+      "phase": "cold",
+      "round": 6,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-006-hdd-C"
+    },
+    {
+      "id": "cold-006-hdd-A",
+      "phase": "cold",
+      "round": 6,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-006-hdd-A"
+    },
+    {
+      "id": "cold-006-ssd-C",
+      "phase": "cold",
+      "round": 6,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-006-ssd-C"
+    },
+    {
+      "id": "cold-006-ssd-A",
+      "phase": "cold",
+      "round": 6,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-006-ssd-A"
+    },
+    {
+      "id": "cold-007-ssd-A",
+      "phase": "cold",
+      "round": 7,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-007-ssd-A"
+    },
+    {
+      "id": "cold-007-ssd-C",
+      "phase": "cold",
+      "round": 7,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-007-ssd-C"
+    },
+    {
+      "id": "cold-007-hdd-A",
+      "phase": "cold",
+      "round": 7,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-007-hdd-A"
+    },
+    {
+      "id": "cold-007-hdd-C",
+      "phase": "cold",
+      "round": 7,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-007-hdd-C"
+    },
+    {
+      "id": "cold-008-hdd-C",
+      "phase": "cold",
+      "round": 8,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-008-hdd-C"
+    },
+    {
+      "id": "cold-008-hdd-A",
+      "phase": "cold",
+      "round": 8,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-008-hdd-A"
+    },
+    {
+      "id": "cold-008-ssd-C",
+      "phase": "cold",
+      "round": 8,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-008-ssd-C"
+    },
+    {
+      "id": "cold-008-ssd-A",
+      "phase": "cold",
+      "round": 8,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-008-ssd-A"
+    },
+    {
+      "id": "cold-009-ssd-A",
+      "phase": "cold",
+      "round": 9,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-009-ssd-A"
+    },
+    {
+      "id": "cold-009-ssd-C",
+      "phase": "cold",
+      "round": 9,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-009-ssd-C"
+    },
+    {
+      "id": "cold-009-hdd-A",
+      "phase": "cold",
+      "round": 9,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-009-hdd-A"
+    },
+    {
+      "id": "cold-009-hdd-C",
+      "phase": "cold",
+      "round": 9,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-009-hdd-C"
+    },
+    {
+      "id": "cold-010-hdd-C",
+      "phase": "cold",
+      "round": 10,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-010-hdd-C"
+    },
+    {
+      "id": "cold-010-hdd-A",
+      "phase": "cold",
+      "round": 10,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-010-hdd-A"
+    },
+    {
+      "id": "cold-010-ssd-C",
+      "phase": "cold",
+      "round": 10,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-010-ssd-C"
+    },
+    {
+      "id": "cold-010-ssd-A",
+      "phase": "cold",
+      "round": 10,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-010-ssd-A"
+    },
+    {
+      "id": "cold-011-ssd-A",
+      "phase": "cold",
+      "round": 11,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-011-ssd-A"
+    },
+    {
+      "id": "cold-011-ssd-C",
+      "phase": "cold",
+      "round": 11,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-011-ssd-C"
+    },
+    {
+      "id": "cold-011-hdd-A",
+      "phase": "cold",
+      "round": 11,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-011-hdd-A"
+    },
+    {
+      "id": "cold-011-hdd-C",
+      "phase": "cold",
+      "round": 11,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-011-hdd-C"
+    },
+    {
+      "id": "cold-012-hdd-C",
+      "phase": "cold",
+      "round": 12,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-012-hdd-C"
+    },
+    {
+      "id": "cold-012-hdd-A",
+      "phase": "cold",
+      "round": 12,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-012-hdd-A"
+    },
+    {
+      "id": "cold-012-ssd-C",
+      "phase": "cold",
+      "round": 12,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-012-ssd-C"
+    },
+    {
+      "id": "cold-012-ssd-A",
+      "phase": "cold",
+      "round": 12,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-012-ssd-A"
+    },
+    {
+      "id": "cold-013-ssd-A",
+      "phase": "cold",
+      "round": 13,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-013-ssd-A"
+    },
+    {
+      "id": "cold-013-ssd-C",
+      "phase": "cold",
+      "round": 13,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-013-ssd-C"
+    },
+    {
+      "id": "cold-013-hdd-A",
+      "phase": "cold",
+      "round": 13,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-013-hdd-A"
+    },
+    {
+      "id": "cold-013-hdd-C",
+      "phase": "cold",
+      "round": 13,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-013-hdd-C"
+    },
+    {
+      "id": "cold-014-hdd-C",
+      "phase": "cold",
+      "round": 14,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-014-hdd-C"
+    },
+    {
+      "id": "cold-014-hdd-A",
+      "phase": "cold",
+      "round": 14,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-014-hdd-A"
+    },
+    {
+      "id": "cold-014-ssd-C",
+      "phase": "cold",
+      "round": 14,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-014-ssd-C"
+    },
+    {
+      "id": "cold-014-ssd-A",
+      "phase": "cold",
+      "round": 14,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-014-ssd-A"
+    },
+    {
+      "id": "cold-015-ssd-A",
+      "phase": "cold",
+      "round": 15,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-015-ssd-A"
+    },
+    {
+      "id": "cold-015-ssd-C",
+      "phase": "cold",
+      "round": 15,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-015-ssd-C"
+    },
+    {
+      "id": "cold-015-hdd-A",
+      "phase": "cold",
+      "round": 15,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-015-hdd-A"
+    },
+    {
+      "id": "cold-015-hdd-C",
+      "phase": "cold",
+      "round": 15,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-015-hdd-C"
+    },
+    {
+      "id": "cold-016-hdd-C",
+      "phase": "cold",
+      "round": 16,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-016-hdd-C"
+    },
+    {
+      "id": "cold-016-hdd-A",
+      "phase": "cold",
+      "round": 16,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-016-hdd-A"
+    },
+    {
+      "id": "cold-016-ssd-C",
+      "phase": "cold",
+      "round": 16,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-016-ssd-C"
+    },
+    {
+      "id": "cold-016-ssd-A",
+      "phase": "cold",
+      "round": 16,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-016-ssd-A"
+    },
+    {
+      "id": "cold-017-ssd-A",
+      "phase": "cold",
+      "round": 17,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-017-ssd-A"
+    },
+    {
+      "id": "cold-017-ssd-C",
+      "phase": "cold",
+      "round": 17,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-017-ssd-C"
+    },
+    {
+      "id": "cold-017-hdd-A",
+      "phase": "cold",
+      "round": 17,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-017-hdd-A"
+    },
+    {
+      "id": "cold-017-hdd-C",
+      "phase": "cold",
+      "round": 17,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-017-hdd-C"
+    },
+    {
+      "id": "cold-018-hdd-C",
+      "phase": "cold",
+      "round": 18,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-018-hdd-C"
+    },
+    {
+      "id": "cold-018-hdd-A",
+      "phase": "cold",
+      "round": 18,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-018-hdd-A"
+    },
+    {
+      "id": "cold-018-ssd-C",
+      "phase": "cold",
+      "round": 18,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-018-ssd-C"
+    },
+    {
+      "id": "cold-018-ssd-A",
+      "phase": "cold",
+      "round": 18,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-018-ssd-A"
+    },
+    {
+      "id": "cold-019-ssd-A",
+      "phase": "cold",
+      "round": 19,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-019-ssd-A"
+    },
+    {
+      "id": "cold-019-ssd-C",
+      "phase": "cold",
+      "round": 19,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-019-ssd-C"
+    },
+    {
+      "id": "cold-019-hdd-A",
+      "phase": "cold",
+      "round": 19,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-019-hdd-A"
+    },
+    {
+      "id": "cold-019-hdd-C",
+      "phase": "cold",
+      "round": 19,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-019-hdd-C"
+    },
+    {
+      "id": "cold-020-hdd-C",
+      "phase": "cold",
+      "round": 20,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-020-hdd-C"
+    },
+    {
+      "id": "cold-020-hdd-A",
+      "phase": "cold",
+      "round": 20,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-020-hdd-A"
+    },
+    {
+      "id": "cold-020-ssd-C",
+      "phase": "cold",
+      "round": 20,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-020-ssd-C"
+    },
+    {
+      "id": "cold-020-ssd-A",
+      "phase": "cold",
+      "round": 20,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\cold-020-ssd-A"
+    },
+    {
+      "id": "warmup-001-ssd-A",
+      "phase": "warmup",
+      "round": 1,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-001-ssd-A"
+    },
+    {
+      "id": "warmup-001-ssd-C",
+      "phase": "warmup",
+      "round": 1,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-001-ssd-C"
+    },
+    {
+      "id": "warmup-001-hdd-A",
+      "phase": "warmup",
+      "round": 1,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-001-hdd-A"
+    },
+    {
+      "id": "warmup-001-hdd-C",
+      "phase": "warmup",
+      "round": 1,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-001-hdd-C"
+    },
+    {
+      "id": "warmup-002-hdd-C",
+      "phase": "warmup",
+      "round": 2,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-002-hdd-C"
+    },
+    {
+      "id": "warmup-002-hdd-A",
+      "phase": "warmup",
+      "round": 2,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-002-hdd-A"
+    },
+    {
+      "id": "warmup-002-ssd-C",
+      "phase": "warmup",
+      "round": 2,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-002-ssd-C"
+    },
+    {
+      "id": "warmup-002-ssd-A",
+      "phase": "warmup",
+      "round": 2,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-002-ssd-A"
+    },
+    {
+      "id": "warmup-003-ssd-A",
+      "phase": "warmup",
+      "round": 3,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-003-ssd-A"
+    },
+    {
+      "id": "warmup-003-ssd-C",
+      "phase": "warmup",
+      "round": 3,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-003-ssd-C"
+    },
+    {
+      "id": "warmup-003-hdd-A",
+      "phase": "warmup",
+      "round": 3,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-003-hdd-A"
+    },
+    {
+      "id": "warmup-003-hdd-C",
+      "phase": "warmup",
+      "round": 3,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-003-hdd-C"
+    },
+    {
+      "id": "warmup-004-hdd-C",
+      "phase": "warmup",
+      "round": 4,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-004-hdd-C"
+    },
+    {
+      "id": "warmup-004-hdd-A",
+      "phase": "warmup",
+      "round": 4,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-004-hdd-A"
+    },
+    {
+      "id": "warmup-004-ssd-C",
+      "phase": "warmup",
+      "round": 4,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-004-ssd-C"
+    },
+    {
+      "id": "warmup-004-ssd-A",
+      "phase": "warmup",
+      "round": 4,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-004-ssd-A"
+    },
+    {
+      "id": "warmup-005-ssd-A",
+      "phase": "warmup",
+      "round": 5,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-005-ssd-A"
+    },
+    {
+      "id": "warmup-005-ssd-C",
+      "phase": "warmup",
+      "round": 5,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-005-ssd-C"
+    },
+    {
+      "id": "warmup-005-hdd-A",
+      "phase": "warmup",
+      "round": 5,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-005-hdd-A"
+    },
+    {
+      "id": "warmup-005-hdd-C",
+      "phase": "warmup",
+      "round": 5,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-005-hdd-C"
+    },
+    {
+      "id": "warm-001-ssd-A",
+      "phase": "warm",
+      "round": 1,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-001-ssd-A"
+    },
+    {
+      "id": "warm-001-ssd-C",
+      "phase": "warm",
+      "round": 1,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-001-ssd-C"
+    },
+    {
+      "id": "warm-001-hdd-A",
+      "phase": "warm",
+      "round": 1,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-001-hdd-A"
+    },
+    {
+      "id": "warm-001-hdd-C",
+      "phase": "warm",
+      "round": 1,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-001-hdd-C"
+    },
+    {
+      "id": "warm-002-hdd-C",
+      "phase": "warm",
+      "round": 2,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-002-hdd-C"
+    },
+    {
+      "id": "warm-002-hdd-A",
+      "phase": "warm",
+      "round": 2,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-002-hdd-A"
+    },
+    {
+      "id": "warm-002-ssd-C",
+      "phase": "warm",
+      "round": 2,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-002-ssd-C"
+    },
+    {
+      "id": "warm-002-ssd-A",
+      "phase": "warm",
+      "round": 2,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-002-ssd-A"
+    },
+    {
+      "id": "warm-003-ssd-A",
+      "phase": "warm",
+      "round": 3,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-003-ssd-A"
+    },
+    {
+      "id": "warm-003-ssd-C",
+      "phase": "warm",
+      "round": 3,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-003-ssd-C"
+    },
+    {
+      "id": "warm-003-hdd-A",
+      "phase": "warm",
+      "round": 3,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-003-hdd-A"
+    },
+    {
+      "id": "warm-003-hdd-C",
+      "phase": "warm",
+      "round": 3,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-003-hdd-C"
+    },
+    {
+      "id": "warm-004-hdd-C",
+      "phase": "warm",
+      "round": 4,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-004-hdd-C"
+    },
+    {
+      "id": "warm-004-hdd-A",
+      "phase": "warm",
+      "round": 4,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-004-hdd-A"
+    },
+    {
+      "id": "warm-004-ssd-C",
+      "phase": "warm",
+      "round": 4,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-004-ssd-C"
+    },
+    {
+      "id": "warm-004-ssd-A",
+      "phase": "warm",
+      "round": 4,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-004-ssd-A"
+    },
+    {
+      "id": "warm-005-ssd-A",
+      "phase": "warm",
+      "round": 5,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-005-ssd-A"
+    },
+    {
+      "id": "warm-005-ssd-C",
+      "phase": "warm",
+      "round": 5,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-005-ssd-C"
+    },
+    {
+      "id": "warm-005-hdd-A",
+      "phase": "warm",
+      "round": 5,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-005-hdd-A"
+    },
+    {
+      "id": "warm-005-hdd-C",
+      "phase": "warm",
+      "round": 5,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-005-hdd-C"
+    },
+    {
+      "id": "warm-006-hdd-C",
+      "phase": "warm",
+      "round": 6,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-006-hdd-C"
+    },
+    {
+      "id": "warm-006-hdd-A",
+      "phase": "warm",
+      "round": 6,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-006-hdd-A"
+    },
+    {
+      "id": "warm-006-ssd-C",
+      "phase": "warm",
+      "round": 6,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-006-ssd-C"
+    },
+    {
+      "id": "warm-006-ssd-A",
+      "phase": "warm",
+      "round": 6,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-006-ssd-A"
+    },
+    {
+      "id": "warm-007-ssd-A",
+      "phase": "warm",
+      "round": 7,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-007-ssd-A"
+    },
+    {
+      "id": "warm-007-ssd-C",
+      "phase": "warm",
+      "round": 7,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-007-ssd-C"
+    },
+    {
+      "id": "warm-007-hdd-A",
+      "phase": "warm",
+      "round": 7,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-007-hdd-A"
+    },
+    {
+      "id": "warm-007-hdd-C",
+      "phase": "warm",
+      "round": 7,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-007-hdd-C"
+    },
+    {
+      "id": "warm-008-hdd-C",
+      "phase": "warm",
+      "round": 8,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-008-hdd-C"
+    },
+    {
+      "id": "warm-008-hdd-A",
+      "phase": "warm",
+      "round": 8,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-008-hdd-A"
+    },
+    {
+      "id": "warm-008-ssd-C",
+      "phase": "warm",
+      "round": 8,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-008-ssd-C"
+    },
+    {
+      "id": "warm-008-ssd-A",
+      "phase": "warm",
+      "round": 8,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-008-ssd-A"
+    },
+    {
+      "id": "warm-009-ssd-A",
+      "phase": "warm",
+      "round": 9,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-009-ssd-A"
+    },
+    {
+      "id": "warm-009-ssd-C",
+      "phase": "warm",
+      "round": 9,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-009-ssd-C"
+    },
+    {
+      "id": "warm-009-hdd-A",
+      "phase": "warm",
+      "round": 9,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-009-hdd-A"
+    },
+    {
+      "id": "warm-009-hdd-C",
+      "phase": "warm",
+      "round": 9,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-009-hdd-C"
+    },
+    {
+      "id": "warm-010-hdd-C",
+      "phase": "warm",
+      "round": 10,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-010-hdd-C"
+    },
+    {
+      "id": "warm-010-hdd-A",
+      "phase": "warm",
+      "round": 10,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-010-hdd-A"
+    },
+    {
+      "id": "warm-010-ssd-C",
+      "phase": "warm",
+      "round": 10,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-010-ssd-C"
+    },
+    {
+      "id": "warm-010-ssd-A",
+      "phase": "warm",
+      "round": 10,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-010-ssd-A"
+    },
+    {
+      "id": "warm-011-ssd-A",
+      "phase": "warm",
+      "round": 11,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-011-ssd-A"
+    },
+    {
+      "id": "warm-011-ssd-C",
+      "phase": "warm",
+      "round": 11,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-011-ssd-C"
+    },
+    {
+      "id": "warm-011-hdd-A",
+      "phase": "warm",
+      "round": 11,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-011-hdd-A"
+    },
+    {
+      "id": "warm-011-hdd-C",
+      "phase": "warm",
+      "round": 11,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-011-hdd-C"
+    },
+    {
+      "id": "warm-012-hdd-C",
+      "phase": "warm",
+      "round": 12,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-012-hdd-C"
+    },
+    {
+      "id": "warm-012-hdd-A",
+      "phase": "warm",
+      "round": 12,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-012-hdd-A"
+    },
+    {
+      "id": "warm-012-ssd-C",
+      "phase": "warm",
+      "round": 12,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-012-ssd-C"
+    },
+    {
+      "id": "warm-012-ssd-A",
+      "phase": "warm",
+      "round": 12,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-012-ssd-A"
+    },
+    {
+      "id": "warm-013-ssd-A",
+      "phase": "warm",
+      "round": 13,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-013-ssd-A"
+    },
+    {
+      "id": "warm-013-ssd-C",
+      "phase": "warm",
+      "round": 13,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-013-ssd-C"
+    },
+    {
+      "id": "warm-013-hdd-A",
+      "phase": "warm",
+      "round": 13,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-013-hdd-A"
+    },
+    {
+      "id": "warm-013-hdd-C",
+      "phase": "warm",
+      "round": 13,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-013-hdd-C"
+    },
+    {
+      "id": "warm-014-hdd-C",
+      "phase": "warm",
+      "round": 14,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-014-hdd-C"
+    },
+    {
+      "id": "warm-014-hdd-A",
+      "phase": "warm",
+      "round": 14,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-014-hdd-A"
+    },
+    {
+      "id": "warm-014-ssd-C",
+      "phase": "warm",
+      "round": 14,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-014-ssd-C"
+    },
+    {
+      "id": "warm-014-ssd-A",
+      "phase": "warm",
+      "round": 14,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-014-ssd-A"
+    },
+    {
+      "id": "warm-015-ssd-A",
+      "phase": "warm",
+      "round": 15,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-015-ssd-A"
+    },
+    {
+      "id": "warm-015-ssd-C",
+      "phase": "warm",
+      "round": 15,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-015-ssd-C"
+    },
+    {
+      "id": "warm-015-hdd-A",
+      "phase": "warm",
+      "round": 15,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-015-hdd-A"
+    },
+    {
+      "id": "warm-015-hdd-C",
+      "phase": "warm",
+      "round": 15,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-015-hdd-C"
+    },
+    {
+      "id": "warm-016-hdd-C",
+      "phase": "warm",
+      "round": 16,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-016-hdd-C"
+    },
+    {
+      "id": "warm-016-hdd-A",
+      "phase": "warm",
+      "round": 16,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-016-hdd-A"
+    },
+    {
+      "id": "warm-016-ssd-C",
+      "phase": "warm",
+      "round": 16,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-016-ssd-C"
+    },
+    {
+      "id": "warm-016-ssd-A",
+      "phase": "warm",
+      "round": 16,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-016-ssd-A"
+    },
+    {
+      "id": "warm-017-ssd-A",
+      "phase": "warm",
+      "round": 17,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-017-ssd-A"
+    },
+    {
+      "id": "warm-017-ssd-C",
+      "phase": "warm",
+      "round": 17,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-017-ssd-C"
+    },
+    {
+      "id": "warm-017-hdd-A",
+      "phase": "warm",
+      "round": 17,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-017-hdd-A"
+    },
+    {
+      "id": "warm-017-hdd-C",
+      "phase": "warm",
+      "round": 17,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-017-hdd-C"
+    },
+    {
+      "id": "warm-018-hdd-C",
+      "phase": "warm",
+      "round": 18,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-018-hdd-C"
+    },
+    {
+      "id": "warm-018-hdd-A",
+      "phase": "warm",
+      "round": 18,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-018-hdd-A"
+    },
+    {
+      "id": "warm-018-ssd-C",
+      "phase": "warm",
+      "round": 18,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-018-ssd-C"
+    },
+    {
+      "id": "warm-018-ssd-A",
+      "phase": "warm",
+      "round": 18,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-018-ssd-A"
+    },
+    {
+      "id": "warm-019-ssd-A",
+      "phase": "warm",
+      "round": 19,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-019-ssd-A"
+    },
+    {
+      "id": "warm-019-ssd-C",
+      "phase": "warm",
+      "round": 19,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-019-ssd-C"
+    },
+    {
+      "id": "warm-019-hdd-A",
+      "phase": "warm",
+      "round": 19,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-019-hdd-A"
+    },
+    {
+      "id": "warm-019-hdd-C",
+      "phase": "warm",
+      "round": 19,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-019-hdd-C"
+    },
+    {
+      "id": "warm-020-hdd-C",
+      "phase": "warm",
+      "round": 20,
+      "target": "hdd-C",
+      "storage": "HDD (E:\\)",
+      "variant": "C",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-020-hdd-C"
+    },
+    {
+      "id": "warm-020-hdd-A",
+      "phase": "warm",
+      "round": 20,
+      "target": "hdd-A",
+      "storage": "HDD (E:\\)",
+      "variant": "A",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-020-hdd-A"
+    },
+    {
+      "id": "warm-020-ssd-C",
+      "phase": "warm",
+      "round": 20,
+      "target": "ssd-C",
+      "storage": "SSD (C:\\)",
+      "variant": "C",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-020-ssd-C"
+    },
+    {
+      "id": "warm-020-ssd-A",
+      "phase": "warm",
+      "round": 20,
+      "target": "ssd-A",
+      "storage": "SSD (C:\\)",
+      "variant": "A",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "profile": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-020-ssd-A"
+    }
+  ],
+  "user": "mtianyang_pc\\autotest",
+  "targets": [
+    {
+      "id": "ssd-A",
+      "diskNumber": 2,
+      "source": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "storage": "SSD (C:\\)",
+      "diskModel": "Samsung SSD 990 PRO 1TB",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+      "variant": "A"
+    },
+    {
+      "id": "ssd-C",
+      "diskNumber": 2,
+      "source": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "storage": "SSD (C:\\)",
+      "diskModel": "Samsung SSD 990 PRO 1TB",
+      "runtime": "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+      "variant": "C"
+    },
+    {
+      "id": "hdd-A",
+      "diskNumber": 0,
+      "source": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\A\\electron.exe",
+      "storage": "HDD (E:\\)",
+      "diskModel": "ST4000VX000-2AG166",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\A\\electron.exe",
+      "variant": "A"
+    },
+    {
+      "id": "hdd-C",
+      "diskNumber": 0,
+      "source": "C:\\ElectronBench\\host-pilot-20260914\\runtimes\\C\\electron.exe",
+      "storage": "HDD (E:\\)",
+      "diskModel": "ST4000VX000-2AG166",
+      "runtime": "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+      "variant": "C"
+    }
+  ],
+  "workflowOnly": false,
+  "profileMethod": "Independent copies of an initialized seed per target",
+  "order": "ColdFirst",
+  "node": "C:\\Program Files\\nodejs\\node.exe",
+  "created": "2026-09-21T16:52:09.6257276Z",
+  "runKeyName": "ElectronBenchmark",
+  "installedBoot": "2026-09-21T16:51:04.5000000Z",
+  "warmups": 5,
+  "sid": "S-1-5-21-725251106-1954231564-3521431051-1007"
+}

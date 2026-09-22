@@ -1,0 +1,40 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-21T20:28:28.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-22T04:39:57.6526267+08:00",
+                     "cpu":  12
+                 },
+                 {
+                     "time":  "2026-09-22T04:40:00.9338375+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-22T04:40:03.2086050+08:00",
+                     "cpu":  2
+                 },
+                 {
+                     "time":  "2026-09-22T04:40:05.4675111+08:00",
+                     "cpu":  10
+                 }
+             ],
+    "sample":  {
+                   "id":  "warm-011-ssd-A",
+                   "phase":  "warm",
+                   "round":  11,
+                   "target":  "ssd-A",
+                   "storage":  "SSD (C:\\)",
+                   "variant":  "A",
+                   "runtime":  "C:\\ElectronBench\\ElectronBench-4f43e93b\\A\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-011-ssd-A"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

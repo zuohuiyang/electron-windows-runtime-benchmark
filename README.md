@@ -15,7 +15,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\code\run.ps1 `
   -ElectronPath "D:\build\changed" `
   -BaselinePath "D:\build\baseline" `
   -DiskSSD "C:\ElectronBench" `
-  -DiskHDD "E:\ElectronBench"
+  -DiskHDD "E:\ElectronBench" `
+  -Order ColdFirst
 ```
 
 By default, the comparison collects 20 samples per condition: **160 measured launches, 20 warmup launches, and 80 reboots**, resuming automatically after login. Each launch records APP READY and the first visible video presentation callback, with P50/P90 summaries and version comparisons. Omit `-BaselinePath` to test a single build.
@@ -26,7 +27,7 @@ See the [usage guide (Chinese)](doc/RUNNING.zh-CN.md) for parameters, helper pre
 
 ## Archived test data
 
-- [data/data/](data/data): raw cold- and warm-start measurements from the test machine.
+- [data/data/final-20260922/](data/data/final-20260922): raw cold- and warm-start measurements from the test machine.
 - [data/reports/RESULTS.zh-CN.md](data/reports/RESULTS.zh-CN.md): P50/P90 summaries and comparisons.
 - [data/provenance/](data/provenance): machine environment, tested builds, and file hashes.
 - [Methodology (Chinese)](doc/METHODOLOGY.zh-CN.md): sampling, timing, and statistical definitions.

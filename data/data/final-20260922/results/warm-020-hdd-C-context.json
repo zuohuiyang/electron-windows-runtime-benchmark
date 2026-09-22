@@ -1,0 +1,56 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-21T20:28:28.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-22T04:47:37.4899868+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:39.7621311+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:42.0304046+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:45.3329133+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:47.6041526+08:00",
+                     "cpu":  60
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:49.8773456+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:52.1588333+08:00",
+                     "cpu":  10
+                 },
+                 {
+                     "time":  "2026-09-22T04:47:54.4306807+08:00",
+                     "cpu":  9
+                 }
+             ],
+    "sample":  {
+                   "id":  "warm-020-hdd-C",
+                   "phase":  "warm",
+                   "round":  20,
+                   "target":  "hdd-C",
+                   "storage":  "HDD (E:\\)",
+                   "variant":  "C",
+                   "runtime":  "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-020-hdd-C"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

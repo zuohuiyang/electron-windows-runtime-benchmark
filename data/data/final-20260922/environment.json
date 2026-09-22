@@ -1,0 +1,51 @@
+﻿{
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "volumes":  [
+                    {
+                        "DeviceID":  "C:",
+                        "FileSystem":  "NTFS",
+                        "Size":  899289182208,
+                        "FreeSpace":  81438666752
+                    },
+                    {
+                        "DeviceID":  "D:",
+                        "FileSystem":  "NTFS",
+                        "Size":  900183617536,
+                        "FreeSpace":  185451360256
+                    },
+                    {
+                        "DeviceID":  "E:",
+                        "FileSystem":  "NTFS",
+                        "Size":  4000768323584,
+                        "FreeSpace":  393850224640
+                    }
+                ],
+    "cpu":  {
+                "Name":  "AMD Ryzen 9 7950X 16-Core Processor            ",
+                "NumberOfLogicalProcessors":  32
+            },
+    "disks":  [
+                  {
+                      "Model":  "ST4000VX000-2AG166",
+                      "Size":  4000784417280,
+                      "InterfaceType":  "IDE"
+                  },
+                  {
+                      "Model":  "Samsung SSD 870 QVO 1TB",
+                      "Size":  1000202273280,
+                      "InterfaceType":  "IDE"
+                  },
+                  {
+                      "Model":  "Samsung SSD 990 PRO 1TB",
+                      "Size":  1000202273280,
+                      "InterfaceType":  "SCSI"
+                  }
+              ],
+    "user":  "mtianyang_pc\\autotest",
+    "memoryBytes":  33442582528,
+    "os":  {
+               "Caption":  "Microsoft Windows 11 专业版",
+               "Version":  "10.0.26200",
+               "BuildNumber":  "26200"
+           }
+}

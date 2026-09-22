@@ -1,0 +1,56 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-21T20:28:28.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-22T04:32:10.5676003+08:00",
+                     "cpu":  16
+                 },
+                 {
+                     "time":  "2026-09-22T04:32:13.8694063+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-22T04:32:16.1395939+08:00",
+                     "cpu":  17
+                 },
+                 {
+                     "time":  "2026-09-22T04:32:18.4132824+08:00",
+                     "cpu":  6
+                 },
+                 {
+                     "time":  "2026-09-22T04:32:20.6958683+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-22T04:32:22.9683619+08:00",
+                     "cpu":  2
+                 },
+                 {
+                     "time":  "2026-09-22T04:32:25.2281813+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-22T04:32:27.5038950+08:00",
+                     "cpu":  8
+                 }
+             ],
+    "sample":  {
+                   "id":  "warmup-003-ssd-C",
+                   "phase":  "warmup",
+                   "round":  3,
+                   "target":  "ssd-C",
+                   "storage":  "SSD (C:\\)",
+                   "variant":  "C",
+                   "runtime":  "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warmup-003-ssd-C"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

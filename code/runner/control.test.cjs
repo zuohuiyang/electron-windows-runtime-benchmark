@@ -14,13 +14,14 @@ function setup(t) {
  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  for(const name of ['runner','harness','results','logs'])fs.mkdirSync(path.join(root,name));
  fs.copyFileSync(path.join(__dirname,'data.cjs'),path.join(root,'runner/data.cjs'));
+ fs.copyFileSync(path.join(__dirname,'priority.cs'),path.join(root,'runner/priority.cs'));
  fs.copyFileSync(path.join(__dirname,'../harness/validate.cjs'),path.join(root,'harness/validate.cjs'));
  const sid=spawnSync('powershell.exe',['-NoProfile','-Command','[Security.Principal.WindowsIdentity]::GetCurrent().User.Value'],{encoding:'utf8'}).stdout.trim();
  const samples=['warmup','warm','cold','cold'].map((phase,i)=>({id:phase+'-'+i,phase,variant:'A',runtime:'target.exe',profile:'profile-'+i}));
  const cfg={sid,user:'test-user',electron:'target.exe',node:process.execPath,runKeyName:'ElectronBenchmark',count:2,warmups:1,samples,installedBoot:'2026-09-01T00:00:00.0000000Z'};
  write(path.join(root,'config.json'),cfg);
  write(path.join(root,'state.json'),{status:'PREPARED',nextIndex:0,lastBoot:'',warmBoot:'',restarts:0,error:'',updated:''});
- const fixture=path.resolve(__dirname,'../../data/data/cold/results/001-C-A-sample.json');
+ const fixture=path.resolve(__dirname,'../../data/data/final-20260922/results/cold-001-ssd-A-sample.json');
  fs.writeFileSync(path.join(root,'harness/launch.cjs'),`const fs=require('fs');const row=JSON.parse(fs.readFileSync(${JSON.stringify(fixture)},'utf8').replace(/^\\uFEFF/,''));fs.writeFileSync(process.argv[5],JSON.stringify(row));`);
  fs.writeFileSync(path.join(root,'runner/system-load.ps1'),'function Wait-BenchmarkIdle { return [pscustomobject]@{Ready=$true;Readings=@(@{cpu=0},@{cpu=0},@{cpu=0})} }');
  let script=fs.readFileSync(path.join(__dirname,'control.ps1'),'utf8');
@@ -80,6 +81,23 @@ test('two-disk controller reboots once per cold target and keeps both groups',{s
  assert.equal(read(path.join(root,'summary.json')).stats.length,8);
  assert.equal(fs.readFileSync(path.join(root,'reboots.txt'),'utf8'),'reboot\nreboot\n');
 });
+test('cold first finishes warm sampling on the last cold boot without extra restart',{skip:process.platform!=='win32'},t=>{
+ const {root,run,cfg}=setup(t);
+ cfg.version=2;cfg.order='ColdFirst';cfg.count=1;
+ cfg.targets=['SSD','HDD'].map(storage=>({id:storage,storage,variant:'A',runtime:storage+'/electron.exe'}));
+ cfg.samples=plan(cfg,root);write(path.join(root,'config.json'),cfg);
+ let r=run('Start');assert.equal(r.status,0,r.stdout+r.stderr);
+ assert.equal(read(path.join(root,'state.json')).nextIndex,0);
+ r=run('Run','2026-09-02T00:00:00Z');assert.equal(r.status,0,r.stdout+r.stderr);
+ assert.equal(read(path.join(root,'state.json')).nextIndex,1);
+ r=run('Run','2026-09-03T00:00:00Z');assert.equal(r.status,0,r.stdout+r.stderr);
+ const state=read(path.join(root,'state.json'));
+ assert.equal(state.status,'COMPLETE');assert.equal(state.restarts,2);
+ assert.equal(read(path.join(root,'summary.json')).order,'ColdFirst');
+ assert.equal(fs.readFileSync(path.join(root,'reboots.txt'),'utf8'),'reboot\nreboot\n');
+ assert(!fs.existsSync(path.join(root,'registry.json')));
+});
+
 test('idle gate accepts real 100% CPU only in explicit workflow mode',{skip:process.platform!=='win32'},t=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'bench-idle-'));
  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));

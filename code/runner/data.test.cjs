@@ -4,9 +4,18 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { validateRun, report, inventory, plan } = require('./data.cjs');
-const source = path.resolve(__dirname, '../../data/data/cold');
+const source = path.resolve(__dirname, '../../data/data/final-20260922');
 const read = p => JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,''));
 const write = (p, v) => fs.writeFileSync(p, JSON.stringify(v));
+test('cold-first preserves all samples and balanced rounds; old configs remain warm-first',()=>{
+ const cfg={count:20,warmups:5,targets:['A','C'].map(variant=>({id:variant,variant,storage:'SSD',runtime:variant+'/electron.exe'}))};
+ const warm=plan(cfg,'C:/test');
+ const cold=plan({...cfg,order:'ColdFirst'},'C:/test');
+ assert.equal(warm[0].phase,'warmup');assert.equal(cold[0].phase,'cold');
+ assert.deepEqual(cold.slice(0,40),warm.filter(s=>s.phase==='cold'));
+ assert.deepEqual(cold.slice(40),warm.filter(s=>s.phase!=='cold'));
+ assert.throws(()=>plan({...cfg,order:'invalid'},'C:/test'));
+});
 function experiment(t) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(),'electron-runner-test-'));
   t.after(() => fs.rmSync(root,{recursive:true,force:true}));
@@ -62,7 +71,7 @@ for(const variants of [['A'],['A','C']]) test(`two disks, ${variants.length} ver
   assert.deepEqual(rounds.filter(s=>s.round===1).map(s=>s.target),cfg.targets.map(t=>t.id));
   assert.deepEqual(rounds.filter(s=>s.round===2).map(s=>s.target),cfg.targets.map(t=>t.id).reverse());
  }
- const original=read(path.join(source,'results/001-C-A-sample.json'));
+ const original=read(path.join(source,'results/cold-001-ssd-A-sample.json'));
  let boot=0;
  for(const item of cfg.samples) {
   const raw=structuredClone(original);raw.variant=item.variant;

@@ -4,6 +4,7 @@
  [string]$DiskSSD,
  [string]$DiskHDD,
  [switch]$WorkflowOnly,
+ [ValidateSet('WarmFirst','ColdFirst')][string]$Order='WarmFirst',
  [string]$ClockHelperPath,
  [ValidateRange(1,100)][int]$Count=20,
  [ValidateRange(1,100)][int]$Warmups=5,
@@ -100,7 +101,7 @@ if($DiskSSD){
   }
  }
 }else{$targets=@(@{id='single';storage='Original path';variant='A';source=$electron;runtime=$electron})}
-$cfg=@{version=2;workflowOnly=[bool]$WorkflowOnly;electron=$electron;targets=$targets;node=$node;user=$identity.Name;sid=$identity.User.Value;count=$Count;warmups=$Warmups;samples=@();installedBoot=$boot;created=(Get-Date).ToUniversalTime().ToString('o');profileMethod='Independent copies of an initialized seed per target';runKeyName='ElectronBenchmark'}
+$cfg=@{version=2;order=$Order;workflowOnly=[bool]$WorkflowOnly;electron=$electron;targets=$targets;node=$node;user=$identity.Name;sid=$identity.User.Value;count=$Count;warmups=$Warmups;samples=@();installedBoot=$boot;created=(Get-Date).ToUniversalTime().ToString('o');profileMethod='Independent copies of an initialized seed per target';runKeyName='ElectronBenchmark'}
 if($WorkflowOnly){Say '仅验证流程，结果不可作为 SSD/HDD 性能对比' 'Workflow validation only; not an SSD/HDD performance comparison'}
 Save-Json (Join-Path $root 'config.json') $cfg
 & $node (Join-Path $root 'runner\data.cjs') plan $root
@@ -116,12 +117,6 @@ if($LASTEXITCODE -ne 0){throw '启动预检失败，未设置自动运行 / Pref
 $raw=Get-Content -LiteralPath (Join-Path $root ('preflight-'+$target.id+'.json')) -Raw|ConvertFrom-Json
 if(-not $raw.valid -or $raw.stderr){throw '启动预检结果无效 / Invalid preflight result'}
 foreach($sample in @($samples|Where-Object target -eq $target.id)){Copy-BenchmarkTree $seed $sample.profile}
-$preflightCopy=Join-Path $root ('profiles\preflight-copy-'+$target.id)
-Copy-BenchmarkTree $seed $preflightCopy
-& $node (Join-Path $root 'harness\launch.cjs') $target.variant $target.runtime $preflightCopy (Join-Path $root ('preflight-copy-'+$target.id+'.json'))
-if($LASTEXITCODE -ne 0){throw '复制配置的实际启动失败，未设置自动运行 / Cloned-profile launch failed; automatic startup was not installed'}
-$copyRaw=Get-Content -LiteralPath (Join-Path $root ('preflight-copy-'+$target.id+'.json')) -Raw|ConvertFrom-Json
-if(-not $copyRaw.valid -or $copyRaw.stderr){throw '复制配置预检无效 / Invalid cloned-profile preflight'}
 }
 & $node (Join-Path $root 'runner\data.cjs') freeze $root
 if($LASTEXITCODE -ne 0){throw '冻结输入失败 / Input snapshot failed'}

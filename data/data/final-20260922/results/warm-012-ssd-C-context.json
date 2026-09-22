@@ -1,0 +1,68 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-21T20:28:28.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-22T04:41:16.5445521+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:18.8178883+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:22.1021840+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:24.3739254+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:26.6336274+08:00",
+                     "cpu":  6
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:28.8951384+08:00",
+                     "cpu":  18
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:31.1564542+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:33.4321920+08:00",
+                     "cpu":  17
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:35.7155260+08:00",
+                     "cpu":  6
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:37.9891092+08:00",
+                     "cpu":  4
+                 },
+                 {
+                     "time":  "2026-09-22T04:41:40.2646860+08:00",
+                     "cpu":  0
+                 }
+             ],
+    "sample":  {
+                   "id":  "warm-012-ssd-C",
+                   "phase":  "warm",
+                   "round":  12,
+                   "target":  "ssd-C",
+                   "storage":  "SSD (C:\\)",
+                   "variant":  "C",
+                   "runtime":  "C:\\ElectronBench\\ElectronBench-4f43e93b\\C\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-012-ssd-C"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

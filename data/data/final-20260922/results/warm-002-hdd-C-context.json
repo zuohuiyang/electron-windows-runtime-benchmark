@@ -1,0 +1,52 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-21T20:28:28.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-22T04:34:20.5000614+08:00",
+                     "cpu":  2
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:22.7743203+08:00",
+                     "cpu":  16
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:26.0819226+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:28.3603724+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:30.6320737+08:00",
+                     "cpu":  2
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:32.8928065+08:00",
+                     "cpu":  3
+                 },
+                 {
+                     "time":  "2026-09-22T04:34:35.1752450+08:00",
+                     "cpu":  10
+                 }
+             ],
+    "sample":  {
+                   "id":  "warm-002-hdd-C",
+                   "phase":  "warm",
+                   "round":  2,
+                   "target":  "hdd-C",
+                   "storage":  "HDD (E:\\)",
+                   "variant":  "C",
+                   "runtime":  "E:\\ElectronBench\\ElectronBench-816801f7\\C\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260922-005203-daabfc\\profiles\\warm-002-hdd-C"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

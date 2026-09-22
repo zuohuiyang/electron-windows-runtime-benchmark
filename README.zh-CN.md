@@ -15,7 +15,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\code\run.ps1 `
   -ElectronPath "D:\build\changed" `
   -BaselinePath "D:\build\baseline" `
   -DiskSSD "C:\ElectronBench" `
-  -DiskHDD "E:\ElectronBench"
+  -DiskHDD "E:\ElectronBench" `
+  -Order ColdFirst
 ```
 
 默认每种条件采样 20 次，共 **160 次正式启动、20 次热身、80 次重启**，自动登录后续跑。每次同时记录 APP READY 和视频呈现回调，输出 P50/P90 及版本对比。只测一个产物时，省略 `-BaselinePath`。
@@ -26,7 +27,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\code\run.ps1 `
 
 ## 已有测试数据
 
-- [data/data/](data/data)：本机冷热启动原始记录。
+- [data/data/final-20260922/](data/data/final-20260922)：本机冷热启动原始记录。
 - [data/reports/RESULTS.zh-CN.md](data/reports/RESULTS.zh-CN.md)：P50/P90 汇总及对比。
 - [data/provenance/](data/provenance)：机器环境、被测构建和文件哈希。
 - [测试方法](doc/METHODOLOGY.zh-CN.md)：采样、计时与统计口径。

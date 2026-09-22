@@ -25,7 +25,9 @@ function plan(cfg, root) {
   const samples=[];
   const paths=/^[A-Za-z]:[\\/]|^\\\\/.test(root)?path.win32:path;
   assert(cfg.targets.length>0 && new Set(cfg.targets.map(t=>t.id)).size===cfg.targets.length);
-  for(const phase of ['warmup','warm','cold']) {
+  const order=cfg.order || 'WarmFirst';
+  assert(['WarmFirst','ColdFirst'].includes(order),'Unknown sampling order');
+  for(const phase of (order==='ColdFirst'?['cold','warmup','warm']:['warmup','warm','cold'])) {
     const count=phase==='warmup'?cfg.warmups:cfg.count;
     for(let round=1;round<=count;round++) {
       // Reverse each round to balance which target runs first (AB / BA, or AC / CA).
@@ -80,8 +82,9 @@ function report(root) {
       p50:{ms:s.p50-baseline.p50,percent:(s.p50/baseline.p50-1)*100},
       p90:{ms:s.p90-baseline.p90,percent:(s.p90/baseline.p90-1)*100}});
   }
-  write(path.join(root, 'summary.json'), { workflowOnly:!!cfg.workflowOnly,electron: cfg.electron, targets,user: cfg.user, sid: cfg.sid, stats,comparisons, rows });
+  write(path.join(root, 'summary.json'), { order:cfg.order || 'WarmFirst',workflowOnly:!!cfg.workflowOnly,electron: cfg.electron, targets,user: cfg.user, sid: cfg.sid, stats,comparisons, rows });
   fs.writeFileSync(path.join(root, 'RESULTS.md'), '# Electron 启动测量结果 / Startup benchmark results\n\n' +
+    `采样顺序 / Sampling order: ${cfg.order || 'WarmFirst'}\n\n`+
     (cfg.workflowOnly?'**仅验证流程，不代表 SSD/HDD 性能对比 / Workflow validation only, not an SSD/HDD performance comparison.**\n\n':'')+
     `Electron: ${cfg.electron}\n\n账户 / User: ${cfg.user}\n\n每种条件 / Samples per condition: ${cfg.count}; 热身（不计入） / Excluded warmups: ${cfg.warmups}. 单位 / Unit: ms.\n\n` +
     '| 磁盘 / Disk | 版本 / Variant | 条件 / Condition | 终点 / Endpoint | 样本数 / N | P50 | P90 |\n|---|---|---|---|---:|---:|---:|\n' +
