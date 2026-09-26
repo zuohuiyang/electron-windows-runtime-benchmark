@@ -1,0 +1,2 @@
+import("//electron/build/args/release.gn")
+target_cpu = "x64"

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; media-src 'self'; connect-src 'none'">
+  <title>Electron 本地视频</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #10131b; color: #edf1fa; font: 16px 'Segoe UI', 'Microsoft YaHei', sans-serif; }
+    header { display: flex; align-items: center; gap: 14px; padding: 24px 36px; border-bottom: 1px solid #303645; }
+    svg { width: 42px; height: 42px; }
+    h1 { font-size: 22px; margin: 0; }
+    main { max-width: 900px; margin: 24px auto; }
+    video { display: block; width: 100%; height: 470px; object-fit: contain; background: #050608; border-radius: 12px; }
+    p { color: #aab5c9; margin: 18px 0 0; }
+  </style>
+</head>
+<body>
+  <header><svg viewBox="0 0 48 48" role="img" aria-label="播放图标"><rect width="48" height="48" rx="13" fill="#4b6ef5"/><path d="M19 13 36 24 19 35Z" fill="white"/></svg><h1>本地视频</h1></header>
+  <main><video id="video" muted playsinline loop preload="none"></video><p>离线播放 · 页面与视频均来自本地文件</p></main>
+  <script src="video.js"></script>
+</body>
+</html>

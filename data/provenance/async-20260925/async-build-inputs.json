@@ -1,0 +1,8 @@
+{
+    "parallelism":  "autoninja default",
+    "startedUtc":  "2026-09-25T10:22:56.0977315Z",
+    "loaderHash":  "B58DAE245FA4D6F8FA5B06DE7B00EFA0DDDA820190D7B1EBFBA07489C33B5889",
+    "out":  "out/RuntimePerf-Release",
+    "productHead":  "1bbcdc28e272ed5299b00ef59d592433cb6b5361",
+    "target":  "electron:electron_dist_zip"
+}

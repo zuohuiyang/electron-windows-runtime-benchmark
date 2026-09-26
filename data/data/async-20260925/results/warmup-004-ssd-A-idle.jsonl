@@ -1,0 +1,5 @@
+{"time":"2026-09-25T17:07:54.1494816Z","consecutiveReadings":3,"thresholdPercent":10,"type":"idle-start","maxWaitSeconds":1200}
+{"time":"2026-09-26T01:07:54.4213386+08:00","cpu":0,"elapsedSeconds":0.28,"type":"idle-reading","consecutive":1}
+{"time":"2026-09-26T01:07:56.7087943+08:00","cpu":9,"elapsedSeconds":2.56,"type":"idle-reading","consecutive":2}
+{"time":"2026-09-26T01:07:58.9866623+08:00","cpu":2,"elapsedSeconds":4.84,"type":"idle-reading","consecutive":3}
+{"time":"2026-09-25T17:07:58.9866623Z","type":"idle-ready","elapsedSeconds":4.8383202999999995}

@@ -1,0 +1,529 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20260926010336
+用户名: mtianyang_pc\autotest
+RunAs 用户: mtianyang_pc\autotest
+配置名称: 
+计算机: MTIANYANG_PC (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\autotest\AppData\Local\ElectronBench\runs\20260925-212448-6a99b2\runner\control.ps1 -Action Run
+进程 ID: 8560
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+等待系统空闲：cold-020-ssd-A / Waiting for idle: cold-020-ssd-A
+正在测量：cold-020-ssd-A / Measuring: cold-020-ssd-A
+{"variant":"A","valid":true,"parentAppReadyMs":477.2459999999992,"parentVideoMs":823.4578499999916}
+
+
+等待系统空闲：warmup-001-ssd-A / Waiting for idle: warmup-001-ssd-A
+正在测量：warmup-001-ssd-A / Measuring: warmup-001-ssd-A
+{"variant":"A","valid":true,"parentAppReadyMs":63.29749999998603,"parentVideoMs":222.4265000000014}
+
+
+等待系统空闲：warmup-001-ssd-C / Waiting for idle: warmup-001-ssd-C
+正在测量：warmup-001-ssd-C / Measuring: warmup-001-ssd-C
+{"variant":"C","valid":true,"parentAppReadyMs":219.49650000000838,"parentVideoMs":526.3279499999771}
+
+
+等待系统空闲：warmup-001-hdd-A / Waiting for idle: warmup-001-hdd-A
+正在测量：warmup-001-hdd-A / Measuring: warmup-001-hdd-A
+{"variant":"A","valid":true,"parentAppReadyMs":1550.9795999999915,"parentVideoMs":5868.179000000004}
+
+
+等待系统空闲：warmup-001-hdd-C / Waiting for idle: warmup-001-hdd-C
+正在测量：warmup-001-hdd-C / Measuring: warmup-001-hdd-C
+{"variant":"C","valid":true,"parentAppReadyMs":1484.852200000023,"parentVideoMs":2376.599499999982}
+
+
+等待系统空闲：warmup-002-hdd-C / Waiting for idle: warmup-002-hdd-C
+正在测量：warmup-002-hdd-C / Measuring: warmup-002-hdd-C
+{"variant":"C","valid":true,"parentAppReadyMs":81.24760000000242,"parentVideoMs":229.12839999998687}
+
+
+等待系统空闲：warmup-002-hdd-A / Waiting for idle: warmup-002-hdd-A
+正在测量：warmup-002-hdd-A / Measuring: warmup-002-hdd-A
+{"variant":"A","valid":true,"parentAppReadyMs":62.21099999998114,"parentVideoMs":215.44865000000573}
+
+
+等待系统空闲：warmup-002-ssd-C / Waiting for idle: warmup-002-ssd-C
+正在测量：warmup-002-ssd-C / Measuring: warmup-002-ssd-C
+{"variant":"C","valid":true,"parentAppReadyMs":65.14900000000489,"parentVideoMs":209.55810000002384}
+
+
+等待系统空闲：warmup-002-ssd-A / Waiting for idle: warmup-002-ssd-A
+正在测量：warmup-002-ssd-A / Measuring: warmup-002-ssd-A
+{"variant":"A","valid":true,"parentAppReadyMs":62.83319999999367,"parentVideoMs":212.99079999997048}
+
+
+等待系统空闲：warmup-003-ssd-A / Waiting for idle: warmup-003-ssd-A
+正在测量：warmup-003-ssd-A / Measuring: warmup-003-ssd-A
+
+
+
+等待系统空闲：warmup-003-ssd-C / Waiting for idle: warmup-003-ssd-C
+正在测量：warmup-003-ssd-C / Measuring: warmup-003-ssd-C
+
+
+
+等待系统空闲：warmup-003-hdd-A / Waiting for idle: warmup-003-hdd-A
+正在测量：warmup-003-hdd-A / Measuring: warmup-003-hdd-A
+
+
+
+等待系统空闲：warmup-003-hdd-C / Waiting for idle: warmup-003-hdd-C
+正在测量：warmup-003-hdd-C / Measuring: warmup-003-hdd-C
+
+
+
+等待系统空闲：warmup-004-hdd-C / Waiting for idle: warmup-004-hdd-C
+正在测量：warmup-004-hdd-C / Measuring: warmup-004-hdd-C
+
+
+
+等待系统空闲：warmup-004-hdd-A / Waiting for idle: warmup-004-hdd-A
+正在测量：warmup-004-hdd-A / Measuring: warmup-004-hdd-A
+
+
+
+等待系统空闲：warmup-004-ssd-C / Waiting for idle: warmup-004-ssd-C
+正在测量：warmup-004-ssd-C / Measuring: warmup-004-ssd-C
+
+
+
+等待系统空闲：warmup-004-ssd-A / Waiting for idle: warmup-004-ssd-A
+正在测量：warmup-004-ssd-A / Measuring: warmup-004-ssd-A
+
+
+
+等待系统空闲：warmup-005-ssd-A / Waiting for idle: warmup-005-ssd-A
+正在测量：warmup-005-ssd-A / Measuring: warmup-005-ssd-A
+
+
+
+等待系统空闲：warmup-005-ssd-C / Waiting for idle: warmup-005-ssd-C
+正在测量：warmup-005-ssd-C / Measuring: warmup-005-ssd-C
+
+
+
+等待系统空闲：warmup-005-hdd-A / Waiting for idle: warmup-005-hdd-A
+正在测量：warmup-005-hdd-A / Measuring: warmup-005-hdd-A
+
+
+
+等待系统空闲：warmup-005-hdd-C / Waiting for idle: warmup-005-hdd-C
+正在测量：warmup-005-hdd-C / Measuring: warmup-005-hdd-C
+
+
+
+等待系统空闲：warm-001-ssd-A / Waiting for idle: warm-001-ssd-A
+正在测量：warm-001-ssd-A / Measuring: warm-001-ssd-A
+
+
+
+等待系统空闲：warm-001-ssd-C / Waiting for idle: warm-001-ssd-C
+正在测量：warm-001-ssd-C / Measuring: warm-001-ssd-C
+
+
+
+等待系统空闲：warm-001-hdd-A / Waiting for idle: warm-001-hdd-A
+正在测量：warm-001-hdd-A / Measuring: warm-001-hdd-A
+
+
+
+等待系统空闲：warm-001-hdd-C / Waiting for idle: warm-001-hdd-C
+正在测量：warm-001-hdd-C / Measuring: warm-001-hdd-C
+
+
+
+等待系统空闲：warm-002-hdd-C / Waiting for idle: warm-002-hdd-C
+正在测量：warm-002-hdd-C / Measuring: warm-002-hdd-C
+
+
+
+等待系统空闲：warm-002-hdd-A / Waiting for idle: warm-002-hdd-A
+正在测量：warm-002-hdd-A / Measuring: warm-002-hdd-A
+
+
+
+等待系统空闲：warm-002-ssd-C / Waiting for idle: warm-002-ssd-C
+正在测量：warm-002-ssd-C / Measuring: warm-002-ssd-C
+
+
+
+等待系统空闲：warm-002-ssd-A / Waiting for idle: warm-002-ssd-A
+正在测量：warm-002-ssd-A / Measuring: warm-002-ssd-A
+
+
+
+等待系统空闲：warm-003-ssd-A / Waiting for idle: warm-003-ssd-A
+正在测量：warm-003-ssd-A / Measuring: warm-003-ssd-A
+
+
+
+等待系统空闲：warm-003-ssd-C / Waiting for idle: warm-003-ssd-C
+正在测量：warm-003-ssd-C / Measuring: warm-003-ssd-C
+
+
+
+等待系统空闲：warm-003-hdd-A / Waiting for idle: warm-003-hdd-A
+正在测量：warm-003-hdd-A / Measuring: warm-003-hdd-A
+
+
+
+等待系统空闲：warm-003-hdd-C / Waiting for idle: warm-003-hdd-C
+正在测量：warm-003-hdd-C / Measuring: warm-003-hdd-C
+
+
+
+等待系统空闲：warm-004-hdd-C / Waiting for idle: warm-004-hdd-C
+正在测量：warm-004-hdd-C / Measuring: warm-004-hdd-C
+
+
+
+等待系统空闲：warm-004-hdd-A / Waiting for idle: warm-004-hdd-A
+正在测量：warm-004-hdd-A / Measuring: warm-004-hdd-A
+
+
+
+等待系统空闲：warm-004-ssd-C / Waiting for idle: warm-004-ssd-C
+正在测量：warm-004-ssd-C / Measuring: warm-004-ssd-C
+
+
+
+等待系统空闲：warm-004-ssd-A / Waiting for idle: warm-004-ssd-A
+正在测量：warm-004-ssd-A / Measuring: warm-004-ssd-A
+
+
+
+等待系统空闲：warm-005-ssd-A / Waiting for idle: warm-005-ssd-A
+正在测量：warm-005-ssd-A / Measuring: warm-005-ssd-A
+
+
+
+等待系统空闲：warm-005-ssd-C / Waiting for idle: warm-005-ssd-C
+正在测量：warm-005-ssd-C / Measuring: warm-005-ssd-C
+
+
+
+等待系统空闲：warm-005-hdd-A / Waiting for idle: warm-005-hdd-A
+正在测量：warm-005-hdd-A / Measuring: warm-005-hdd-A
+
+
+
+等待系统空闲：warm-005-hdd-C / Waiting for idle: warm-005-hdd-C
+正在测量：warm-005-hdd-C / Measuring: warm-005-hdd-C
+
+
+
+等待系统空闲：warm-006-hdd-C / Waiting for idle: warm-006-hdd-C
+正在测量：warm-006-hdd-C / Measuring: warm-006-hdd-C
+
+
+
+等待系统空闲：warm-006-hdd-A / Waiting for idle: warm-006-hdd-A
+正在测量：warm-006-hdd-A / Measuring: warm-006-hdd-A
+
+
+
+等待系统空闲：warm-006-ssd-C / Waiting for idle: warm-006-ssd-C
+正在测量：warm-006-ssd-C / Measuring: warm-006-ssd-C
+
+
+
+等待系统空闲：warm-006-ssd-A / Waiting for idle: warm-006-ssd-A
+正在测量：warm-006-ssd-A / Measuring: warm-006-ssd-A
+
+
+
+等待系统空闲：warm-007-ssd-A / Waiting for idle: warm-007-ssd-A
+正在测量：warm-007-ssd-A / Measuring: warm-007-ssd-A
+
+
+
+等待系统空闲：warm-007-ssd-C / Waiting for idle: warm-007-ssd-C
+正在测量：warm-007-ssd-C / Measuring: warm-007-ssd-C
+
+
+
+等待系统空闲：warm-007-hdd-A / Waiting for idle: warm-007-hdd-A
+正在测量：warm-007-hdd-A / Measuring: warm-007-hdd-A
+
+
+
+等待系统空闲：warm-007-hdd-C / Waiting for idle: warm-007-hdd-C
+正在测量：warm-007-hdd-C / Measuring: warm-007-hdd-C
+
+
+
+等待系统空闲：warm-008-hdd-C / Waiting for idle: warm-008-hdd-C
+正在测量：warm-008-hdd-C / Measuring: warm-008-hdd-C
+
+
+
+等待系统空闲：warm-008-hdd-A / Waiting for idle: warm-008-hdd-A
+正在测量：warm-008-hdd-A / Measuring: warm-008-hdd-A
+
+
+
+等待系统空闲：warm-008-ssd-C / Waiting for idle: warm-008-ssd-C
+正在测量：warm-008-ssd-C / Measuring: warm-008-ssd-C
+
+
+
+等待系统空闲：warm-008-ssd-A / Waiting for idle: warm-008-ssd-A
+正在测量：warm-008-ssd-A / Measuring: warm-008-ssd-A
+
+
+
+等待系统空闲：warm-009-ssd-A / Waiting for idle: warm-009-ssd-A
+正在测量：warm-009-ssd-A / Measuring: warm-009-ssd-A
+
+
+
+等待系统空闲：warm-009-ssd-C / Waiting for idle: warm-009-ssd-C
+正在测量：warm-009-ssd-C / Measuring: warm-009-ssd-C
+
+
+
+等待系统空闲：warm-009-hdd-A / Waiting for idle: warm-009-hdd-A
+正在测量：warm-009-hdd-A / Measuring: warm-009-hdd-A
+
+
+
+等待系统空闲：warm-009-hdd-C / Waiting for idle: warm-009-hdd-C
+正在测量：warm-009-hdd-C / Measuring: warm-009-hdd-C
+
+
+
+等待系统空闲：warm-010-hdd-C / Waiting for idle: warm-010-hdd-C
+正在测量：warm-010-hdd-C / Measuring: warm-010-hdd-C
+
+
+
+等待系统空闲：warm-010-hdd-A / Waiting for idle: warm-010-hdd-A
+正在测量：warm-010-hdd-A / Measuring: warm-010-hdd-A
+
+
+
+等待系统空闲：warm-010-ssd-C / Waiting for idle: warm-010-ssd-C
+正在测量：warm-010-ssd-C / Measuring: warm-010-ssd-C
+
+
+
+等待系统空闲：warm-010-ssd-A / Waiting for idle: warm-010-ssd-A
+正在测量：warm-010-ssd-A / Measuring: warm-010-ssd-A
+
+
+
+等待系统空闲：warm-011-ssd-A / Waiting for idle: warm-011-ssd-A
+正在测量：warm-011-ssd-A / Measuring: warm-011-ssd-A
+
+
+
+等待系统空闲：warm-011-ssd-C / Waiting for idle: warm-011-ssd-C
+正在测量：warm-011-ssd-C / Measuring: warm-011-ssd-C
+
+
+
+等待系统空闲：warm-011-hdd-A / Waiting for idle: warm-011-hdd-A
+正在测量：warm-011-hdd-A / Measuring: warm-011-hdd-A
+
+
+
+等待系统空闲：warm-011-hdd-C / Waiting for idle: warm-011-hdd-C
+正在测量：warm-011-hdd-C / Measuring: warm-011-hdd-C
+
+
+
+等待系统空闲：warm-012-hdd-C / Waiting for idle: warm-012-hdd-C
+正在测量：warm-012-hdd-C / Measuring: warm-012-hdd-C
+
+
+
+等待系统空闲：warm-012-hdd-A / Waiting for idle: warm-012-hdd-A
+正在测量：warm-012-hdd-A / Measuring: warm-012-hdd-A
+
+
+
+等待系统空闲：warm-012-ssd-C / Waiting for idle: warm-012-ssd-C
+正在测量：warm-012-ssd-C / Measuring: warm-012-ssd-C
+
+
+
+等待系统空闲：warm-012-ssd-A / Waiting for idle: warm-012-ssd-A
+正在测量：warm-012-ssd-A / Measuring: warm-012-ssd-A
+
+
+
+等待系统空闲：warm-013-ssd-A / Waiting for idle: warm-013-ssd-A
+正在测量：warm-013-ssd-A / Measuring: warm-013-ssd-A
+
+
+
+等待系统空闲：warm-013-ssd-C / Waiting for idle: warm-013-ssd-C
+正在测量：warm-013-ssd-C / Measuring: warm-013-ssd-C
+
+
+
+等待系统空闲：warm-013-hdd-A / Waiting for idle: warm-013-hdd-A
+正在测量：warm-013-hdd-A / Measuring: warm-013-hdd-A
+
+
+
+等待系统空闲：warm-013-hdd-C / Waiting for idle: warm-013-hdd-C
+正在测量：warm-013-hdd-C / Measuring: warm-013-hdd-C
+
+
+
+等待系统空闲：warm-014-hdd-C / Waiting for idle: warm-014-hdd-C
+正在测量：warm-014-hdd-C / Measuring: warm-014-hdd-C
+
+
+
+等待系统空闲：warm-014-hdd-A / Waiting for idle: warm-014-hdd-A
+正在测量：warm-014-hdd-A / Measuring: warm-014-hdd-A
+
+
+
+等待系统空闲：warm-014-ssd-C / Waiting for idle: warm-014-ssd-C
+正在测量：warm-014-ssd-C / Measuring: warm-014-ssd-C
+
+
+
+等待系统空闲：warm-014-ssd-A / Waiting for idle: warm-014-ssd-A
+正在测量：warm-014-ssd-A / Measuring: warm-014-ssd-A
+
+
+
+等待系统空闲：warm-015-ssd-A / Waiting for idle: warm-015-ssd-A
+正在测量：warm-015-ssd-A / Measuring: warm-015-ssd-A
+
+
+
+等待系统空闲：warm-015-ssd-C / Waiting for idle: warm-015-ssd-C
+正在测量：warm-015-ssd-C / Measuring: warm-015-ssd-C
+
+
+
+等待系统空闲：warm-015-hdd-A / Waiting for idle: warm-015-hdd-A
+正在测量：warm-015-hdd-A / Measuring: warm-015-hdd-A
+
+
+
+等待系统空闲：warm-015-hdd-C / Waiting for idle: warm-015-hdd-C
+正在测量：warm-015-hdd-C / Measuring: warm-015-hdd-C
+
+
+
+等待系统空闲：warm-016-hdd-C / Waiting for idle: warm-016-hdd-C
+正在测量：warm-016-hdd-C / Measuring: warm-016-hdd-C
+
+
+
+等待系统空闲：warm-016-hdd-A / Waiting for idle: warm-016-hdd-A
+正在测量：warm-016-hdd-A / Measuring: warm-016-hdd-A
+
+
+
+等待系统空闲：warm-016-ssd-C / Waiting for idle: warm-016-ssd-C
+正在测量：warm-016-ssd-C / Measuring: warm-016-ssd-C
+
+
+
+等待系统空闲：warm-016-ssd-A / Waiting for idle: warm-016-ssd-A
+正在测量：warm-016-ssd-A / Measuring: warm-016-ssd-A
+
+
+
+等待系统空闲：warm-017-ssd-A / Waiting for idle: warm-017-ssd-A
+正在测量：warm-017-ssd-A / Measuring: warm-017-ssd-A
+
+
+
+等待系统空闲：warm-017-ssd-C / Waiting for idle: warm-017-ssd-C
+正在测量：warm-017-ssd-C / Measuring: warm-017-ssd-C
+
+
+
+等待系统空闲：warm-017-hdd-A / Waiting for idle: warm-017-hdd-A
+正在测量：warm-017-hdd-A / Measuring: warm-017-hdd-A
+
+
+
+等待系统空闲：warm-017-hdd-C / Waiting for idle: warm-017-hdd-C
+正在测量：warm-017-hdd-C / Measuring: warm-017-hdd-C
+
+
+
+等待系统空闲：warm-018-hdd-C / Waiting for idle: warm-018-hdd-C
+正在测量：warm-018-hdd-C / Measuring: warm-018-hdd-C
+
+
+
+等待系统空闲：warm-018-hdd-A / Waiting for idle: warm-018-hdd-A
+正在测量：warm-018-hdd-A / Measuring: warm-018-hdd-A
+
+
+
+等待系统空闲：warm-018-ssd-C / Waiting for idle: warm-018-ssd-C
+正在测量：warm-018-ssd-C / Measuring: warm-018-ssd-C
+
+
+
+等待系统空闲：warm-018-ssd-A / Waiting for idle: warm-018-ssd-A
+正在测量：warm-018-ssd-A / Measuring: warm-018-ssd-A
+
+
+
+等待系统空闲：warm-019-ssd-A / Waiting for idle: warm-019-ssd-A
+正在测量：warm-019-ssd-A / Measuring: warm-019-ssd-A
+
+
+
+等待系统空闲：warm-019-ssd-C / Waiting for idle: warm-019-ssd-C
+正在测量：warm-019-ssd-C / Measuring: warm-019-ssd-C
+
+
+
+等待系统空闲：warm-019-hdd-A / Waiting for idle: warm-019-hdd-A
+正在测量：warm-019-hdd-A / Measuring: warm-019-hdd-A
+
+
+
+等待系统空闲：warm-019-hdd-C / Waiting for idle: warm-019-hdd-C
+正在测量：warm-019-hdd-C / Measuring: warm-019-hdd-C
+
+
+
+等待系统空闲：warm-020-hdd-C / Waiting for idle: warm-020-hdd-C
+正在测量：warm-020-hdd-C / Measuring: warm-020-hdd-C
+
+
+
+等待系统空闲：warm-020-hdd-A / Waiting for idle: warm-020-hdd-A
+正在测量：warm-020-hdd-A / Measuring: warm-020-hdd-A
+
+
+
+等待系统空闲：warm-020-ssd-C / Waiting for idle: warm-020-ssd-C
+正在测量：warm-020-ssd-C / Measuring: warm-020-ssd-C
+
+
+
+等待系统空闲：warm-020-ssd-A / Waiting for idle: warm-020-ssd-A
+正在测量：warm-020-ssd-A / Measuring: warm-020-ssd-A
+
+
+
+
+全部完成，报告：C:\Users\autotest\AppData\Local\ElectronBench\runs\20260925-212448-6a99b2\RESULTS.md / Complete. Report: C:\Users\autotest\AppData\Local\ElectronBench\runs\20260925-212448-6a99b2\RESULTS.md
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20260926012457
+**********************

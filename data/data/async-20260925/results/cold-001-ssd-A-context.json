@@ -1,0 +1,64 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-25T13:25:41.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-25T21:27:44.3186890+08:00",
+                     "cpu":  6
+                 },
+                 {
+                     "time":  "2026-09-25T21:27:46.6027807+08:00",
+                     "cpu":  1
+                 },
+                 {
+                     "time":  "2026-09-25T21:27:48.8749848+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-25T21:27:52.5234077+08:00",
+                     "cpu":  6
+                 },
+                 {
+                     "time":  "2026-09-25T21:27:54.7961533+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-25T21:27:57.0720092+08:00",
+                     "cpu":  14
+                 },
+                 {
+                     "time":  "2026-09-25T21:27:59.3574564+08:00",
+                     "cpu":  22
+                 },
+                 {
+                     "time":  "2026-09-25T21:28:01.6429648+08:00",
+                     "cpu":  5
+                 },
+                 {
+                     "time":  "2026-09-25T21:28:03.9280937+08:00",
+                     "cpu":  7
+                 },
+                 {
+                     "time":  "2026-09-25T21:28:06.1972937+08:00",
+                     "cpu":  4
+                 }
+             ],
+    "sample":  {
+                   "id":  "cold-001-ssd-A",
+                   "phase":  "cold",
+                   "round":  1,
+                   "target":  "ssd-A",
+                   "storage":  "SSD (C:\\)",
+                   "variant":  "A",
+                   "runtime":  "C:\\ElectronBench\\ElectronBench-9c565613\\A\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\profiles\\cold-001-ssd-A"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

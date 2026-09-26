@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "Reproducible evidence for Electron Windows runtime split and preread",
-  "scripts": { "analyze": "node scripts/analyze.cjs", "test": "node --test scripts/analyze.test.cjs runner/data.test.cjs runner/control.test.cjs runner/copy-tree.test.cjs" },
+  "scripts": { "analyze": "node scripts/analyze.cjs", "analyze:async": "node scripts/analyze-run.cjs", "test": "node --test scripts/analyze.test.cjs scripts/analyze-run.test.cjs runner/data.test.cjs runner/control.test.cjs runner/copy-tree.test.cjs harness/stderr.test.cjs" },
   "engines": { "node": ">=18" }
 }

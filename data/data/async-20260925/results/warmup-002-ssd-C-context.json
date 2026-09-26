@@ -1,0 +1,36 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-25T17:03:16.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-26T01:06:47.5145512+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-26T01:06:49.7856455+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-26T01:06:52.0600358+08:00",
+                     "cpu":  8
+                 }
+             ],
+    "sample":  {
+                   "id":  "warmup-002-ssd-C",
+                   "phase":  "warmup",
+                   "round":  2,
+                   "target":  "ssd-C",
+                   "storage":  "SSD (C:\\)",
+                   "variant":  "C",
+                   "runtime":  "C:\\ElectronBench\\ElectronBench-9c565613\\C\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\profiles\\warmup-002-ssd-C"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

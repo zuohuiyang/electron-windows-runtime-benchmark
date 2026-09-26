@@ -1,0 +1,347 @@
+{
+  "variant": "C",
+  "pid": 4644,
+  "parentSpawnEpochMs": 1790356836238,
+  "timingOrigin": "parent-before-spawn-qpc-v1",
+  "parentBeforeSpawnNs": "1040370614700",
+  "parentAfterSpawnNs": "1040375161600",
+  "spawnCallMs": 4.5469,
+  "parentToCreationMs": 0.8003000000026077,
+  "parentAppReadyMs": 98.64319999993313,
+  "parentVideoMs": 260.1864000001224,
+  "timestamp": "2026-09-25T17:20:36.743Z",
+  "valid": true,
+  "code": 0,
+  "error": null,
+  "timedOut": false,
+  "events": [
+    {
+      "event": "app-ready",
+      "sinceCreationMs": 97.84289999993052
+    },
+    {
+      "event": "window-created",
+      "sinceCreationMs": 123.48679999995511
+    },
+    {
+      "event": "ready-to-show",
+      "sinceCreationMs": 209.72519999998622
+    },
+    {
+      "event": "first-video-frame",
+      "firstFrameMs": 259.38610000011977,
+      "firstSubmittedMs": 244.0861000000732,
+      "firstExpectedDisplayMs": 244.0861000000732,
+      "firstFrameBoundsMs": [
+        259.33580000011716,
+        259.43640000000596
+      ],
+      "ipcAndClockDeltaMs": 2.049199999892153,
+      "creationQpcMs": 1040371.415,
+      "creationEpochMs": 1790356836241.5913,
+      "clock": {
+        "native": {
+          "pid": 4644,
+          "frequency": "10000000",
+          "qpcBefore": "10406485178",
+          "qpcAfter": "10406485178",
+          "utcFileTime100ns": "134348304365186940",
+          "creationFileTime100ns": "134348304362415912"
+        },
+        "prelaunch": {
+          "pid": 20128,
+          "frequency": "10000000",
+          "qpcBefore": "10403696465",
+          "qpcAfter": "10403696465",
+          "utcFileTime100ns": "134348304362398227",
+          "creationFileTime100ns": "134348304362270315"
+        },
+        "clockDriftMs": 0,
+        "rendererOffsetBoundsMs": [
+          1040495.0508000001,
+          1040495.1514
+        ],
+        "uncertaintyMs": 0.05029999994440004,
+        "helperBracketNs": [
+          "1040634036800",
+          "1040650316700"
+        ]
+      },
+      "pid": 4644,
+      "frame": {
+        "timeOrigin": 1790356836365.2,
+        "callbackNow": 135.70000000006985,
+        "callbackTimestamp": 135.2,
+        "presentationTime": 120.4,
+        "expectedDisplayTime": 120.4,
+        "mediaTime": 0.033367,
+        "presentedFrames": 1,
+        "processingDuration": 0.0057,
+        "width": 1280,
+        "height": 720,
+        "duration": 2.763175,
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "readyState": 4,
+        "paused": false,
+        "visibility": "visible",
+        "source": "file:///C:/Users/autotest/AppData/Local/ElectronBench/runs/20260925-212448-6a99b2/harness/app/local-video.mp4",
+        "playbackQuality": {
+          "totalVideoFrames": 4,
+          "droppedVideoFrames": 0,
+          "creationTime": 135.70000000006985
+        },
+        "clockSamples": [
+          {
+            "before": 135.70000000006985,
+            "mainNs": "1040631094100",
+            "after": 136.09999999997672
+          },
+          {
+            "before": 136.09999999997672,
+            "mainNs": "1040631266200",
+            "after": 136.30000000004657
+          },
+          {
+            "before": 136.30000000004657,
+            "mainNs": "1040631373900",
+            "after": 136.30000000004657
+          },
+          {
+            "before": 136.30000000004657,
+            "mainNs": "1040631435700",
+            "after": 136.40000000002328
+          },
+          {
+            "before": 136.40000000002328,
+            "mainNs": "1040631489300",
+            "after": 136.40000000002328
+          },
+          {
+            "before": 136.40000000002328,
+            "mainNs": "1040631539100",
+            "after": 136.5
+          },
+          {
+            "before": 136.5,
+            "mainNs": "1040631628000",
+            "after": 136.59999999997672
+          },
+          {
+            "before": 136.59999999997672,
+            "mainNs": "1040631707300",
+            "after": 136.70000000006985
+          },
+          {
+            "before": 136.70000000006985,
+            "mainNs": "1040631776700",
+            "after": 136.70000000006985
+          },
+          {
+            "before": 136.70000000006985,
+            "mainNs": "1040631836900",
+            "after": 136.80000000004657
+          },
+          {
+            "before": 136.80000000004657,
+            "mainNs": "1040631907100",
+            "after": 136.80000000004657
+          },
+          {
+            "before": 136.80000000004657,
+            "mainNs": "1040631968600",
+            "after": 136.90000000002328
+          },
+          {
+            "before": 136.90000000002328,
+            "mainNs": "1040632019400",
+            "after": 136.90000000002328
+          },
+          {
+            "before": 136.90000000002328,
+            "mainNs": "1040632077800",
+            "after": 137
+          },
+          {
+            "before": 137,
+            "mainNs": "1040632152300",
+            "after": 137.09999999997672
+          },
+          {
+            "before": 137.09999999997672,
+            "mainNs": "1040632206700",
+            "after": 137.09999999997672
+          },
+          {
+            "before": 137.09999999997672,
+            "mainNs": "1040632250800",
+            "after": 137.09999999997672
+          },
+          {
+            "before": 137.09999999997672,
+            "mainNs": "1040632301700",
+            "after": 137.30000000004657
+          },
+          {
+            "before": 137.30000000004657,
+            "mainNs": "1040632351400",
+            "after": 137.30000000004657
+          },
+          {
+            "before": 137.30000000004657,
+            "mainNs": "1040632397000",
+            "after": 137.40000000002328
+          }
+        ]
+      },
+      "endpoint": "first-observed-visible-video-callback-v1"
+    },
+    {
+      "event": "diagnostics",
+      "networkRequests": [],
+      "gpu": {
+        "2d_canvas": "enabled",
+        "direct_rendering_display_compositor": "disabled_off_ok",
+        "gpu_compositing": "enabled",
+        "multiple_raster_threads": "enabled_on",
+        "opengl": "enabled_on",
+        "rasterization": "enabled",
+        "raw_draw": "disabled_off_ok",
+        "skia_graphite": "disabled_off",
+        "trees_in_viz": "disabled_off",
+        "video_decode": "enabled",
+        "video_encode": "enabled",
+        "webgl": "enabled",
+        "webgpu": "enabled",
+        "webnn": "disabled_off"
+      },
+      "metrics": [
+        {
+          "cpu": {
+            "cumulativeCPUUsage": 0.245943,
+            "percentCPUUsage": 0,
+            "idleWakeupsPerSecond": 0
+          },
+          "pid": 4644,
+          "type": "Browser",
+          "creationTime": 1790356836241.591,
+          "memory": {
+            "workingSetSize": 99460,
+            "peakWorkingSetSize": 100016,
+            "privateBytes": 35036
+          },
+          "integrityLevel": "medium",
+          "sandboxed": false
+        },
+        {
+          "cpu": {
+            "cumulativeCPUUsage": 0.335399,
+            "percentCPUUsage": 0,
+            "idleWakeupsPerSecond": 0
+          },
+          "pid": 18124,
+          "type": "GPU",
+          "creationTime": 1790356836337.891,
+          "serviceName": "GPU",
+          "memory": {
+            "workingSetSize": 212420,
+            "peakWorkingSetSize": 213380,
+            "privateBytes": 223740
+          },
+          "integrityLevel": "low",
+          "sandboxed": true
+        },
+        {
+          "cpu": {
+            "cumulativeCPUUsage": 0.048359,
+            "percentCPUUsage": 0,
+            "idleWakeupsPerSecond": 0
+          },
+          "pid": 18052,
+          "type": "Utility",
+          "creationTime": 1790356836339.369,
+          "serviceName": "network.mojom.NetworkService",
+          "name": "Network Service",
+          "memory": {
+            "workingSetSize": 29112,
+            "peakWorkingSetSize": 29112,
+            "privateBytes": 8940
+          },
+          "integrityLevel": "medium",
+          "sandboxed": false
+        },
+        {
+          "cpu": {
+            "cumulativeCPUUsage": 0.07421,
+            "percentCPUUsage": 0,
+            "idleWakeupsPerSecond": 0
+          },
+          "pid": 20012,
+          "type": "Tab",
+          "creationTime": 1790356836344.495,
+          "memory": {
+            "workingSetSize": 65320,
+            "peakWorkingSetSize": 65320,
+            "privateBytes": 24948
+          },
+          "integrityLevel": "untrusted",
+          "sandboxed": true
+        },
+        {
+          "cpu": {
+            "cumulativeCPUUsage": 0.019583,
+            "percentCPUUsage": 0,
+            "idleWakeupsPerSecond": 0
+          },
+          "pid": 15220,
+          "type": "Utility",
+          "creationTime": 1790356836446.407,
+          "serviceName": "audio.mojom.AudioService",
+          "name": "Audio Service",
+          "memory": {
+            "workingSetSize": 22504,
+            "peakWorkingSetSize": 22504,
+            "privateBytes": 6540
+          },
+          "integrityLevel": "low",
+          "sandboxed": true
+        }
+      ],
+      "versions": {
+        "node": "24.21.0",
+        "acorn": "8.18.0",
+        "ada": "4.0.0",
+        "amaro": "1.1.11",
+        "ares": "1.34.8",
+        "brotli": "1.2.0",
+        "cldr": "48.0",
+        "icu": "78.2",
+        "llhttp": "9.4.3",
+        "merve": "1.2.2",
+        "modules": "150",
+        "napi": "10",
+        "nbytes": "0.1.4",
+        "ncrypto": "0.0.1",
+        "nghttp2": "1.70.0",
+        "nghttp3": "",
+        "ngtcp2": "",
+        "openssl": "0.0.0",
+        "simdjson": "4.6.7",
+        "simdutf": "7.7.0",
+        "sqlite": "3.53.4",
+        "tz": "2026c",
+        "undici": "7.29.1",
+        "unicode": "17.0",
+        "uv": "1.52.1",
+        "uvwasi": "0.0.23",
+        "v8": "15.5.18-electron.0",
+        "zlib": "1.3.2.1-motley",
+        "zstd": "1.6.0",
+        "electron": "43.0.0-nightly.20260502",
+        "chrome": "155.0.8046.0"
+      }
+    }
+  ],
+  "stderr": "",
+  "unexpectedStderr": ""
+}

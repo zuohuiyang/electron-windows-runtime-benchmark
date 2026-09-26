@@ -4,7 +4,8 @@
  [string]$DiskSSD,
  [string]$DiskHDD,
  [switch]$WorkflowOnly,
- [ValidateSet('WarmFirst','ColdFirst')][string]$Order='WarmFirst',
+ [ValidateSet('WarmFirst','ColdFirst')][string]$Order='ColdFirst',
+ [switch]$WarmOnly,
  [string]$ClockHelperPath,
  [ValidateRange(1,100)][int]$Count=20,
  [ValidateRange(1,100)][int]$Warmups=5,
@@ -101,7 +102,7 @@ if($DiskSSD){
   }
  }
 }else{$targets=@(@{id='single';storage='Original path';variant='A';source=$electron;runtime=$electron})}
-$cfg=@{version=2;order=$Order;workflowOnly=[bool]$WorkflowOnly;electron=$electron;targets=$targets;node=$node;user=$identity.Name;sid=$identity.User.Value;count=$Count;warmups=$Warmups;samples=@();installedBoot=$boot;created=(Get-Date).ToUniversalTime().ToString('o');profileMethod='Independent copies of an initialized seed per target';runKeyName='ElectronBenchmark'}
+$cfg=@{version=2;timingOrigin='parent-before-spawn-qpc-v1';order=$Order;warmOnly=[bool]$WarmOnly;workflowOnly=[bool]$WorkflowOnly;electron=$electron;targets=$targets;node=$node;user=$identity.Name;sid=$identity.User.Value;count=$Count;warmups=$Warmups;samples=@();installedBoot=$boot;created=(Get-Date).ToUniversalTime().ToString('o');profileMethod='Independent copies of an initialized seed per target';runKeyName='ElectronBenchmark'}
 if($WorkflowOnly){Say '仅验证流程，结果不可作为 SSD/HDD 性能对比' 'Workflow validation only; not an SSD/HDD performance comparison'}
 Save-Json (Join-Path $root 'config.json') $cfg
 & $node (Join-Path $root 'runner\data.cjs') plan $root
@@ -115,13 +116,17 @@ Say '使用当前账户实际启动预检并初始化配置' 'Preflighting a rea
 & $node (Join-Path $root 'harness\launch.cjs') $target.variant $target.runtime $seed (Join-Path $root ('preflight-'+$target.id+'.json'))
 if($LASTEXITCODE -ne 0){throw '启动预检失败，未设置自动运行 / Preflight failed; automatic startup was not installed'}
 $raw=Get-Content -LiteralPath (Join-Path $root ('preflight-'+$target.id+'.json')) -Raw|ConvertFrom-Json
-if(-not $raw.valid -or $raw.stderr){throw '启动预检结果无效 / Invalid preflight result'}
+if(-not $raw.valid -or $raw.unexpectedStderr){throw '启动预检结果无效 / Invalid preflight result'}
 foreach($sample in @($samples|Where-Object target -eq $target.id)){Copy-BenchmarkTree $seed $sample.profile}
 }
 & $node (Join-Path $root 'runner\data.cjs') freeze $root
 if($LASTEXITCODE -ne 0){throw '冻结输入失败 / Input snapshot failed'}
 Save-Json (Join-Path $root 'state.json') @{status='PREPARED';nextIndex=0;lastBoot='';warmBoot='';restarts=0;error='';updated=(Get-Date).ToUniversalTime().ToString('o')}
-Say "每个路径 $Warmups 次热身、$Count 次热启动、$Count 次冷启动，共 $($samples.Count) 次启动。请提前配置自动登录、保存工作。" "Per target: $Warmups warmups, $Count warm and $Count cold launches; total $($samples.Count). Configure automatic login and save your work."
+if($WarmOnly){Say "每个路径 $Warmups 次热身、$Count 次热启动，共 $($samples.Count) 次启动；不会重启。" "Per target: $Warmups warmups and $Count warm launches; $($samples.Count) total, with no reboot."}
+else{Say "每个路径 $Warmups 次热身、$Count 次热启动、$Count 次冷启动，共 $($samples.Count) 次启动。请提前配置自动登录、保存工作。" "Per target: $Warmups warmups, $Count warm and $Count cold launches; total $($samples.Count). Configure automatic login and save your work."}
 Say '停止：在输出目录创建 STOP 文件，或运行 runner\control.ps1 -Action Stop。' 'Stop: create a STOP file in the output directory, or run runner\control.ps1 -Action Stop.'
 if($PrepareOnly){Say '准备完成，尚未设置启动项或开始正式测量。执行输出目录的 runner\control.ps1 -Action Start 开始。' 'Prepared without installing startup or starting formal measurements. Run runner\control.ps1 -Action Start in the output directory to begin.'}
-else{& (Join-Path $root 'runner\control.ps1') -Action Start}
+else{
+ & (Join-Path $root 'runner\control.ps1') -Action Start
+ if($LASTEXITCODE -ne 0){throw '正式采样失败，详见输出目录 ATTENTION.txt / Measurement failed; see ATTENTION.txt'}
+}

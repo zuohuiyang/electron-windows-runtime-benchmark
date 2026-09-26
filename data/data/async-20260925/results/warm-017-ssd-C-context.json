@@ -1,0 +1,52 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-25T17:03:16.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-26T01:21:31.5461744+08:00",
+                     "cpu":  26
+                 },
+                 {
+                     "time":  "2026-09-26T01:21:34.8301835+08:00",
+                     "cpu":  5
+                 },
+                 {
+                     "time":  "2026-09-26T01:21:37.1103128+08:00",
+                     "cpu":  4
+                 },
+                 {
+                     "time":  "2026-09-26T01:21:39.3780778+08:00",
+                     "cpu":  17
+                 },
+                 {
+                     "time":  "2026-09-26T01:21:41.6495749+08:00",
+                     "cpu":  3
+                 },
+                 {
+                     "time":  "2026-09-26T01:21:43.9359498+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-26T01:21:46.2001730+08:00",
+                     "cpu":  0
+                 }
+             ],
+    "sample":  {
+                   "id":  "warm-017-ssd-C",
+                   "phase":  "warm",
+                   "round":  17,
+                   "target":  "ssd-C",
+                   "storage":  "SSD (C:\\)",
+                   "variant":  "C",
+                   "runtime":  "C:\\ElectronBench\\ElectronBench-9c565613\\C\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\profiles\\warm-017-ssd-C"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

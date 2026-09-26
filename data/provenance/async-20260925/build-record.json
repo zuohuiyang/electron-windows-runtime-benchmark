@@ -1,0 +1,48 @@
+{
+  "batch": "20260925-212448-6a99b2",
+  "baselineCommit": "56f681cfe08e1c6bf02cfad2807ff1c47ae13d4f",
+  "splitBaseCommit": "1bbcdc28e272ed5299b00ef59d592433cb6b5361",
+  "changedCommit": "5406e2db70774292bc1f017949029b685fa21a29",
+  "build": "Windows x64 Release, official build with Chromium PGO phase 2",
+  "artifactAssembly": "The async EXE was compiled from the patch on 1bbcdc28, later committed as 5406e2db70 with formatting only. It was deployed with the archived uninstrumented main.dll and distribution files from the same-version split Release. The diagnostic DLL in the working build output was not used.",
+  "deployedBinaryHashes": [
+    {
+      "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\electron.exe",
+      "sha256": "FEFE4B692BBD5860C4AFC65A221A779426AC2F20416E1C66C7A8D9FDE635B6DB",
+      "target": "ssd-A"
+    },
+    {
+      "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\electron.exe",
+      "sha256": "7232D641B48B4006157C1F0DA40B9497ADB083E1BE6ABEF9F83A8B859B3D383A",
+      "target": "ssd-C"
+    },
+    {
+      "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\main.dll",
+      "sha256": "C46195D2752E6AA0EB05364F86DE2403A4E04D57040D4EE186709B35CF671A78",
+      "target": "ssd-C"
+    },
+    {
+      "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\electron.exe",
+      "sha256": "FEFE4B692BBD5860C4AFC65A221A779426AC2F20416E1C66C7A8D9FDE635B6DB",
+      "target": "hdd-A"
+    },
+    {
+      "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\electron.exe",
+      "sha256": "7232D641B48B4006157C1F0DA40B9497ADB083E1BE6ABEF9F83A8B859B3D383A",
+      "target": "hdd-C"
+    },
+    {
+      "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\main.dll",
+      "sha256": "C46195D2752E6AA0EB05364F86DE2403A4E04D57040D4EE186709B35CF671A78",
+      "target": "hdd-C"
+    }
+  ],
+  "omittedArchiveFiles": [
+    "build-helper.cmd",
+    "harness/app/local-video.mp4",
+    "harness/clock-anchor.exe"
+  ],
+  "omissionReason": "Electron distributions and the compiled clock helper are not published. The unchanged video fixture is in code/harness/app/local-video.mp4; the native helper source and build script are in the archived harness. The local VS helper driver is machine-specific.",
+  "recordedOutput": "The args.gn copy was checked during publication; release-pgo-args.txt was recorded during the original Release work. The frozen inputs.json records all measured distribution files.",
+  "baselineBuildController": "continue-release-comparison.ps1 used git switch --detach 56f681cfe0 and archived baseline-dist after a successful build."
+}

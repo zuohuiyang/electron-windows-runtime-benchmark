@@ -1,0 +1,60 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-25T13:49:07.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-25T21:51:10.1979119+08:00",
+                     "cpu":  9
+                 },
+                 {
+                     "time":  "2026-09-25T21:51:12.4866381+08:00",
+                     "cpu":  7
+                 },
+                 {
+                     "time":  "2026-09-25T21:51:14.7643981+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-25T21:51:18.1611372+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-25T21:51:20.4232200+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-25T21:51:22.7061271+08:00",
+                     "cpu":  13
+                 },
+                 {
+                     "time":  "2026-09-25T21:51:24.9784956+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-25T21:51:27.2493657+08:00",
+                     "cpu":  1
+                 },
+                 {
+                     "time":  "2026-09-25T21:51:29.5328095+08:00",
+                     "cpu":  8
+                 }
+             ],
+    "sample":  {
+                   "id":  "cold-003-ssd-A",
+                   "phase":  "cold",
+                   "round":  3,
+                   "target":  "ssd-A",
+                   "storage":  "SSD (C:\\)",
+                   "variant":  "A",
+                   "runtime":  "C:\\ElectronBench\\ElectronBench-9c565613\\A\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\profiles\\cold-003-ssd-A"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

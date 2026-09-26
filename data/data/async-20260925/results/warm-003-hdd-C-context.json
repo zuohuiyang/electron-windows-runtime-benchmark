@@ -1,0 +1,64 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-25T17:03:16.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-26T01:11:04.9038112+08:00",
+                     "cpu":  0
+                 },
+                 {
+                     "time":  "2026-09-26T01:11:07.1661536+08:00",
+                     "cpu":  12
+                 },
+                 {
+                     "time":  "2026-09-26T01:11:10.4460596+08:00",
+                     "cpu":  12
+                 },
+                 {
+                     "time":  "2026-09-26T01:11:12.7252863+08:00",
+                     "cpu":  12
+                 },
+                 {
+                     "time":  "2026-09-26T01:11:14.9971678+08:00",
+                     "cpu":  6
+                 },
+                 {
+                     "time":  "2026-09-26T01:11:17.2559016+08:00",
+                     "cpu":  10
+                 },
+                 {
+                     "time":  "2026-09-26T01:11:19.5314709+08:00",
+                     "cpu":  11
+                 },
+                 {
+                     "time":  "2026-09-26T01:11:21.7977507+08:00",
+                     "cpu":  2
+                 },
+                 {
+                     "time":  "2026-09-26T01:11:24.0701537+08:00",
+                     "cpu":  8
+                 },
+                 {
+                     "time":  "2026-09-26T01:11:26.3558313+08:00",
+                     "cpu":  9
+                 }
+             ],
+    "sample":  {
+                   "id":  "warm-003-hdd-C",
+                   "phase":  "warm",
+                   "round":  3,
+                   "target":  "hdd-C",
+                   "storage":  "HDD (E:\\)",
+                   "variant":  "C",
+                   "runtime":  "E:\\ElectronBench\\ElectronBench-d864aded\\C\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\profiles\\warm-003-hdd-C"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}

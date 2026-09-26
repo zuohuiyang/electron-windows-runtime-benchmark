@@ -1,0 +1,1632 @@
+[
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\config.json",
+    "bytes": 68422,
+    "sha256": "f5d4694abfe907118125f4f7affa39213952d73dd1178ee0b05e47b4c9596c08"
+  },
+  {
+    "path": "C:\\Program Files\\nodejs\\node.exe",
+    "bytes": 91694408,
+    "sha256": "3331e1ffe19874215472217c5e94f5a0c6d8e18c4ac7111d3937aa0ad5e9b4a5"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\chrome_100_percent.pak",
+    "bytes": 577908,
+    "sha256": "c866ebbda1fb317451d2b28ff0133813f43923d8df40da4acaf4e9eef90a36a0"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\chrome_200_percent.pak",
+    "bytes": 947725,
+    "sha256": "7e5f0018fd3e876daafa1fa869bcae5d6ef4958035ae90a3acf96436e50f0af9"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\d3dcompiler_47.dll",
+    "bytes": 4753864,
+    "sha256": "f5c95e919b4ffa1ac71049cd45b9f986d2965e6888395ca2806337985334fa56"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\dxcompiler.dll",
+    "bytes": 25723904,
+    "sha256": "482286a19966b6caf68a0bf95ba1921181c612ecf15a69626eec49cf4268ffd8"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\dxil.dll",
+    "bytes": 1503728,
+    "sha256": "88d83e71c4f9f2a60deeaa685a6d034a182ca197b6ec53f86144335f663fd690"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\electron_wer.dll",
+    "bytes": 423936,
+    "sha256": "8e91febebefc110aa0d264b03d05ee4133f7ea3be6ac3d5e56a70fee2d3076d6"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\electron.exe",
+    "bytes": 248307712,
+    "sha256": "fefe4b692bbd5860c4afc65a221a779426ac2f20416e1c66c7a8d9fde635b6db"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\ffmpeg.dll",
+    "bytes": 3098112,
+    "sha256": "3d7eb5781e7c794fa8f1cc9328a1d2432dde11edad579df07fe495cd1b56ff3d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\icudtl.dat",
+    "bytes": 10819840,
+    "sha256": "495c45cc7a65562ec461f860c310c6b66e006acd96833f61d1aa31f77fe18cf1"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\LICENSE",
+    "bytes": 1096,
+    "sha256": "5154e165bd6c2cc0cfbcd8916498c7abab0497923bafcd5cb07673fe8480087d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\LICENSES.chromium.html",
+    "bytes": 9075031,
+    "sha256": "6b99cc51d7caa9c9550892b72796e60168db432cb38ed59e90dd45a332425175"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\af.pak",
+    "bytes": 625416,
+    "sha256": "d2a1ddbfb987f3dfec1e20b22f374f21fe5e6227716dc25efd4c30cf866f0c3e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\am.pak",
+    "bytes": 1009699,
+    "sha256": "9ec904293b29bfd2a386d1c02e1e9abf4e1121c35f07c748ad1082aee0060141"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ar.pak",
+    "bytes": 1114976,
+    "sha256": "02dd2c855b42fe8aee3ec8c1d510179b48619018f808aeba2827b9fc24516c45"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\bg.pak",
+    "bytes": 1157937,
+    "sha256": "6f3038cd16a7ebed31d9c457ec022cb3b36b33d71158c8c52d910514b56494de"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\bn.pak",
+    "bytes": 1485340,
+    "sha256": "9045ea237fd22f3e08db71c3a014dcd10b4ba3bade4775dd595d7a217418c6da"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ca.pak",
+    "bytes": 705866,
+    "sha256": "cfaa5d90dc6ed7b76c87ff9e6a71bf5b3698eb93309a3990dc54267d889c6f61"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\cs.pak",
+    "bytes": 733715,
+    "sha256": "99bc7bed7ba809cdc7cb1a279ea8418e87a7e72be0f3f7f69868b719c9a1a222"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\da.pak",
+    "bytes": 656558,
+    "sha256": "caa95894799e8fc8674977a9c0e5e2776849b79eb45f695129530bc7d7a622e8"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\de.pak",
+    "bytes": 707541,
+    "sha256": "ea770fa3f440778fa05e18234a0fbcbe42a708e937cdd5293c41c9f0f5cd2b72"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\el.pak",
+    "bytes": 1273386,
+    "sha256": "4a82f36b53fe79755b6098db8e8004a3394b9bdd9c10a48a35e8453735b52b22"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\en-GB.pak",
+    "bytes": 570611,
+    "sha256": "c2dcdd5386efe7257e24c4c45d8f0e28853825a217538c0fea22e0393bd0cd3c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\en-US.pak",
+    "bytes": 577947,
+    "sha256": "19ab92930cd64eb34bda3896d1c0158e38174c48dd44835e60c2255303975e9c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\es-419.pak",
+    "bytes": 696808,
+    "sha256": "67e678fdf599182a9d90dd0e5277bcb7ad0ba098678c9c3d59d2c85bc3900678"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\es.pak",
+    "bytes": 692416,
+    "sha256": "1237dcbf09e9236e1ab848f3ee7afa22f148aeaa36e1320421de02f492d76ae5"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\et.pak",
+    "bytes": 632218,
+    "sha256": "2bd5868aa4aab5bf60ccb1b4cf5b197520c443fe37708fb9d030e8c203f254fa"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\fa.pak",
+    "bytes": 1047865,
+    "sha256": "e12637a3303920fce3043adc3e85c1135fbbb954724043e6a48d81248f7c263d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\fi.pak",
+    "bytes": 645646,
+    "sha256": "9fd135756efd4d65b88aed5797bedec6aac4160622540d1d021fb03ac17c888e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\fil.pak",
+    "bytes": 729891,
+    "sha256": "38adca213eb3baf31d367877149705e357d46c78d6bc77b6926210ef3fb11c4c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\fr.pak",
+    "bytes": 753579,
+    "sha256": "a50c8973d0b3d8508c154ab7ec68ac1408ddf9faae987af83f74f0140e019250"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\gu.pak",
+    "bytes": 1467892,
+    "sha256": "8b3acc5586cae09a9d33aa1f3e2bb7cf081e4dcae0fbeef618ba269b13267b90"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\he.pak",
+    "bytes": 914748,
+    "sha256": "f49cacec6002a398394e6cbdcf4d30d04e6e7f304657e22bf9218ea424345eb4"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\hi.pak",
+    "bytes": 1556104,
+    "sha256": "73ea28b0e2795cc298644b8065ac3a3dc480abd7de73f343a922090586150136"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\hr.pak",
+    "bytes": 705440,
+    "sha256": "02458438ccbbb1a143ecefec164fb3bd7433a36b11e7b58ad502b5b4b0aa541a"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\hu.pak",
+    "bytes": 754313,
+    "sha256": "88d28c99ddd95059f598c78fe1916a9f35e9f769c9a2bf0b489de5a4db0b77a2"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\id.pak",
+    "bytes": 625835,
+    "sha256": "074dd73e0a16303078a603a4be8b7b3693d76cd4d78f5fccf2d733f99b028859"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\it.pak",
+    "bytes": 683010,
+    "sha256": "49fa1fcd7587582a7c2974b9f80c3e2b50df7adf876a16fe0fff7c17ee8da511"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ja.pak",
+    "bytes": 830701,
+    "sha256": "11260f618fdef4f48edfc9e13bf76097f404cfc89c4fc7d1df24a5cdd93e9a88"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\kn.pak",
+    "bytes": 1690997,
+    "sha256": "fad2a4c82c9df91999b3dbdeaa1e3dd58a952822adb583f139b902c1346c76d3"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ko.pak",
+    "bytes": 710052,
+    "sha256": "a6bc4b4805e3c1f39ce429f6c0385914cd0cae2d57569fe984a0b6cd0c5665b7"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\lt.pak",
+    "bytes": 766342,
+    "sha256": "37f134b36145a279ee3cfc5fad15282685aebc9cd9abe33e8f9f2dbdacf90fff"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\lv.pak",
+    "bytes": 762989,
+    "sha256": "c115d565aa8da5b3f397d6962c2ce2c2d20056c64cdf0678962b178e96df4c54"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ml.pak",
+    "bytes": 1735191,
+    "sha256": "ba73cb8bdf6795c49454f79856b17dc68b3170cbbd2d878b3d2edffa09e4248f"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\mr.pak",
+    "bytes": 1439780,
+    "sha256": "663076516089645b7302b8f26a236e8a71157c43e31c301e343df13754e147af"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ms.pak",
+    "bytes": 659387,
+    "sha256": "1f10264026c9a39e5d3a6a7b7d858186524e667af185fc7be6c96df8af44760d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\nb.pak",
+    "bytes": 628528,
+    "sha256": "14c83d1900ec1d82e4ab41b016825468d0615e9b41d865f4d5e6461ac26524fc"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\nl.pak",
+    "bytes": 654511,
+    "sha256": "0cbc5cc17fe3d1b95ed00adb1b34d8bbebf8f305e9f47d82a2d5fe6ba059f750"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\pl.pak",
+    "bytes": 731191,
+    "sha256": "69bd472cecbc62d1c6e2845a036bf4429402f1dd81a255709f2d09bf693026ee"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\pt-BR.pak",
+    "bytes": 686966,
+    "sha256": "9c51b3fb2bbcac43fb9861bb25ff5bdd5af70211ef33f6a31fda3f23ca4ce355"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\pt-PT.pak",
+    "bytes": 690064,
+    "sha256": "5c5e3bf7d63ad15e142b2cecdb45a96afa66b8c17fdf0e950b1ae8da6d0aa6da"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ro.pak",
+    "bytes": 716127,
+    "sha256": "1a5985313f85dcef0ce945911d57b8b1b2f2ceed0a594421b755049015792154"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ru.pak",
+    "bytes": 1181305,
+    "sha256": "6b889c84260d973e43f4d4f1578001792a729f9d733d2f07bfa5335e74d722d5"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\sk.pak",
+    "bytes": 745852,
+    "sha256": "1b35120ce8db2fa4cd2499df87a724e01b2efed3c007a4460e1b1bf5262e3f3e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\sl.pak",
+    "bytes": 711821,
+    "sha256": "1a53a8db0a7beb251f53112861cef6e62f19d70d94ef09cff5c5188163145d5c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\sr.pak",
+    "bytes": 1094871,
+    "sha256": "77381a544e5bb3a45165c5c62bf2b74b8aeb6addd3168274ab5049047e3e7595"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\sv.pak",
+    "bytes": 637536,
+    "sha256": "76b2c8f18f01ebefc77511396d7610f54615cb084a994bcce367c113f98a66a4"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\sw.pak",
+    "bytes": 673718,
+    "sha256": "a101af307eec1f6a3cb60ed98af467e61dd280adb987a8f885d3d9f11be38357"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ta.pak",
+    "bytes": 1723341,
+    "sha256": "3cf959515d4c46304a296cdc872817781d818fd069e8127dbe6a0c5bfd3e6d8d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\te.pak",
+    "bytes": 1601237,
+    "sha256": "d3457c084b7080a39fb9c4f1c2c5d8226a4bae004450c1a15b44440448edb320"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\th.pak",
+    "bytes": 1338941,
+    "sha256": "b47abc0cc1e855d3f62b287046a5fd5c9b139bff80a58a4a3714ae7a1ba7f680"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\tr.pak",
+    "bytes": 687037,
+    "sha256": "4fd267f006916cd69d81f9b715691ecd46d71847565afbb56ca104ebc8aff995"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\uk.pak",
+    "bytes": 1193177,
+    "sha256": "9a17d275136a937e52ab16d9cdc7adb1346ce63dbe67e3c7750c38feb3a0ccb2"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\ur.pak",
+    "bytes": 1031210,
+    "sha256": "873391e930d0303ebfd2c6bd71f4461b45355c9464f4b7f5c8eee1aa53bd0c3c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\vi.pak",
+    "bytes": 815623,
+    "sha256": "d0554041a00641af650729d8da32a3fcd84b038747c50899555125cadaa803bb"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\zh-CN.pak",
+    "bytes": 584886,
+    "sha256": "b24d61e96005ce680381e771402759a2fff40033c650a33fae7d947bd80943d6"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\locales\\zh-TW.pak",
+    "bytes": 576408,
+    "sha256": "f3a6b6f5418ed1ae3fa6f657e7ae2564a2d50445e4f5ad9f9dbd31ffbb0da846"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\resources\\default_app.asar",
+    "bytes": 112155,
+    "sha256": "c2e50c4c8c65b1c8b5d9e11e4350d48b5b1fd24c721efeeb05987fad8d746561"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\resources.pak",
+    "bytes": 13296873,
+    "sha256": "df176b23f8b420d718c887076767d8e7d41886605eb084eec5d19b25ec90fb29"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\snapshot_blob.bin",
+    "bytes": 378568,
+    "sha256": "1a0d000fc7baaeb3983ac06d2bcf611527b2a074f19cf34bad83b2ed44f30245"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\v8_context_snapshot.bin",
+    "bytes": 757576,
+    "sha256": "a5b7dc7fcca9876a25f6921daf20e73ff4ad4dc90e28c2624eac3459cf095f04"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\version",
+    "bytes": 23,
+    "sha256": "17ccb66b0e67b46e6452b274a5fbcaa6ca1fe0cee76d3ce4780f9304faba1b6e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\vk_swiftshader_icd.json",
+    "bytes": 106,
+    "sha256": "32d83ff113fef532a9f97e0d2831f8656628ab1c99e9060f0332b1532839afd9"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\vk_swiftshader.dll",
+    "bytes": 5429248,
+    "sha256": "1f331346ceea6ed6fd435116ba9995e07ed678f7adf54c90bdc3704c4fbf4e0e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\A\\vulkan-1.dll",
+    "bytes": 956416,
+    "sha256": "49d7b9236364d24dfbff3aea96296298a881bc58221fc7c40330727a7c23c562"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\chrome_100_percent.pak",
+    "bytes": 577908,
+    "sha256": "c866ebbda1fb317451d2b28ff0133813f43923d8df40da4acaf4e9eef90a36a0"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\chrome_200_percent.pak",
+    "bytes": 947725,
+    "sha256": "7e5f0018fd3e876daafa1fa869bcae5d6ef4958035ae90a3acf96436e50f0af9"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\d3dcompiler_47.dll",
+    "bytes": 4753864,
+    "sha256": "f5c95e919b4ffa1ac71049cd45b9f986d2965e6888395ca2806337985334fa56"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\dxcompiler.dll",
+    "bytes": 25723904,
+    "sha256": "482286a19966b6caf68a0bf95ba1921181c612ecf15a69626eec49cf4268ffd8"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\dxil.dll",
+    "bytes": 1503728,
+    "sha256": "88d83e71c4f9f2a60deeaa685a6d034a182ca197b6ec53f86144335f663fd690"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\electron_wer.dll",
+    "bytes": 423936,
+    "sha256": "8e91febebefc110aa0d264b03d05ee4133f7ea3be6ac3d5e56a70fee2d3076d6"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\electron.exe",
+    "bytes": 3077632,
+    "sha256": "7232d641b48b4006157c1f0da40b9497adb083e1be6abef9f83a8b859b3d383a"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\ffmpeg.dll",
+    "bytes": 3098112,
+    "sha256": "3d7eb5781e7c794fa8f1cc9328a1d2432dde11edad579df07fe495cd1b56ff3d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\icudtl.dat",
+    "bytes": 10819840,
+    "sha256": "495c45cc7a65562ec461f860c310c6b66e006acd96833f61d1aa31f77fe18cf1"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\LICENSE",
+    "bytes": 1096,
+    "sha256": "5154e165bd6c2cc0cfbcd8916498c7abab0497923bafcd5cb07673fe8480087d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\LICENSES.chromium.html",
+    "bytes": 9075031,
+    "sha256": "6b99cc51d7caa9c9550892b72796e60168db432cb38ed59e90dd45a332425175"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\af.pak",
+    "bytes": 625416,
+    "sha256": "d2a1ddbfb987f3dfec1e20b22f374f21fe5e6227716dc25efd4c30cf866f0c3e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\am.pak",
+    "bytes": 1009699,
+    "sha256": "9ec904293b29bfd2a386d1c02e1e9abf4e1121c35f07c748ad1082aee0060141"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ar.pak",
+    "bytes": 1114976,
+    "sha256": "02dd2c855b42fe8aee3ec8c1d510179b48619018f808aeba2827b9fc24516c45"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\bg.pak",
+    "bytes": 1157937,
+    "sha256": "6f3038cd16a7ebed31d9c457ec022cb3b36b33d71158c8c52d910514b56494de"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\bn.pak",
+    "bytes": 1485340,
+    "sha256": "9045ea237fd22f3e08db71c3a014dcd10b4ba3bade4775dd595d7a217418c6da"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ca.pak",
+    "bytes": 705866,
+    "sha256": "cfaa5d90dc6ed7b76c87ff9e6a71bf5b3698eb93309a3990dc54267d889c6f61"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\cs.pak",
+    "bytes": 733715,
+    "sha256": "99bc7bed7ba809cdc7cb1a279ea8418e87a7e72be0f3f7f69868b719c9a1a222"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\da.pak",
+    "bytes": 656558,
+    "sha256": "caa95894799e8fc8674977a9c0e5e2776849b79eb45f695129530bc7d7a622e8"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\de.pak",
+    "bytes": 707541,
+    "sha256": "ea770fa3f440778fa05e18234a0fbcbe42a708e937cdd5293c41c9f0f5cd2b72"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\el.pak",
+    "bytes": 1273386,
+    "sha256": "4a82f36b53fe79755b6098db8e8004a3394b9bdd9c10a48a35e8453735b52b22"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\en-GB.pak",
+    "bytes": 570611,
+    "sha256": "c2dcdd5386efe7257e24c4c45d8f0e28853825a217538c0fea22e0393bd0cd3c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\en-US.pak",
+    "bytes": 577947,
+    "sha256": "19ab92930cd64eb34bda3896d1c0158e38174c48dd44835e60c2255303975e9c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\es-419.pak",
+    "bytes": 696808,
+    "sha256": "67e678fdf599182a9d90dd0e5277bcb7ad0ba098678c9c3d59d2c85bc3900678"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\es.pak",
+    "bytes": 692416,
+    "sha256": "1237dcbf09e9236e1ab848f3ee7afa22f148aeaa36e1320421de02f492d76ae5"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\et.pak",
+    "bytes": 632218,
+    "sha256": "2bd5868aa4aab5bf60ccb1b4cf5b197520c443fe37708fb9d030e8c203f254fa"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\fa.pak",
+    "bytes": 1047865,
+    "sha256": "e12637a3303920fce3043adc3e85c1135fbbb954724043e6a48d81248f7c263d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\fi.pak",
+    "bytes": 645646,
+    "sha256": "9fd135756efd4d65b88aed5797bedec6aac4160622540d1d021fb03ac17c888e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\fil.pak",
+    "bytes": 729891,
+    "sha256": "38adca213eb3baf31d367877149705e357d46c78d6bc77b6926210ef3fb11c4c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\fr.pak",
+    "bytes": 753579,
+    "sha256": "a50c8973d0b3d8508c154ab7ec68ac1408ddf9faae987af83f74f0140e019250"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\gu.pak",
+    "bytes": 1467892,
+    "sha256": "8b3acc5586cae09a9d33aa1f3e2bb7cf081e4dcae0fbeef618ba269b13267b90"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\he.pak",
+    "bytes": 914748,
+    "sha256": "f49cacec6002a398394e6cbdcf4d30d04e6e7f304657e22bf9218ea424345eb4"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\hi.pak",
+    "bytes": 1556104,
+    "sha256": "73ea28b0e2795cc298644b8065ac3a3dc480abd7de73f343a922090586150136"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\hr.pak",
+    "bytes": 705440,
+    "sha256": "02458438ccbbb1a143ecefec164fb3bd7433a36b11e7b58ad502b5b4b0aa541a"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\hu.pak",
+    "bytes": 754313,
+    "sha256": "88d28c99ddd95059f598c78fe1916a9f35e9f769c9a2bf0b489de5a4db0b77a2"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\id.pak",
+    "bytes": 625835,
+    "sha256": "074dd73e0a16303078a603a4be8b7b3693d76cd4d78f5fccf2d733f99b028859"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\it.pak",
+    "bytes": 683010,
+    "sha256": "49fa1fcd7587582a7c2974b9f80c3e2b50df7adf876a16fe0fff7c17ee8da511"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ja.pak",
+    "bytes": 830701,
+    "sha256": "11260f618fdef4f48edfc9e13bf76097f404cfc89c4fc7d1df24a5cdd93e9a88"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\kn.pak",
+    "bytes": 1690997,
+    "sha256": "fad2a4c82c9df91999b3dbdeaa1e3dd58a952822adb583f139b902c1346c76d3"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ko.pak",
+    "bytes": 710052,
+    "sha256": "a6bc4b4805e3c1f39ce429f6c0385914cd0cae2d57569fe984a0b6cd0c5665b7"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\lt.pak",
+    "bytes": 766342,
+    "sha256": "37f134b36145a279ee3cfc5fad15282685aebc9cd9abe33e8f9f2dbdacf90fff"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\lv.pak",
+    "bytes": 762989,
+    "sha256": "c115d565aa8da5b3f397d6962c2ce2c2d20056c64cdf0678962b178e96df4c54"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ml.pak",
+    "bytes": 1735191,
+    "sha256": "ba73cb8bdf6795c49454f79856b17dc68b3170cbbd2d878b3d2edffa09e4248f"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\mr.pak",
+    "bytes": 1439780,
+    "sha256": "663076516089645b7302b8f26a236e8a71157c43e31c301e343df13754e147af"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ms.pak",
+    "bytes": 659387,
+    "sha256": "1f10264026c9a39e5d3a6a7b7d858186524e667af185fc7be6c96df8af44760d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\nb.pak",
+    "bytes": 628528,
+    "sha256": "14c83d1900ec1d82e4ab41b016825468d0615e9b41d865f4d5e6461ac26524fc"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\nl.pak",
+    "bytes": 654511,
+    "sha256": "0cbc5cc17fe3d1b95ed00adb1b34d8bbebf8f305e9f47d82a2d5fe6ba059f750"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\pl.pak",
+    "bytes": 731191,
+    "sha256": "69bd472cecbc62d1c6e2845a036bf4429402f1dd81a255709f2d09bf693026ee"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\pt-BR.pak",
+    "bytes": 686966,
+    "sha256": "9c51b3fb2bbcac43fb9861bb25ff5bdd5af70211ef33f6a31fda3f23ca4ce355"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\pt-PT.pak",
+    "bytes": 690064,
+    "sha256": "5c5e3bf7d63ad15e142b2cecdb45a96afa66b8c17fdf0e950b1ae8da6d0aa6da"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ro.pak",
+    "bytes": 716127,
+    "sha256": "1a5985313f85dcef0ce945911d57b8b1b2f2ceed0a594421b755049015792154"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ru.pak",
+    "bytes": 1181305,
+    "sha256": "6b889c84260d973e43f4d4f1578001792a729f9d733d2f07bfa5335e74d722d5"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\sk.pak",
+    "bytes": 745852,
+    "sha256": "1b35120ce8db2fa4cd2499df87a724e01b2efed3c007a4460e1b1bf5262e3f3e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\sl.pak",
+    "bytes": 711821,
+    "sha256": "1a53a8db0a7beb251f53112861cef6e62f19d70d94ef09cff5c5188163145d5c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\sr.pak",
+    "bytes": 1094871,
+    "sha256": "77381a544e5bb3a45165c5c62bf2b74b8aeb6addd3168274ab5049047e3e7595"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\sv.pak",
+    "bytes": 637536,
+    "sha256": "76b2c8f18f01ebefc77511396d7610f54615cb084a994bcce367c113f98a66a4"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\sw.pak",
+    "bytes": 673718,
+    "sha256": "a101af307eec1f6a3cb60ed98af467e61dd280adb987a8f885d3d9f11be38357"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ta.pak",
+    "bytes": 1723341,
+    "sha256": "3cf959515d4c46304a296cdc872817781d818fd069e8127dbe6a0c5bfd3e6d8d"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\te.pak",
+    "bytes": 1601237,
+    "sha256": "d3457c084b7080a39fb9c4f1c2c5d8226a4bae004450c1a15b44440448edb320"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\th.pak",
+    "bytes": 1338941,
+    "sha256": "b47abc0cc1e855d3f62b287046a5fd5c9b139bff80a58a4a3714ae7a1ba7f680"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\tr.pak",
+    "bytes": 687037,
+    "sha256": "4fd267f006916cd69d81f9b715691ecd46d71847565afbb56ca104ebc8aff995"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\uk.pak",
+    "bytes": 1193177,
+    "sha256": "9a17d275136a937e52ab16d9cdc7adb1346ce63dbe67e3c7750c38feb3a0ccb2"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\ur.pak",
+    "bytes": 1031210,
+    "sha256": "873391e930d0303ebfd2c6bd71f4461b45355c9464f4b7f5c8eee1aa53bd0c3c"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\vi.pak",
+    "bytes": 815623,
+    "sha256": "d0554041a00641af650729d8da32a3fcd84b038747c50899555125cadaa803bb"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\zh-CN.pak",
+    "bytes": 584886,
+    "sha256": "b24d61e96005ce680381e771402759a2fff40033c650a33fae7d947bd80943d6"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\locales\\zh-TW.pak",
+    "bytes": 576408,
+    "sha256": "f3a6b6f5418ed1ae3fa6f657e7ae2564a2d50445e4f5ad9f9dbd31ffbb0da846"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\main.dll",
+    "bytes": 248171520,
+    "sha256": "c46195d2752e6aa0eb05364f86de2403a4e04d57040d4ee186709b35cf671a78"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\resources\\default_app.asar",
+    "bytes": 112155,
+    "sha256": "c2e50c4c8c65b1c8b5d9e11e4350d48b5b1fd24c721efeeb05987fad8d746561"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\resources.pak",
+    "bytes": 13296873,
+    "sha256": "df176b23f8b420d718c887076767d8e7d41886605eb084eec5d19b25ec90fb29"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\snapshot_blob.bin",
+    "bytes": 378568,
+    "sha256": "1a0d000fc7baaeb3983ac06d2bcf611527b2a074f19cf34bad83b2ed44f30245"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\v8_context_snapshot.bin",
+    "bytes": 757576,
+    "sha256": "a5b7dc7fcca9876a25f6921daf20e73ff4ad4dc90e28c2624eac3459cf095f04"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\version",
+    "bytes": 23,
+    "sha256": "17ccb66b0e67b46e6452b274a5fbcaa6ca1fe0cee76d3ce4780f9304faba1b6e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\vk_swiftshader_icd.json",
+    "bytes": 106,
+    "sha256": "32d83ff113fef532a9f97e0d2831f8656628ab1c99e9060f0332b1532839afd9"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\vk_swiftshader.dll",
+    "bytes": 5429248,
+    "sha256": "1f331346ceea6ed6fd435116ba9995e07ed678f7adf54c90bdc3704c4fbf4e0e"
+  },
+  {
+    "path": "C:\\ElectronBench\\ElectronBench-9c565613\\C\\vulkan-1.dll",
+    "bytes": 956416,
+    "sha256": "49d7b9236364d24dfbff3aea96296298a881bc58221fc7c40330727a7c23c562"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\chrome_100_percent.pak",
+    "bytes": 577908,
+    "sha256": "c866ebbda1fb317451d2b28ff0133813f43923d8df40da4acaf4e9eef90a36a0"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\chrome_200_percent.pak",
+    "bytes": 947725,
+    "sha256": "7e5f0018fd3e876daafa1fa869bcae5d6ef4958035ae90a3acf96436e50f0af9"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\d3dcompiler_47.dll",
+    "bytes": 4753864,
+    "sha256": "f5c95e919b4ffa1ac71049cd45b9f986d2965e6888395ca2806337985334fa56"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\dxcompiler.dll",
+    "bytes": 25723904,
+    "sha256": "482286a19966b6caf68a0bf95ba1921181c612ecf15a69626eec49cf4268ffd8"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\dxil.dll",
+    "bytes": 1503728,
+    "sha256": "88d83e71c4f9f2a60deeaa685a6d034a182ca197b6ec53f86144335f663fd690"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\electron_wer.dll",
+    "bytes": 423936,
+    "sha256": "8e91febebefc110aa0d264b03d05ee4133f7ea3be6ac3d5e56a70fee2d3076d6"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\electron.exe",
+    "bytes": 248307712,
+    "sha256": "fefe4b692bbd5860c4afc65a221a779426ac2f20416e1c66c7a8d9fde635b6db"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\ffmpeg.dll",
+    "bytes": 3098112,
+    "sha256": "3d7eb5781e7c794fa8f1cc9328a1d2432dde11edad579df07fe495cd1b56ff3d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\icudtl.dat",
+    "bytes": 10819840,
+    "sha256": "495c45cc7a65562ec461f860c310c6b66e006acd96833f61d1aa31f77fe18cf1"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\LICENSE",
+    "bytes": 1096,
+    "sha256": "5154e165bd6c2cc0cfbcd8916498c7abab0497923bafcd5cb07673fe8480087d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\LICENSES.chromium.html",
+    "bytes": 9075031,
+    "sha256": "6b99cc51d7caa9c9550892b72796e60168db432cb38ed59e90dd45a332425175"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\af.pak",
+    "bytes": 625416,
+    "sha256": "d2a1ddbfb987f3dfec1e20b22f374f21fe5e6227716dc25efd4c30cf866f0c3e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\am.pak",
+    "bytes": 1009699,
+    "sha256": "9ec904293b29bfd2a386d1c02e1e9abf4e1121c35f07c748ad1082aee0060141"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ar.pak",
+    "bytes": 1114976,
+    "sha256": "02dd2c855b42fe8aee3ec8c1d510179b48619018f808aeba2827b9fc24516c45"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\bg.pak",
+    "bytes": 1157937,
+    "sha256": "6f3038cd16a7ebed31d9c457ec022cb3b36b33d71158c8c52d910514b56494de"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\bn.pak",
+    "bytes": 1485340,
+    "sha256": "9045ea237fd22f3e08db71c3a014dcd10b4ba3bade4775dd595d7a217418c6da"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ca.pak",
+    "bytes": 705866,
+    "sha256": "cfaa5d90dc6ed7b76c87ff9e6a71bf5b3698eb93309a3990dc54267d889c6f61"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\cs.pak",
+    "bytes": 733715,
+    "sha256": "99bc7bed7ba809cdc7cb1a279ea8418e87a7e72be0f3f7f69868b719c9a1a222"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\da.pak",
+    "bytes": 656558,
+    "sha256": "caa95894799e8fc8674977a9c0e5e2776849b79eb45f695129530bc7d7a622e8"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\de.pak",
+    "bytes": 707541,
+    "sha256": "ea770fa3f440778fa05e18234a0fbcbe42a708e937cdd5293c41c9f0f5cd2b72"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\el.pak",
+    "bytes": 1273386,
+    "sha256": "4a82f36b53fe79755b6098db8e8004a3394b9bdd9c10a48a35e8453735b52b22"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\en-GB.pak",
+    "bytes": 570611,
+    "sha256": "c2dcdd5386efe7257e24c4c45d8f0e28853825a217538c0fea22e0393bd0cd3c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\en-US.pak",
+    "bytes": 577947,
+    "sha256": "19ab92930cd64eb34bda3896d1c0158e38174c48dd44835e60c2255303975e9c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\es-419.pak",
+    "bytes": 696808,
+    "sha256": "67e678fdf599182a9d90dd0e5277bcb7ad0ba098678c9c3d59d2c85bc3900678"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\es.pak",
+    "bytes": 692416,
+    "sha256": "1237dcbf09e9236e1ab848f3ee7afa22f148aeaa36e1320421de02f492d76ae5"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\et.pak",
+    "bytes": 632218,
+    "sha256": "2bd5868aa4aab5bf60ccb1b4cf5b197520c443fe37708fb9d030e8c203f254fa"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\fa.pak",
+    "bytes": 1047865,
+    "sha256": "e12637a3303920fce3043adc3e85c1135fbbb954724043e6a48d81248f7c263d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\fi.pak",
+    "bytes": 645646,
+    "sha256": "9fd135756efd4d65b88aed5797bedec6aac4160622540d1d021fb03ac17c888e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\fil.pak",
+    "bytes": 729891,
+    "sha256": "38adca213eb3baf31d367877149705e357d46c78d6bc77b6926210ef3fb11c4c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\fr.pak",
+    "bytes": 753579,
+    "sha256": "a50c8973d0b3d8508c154ab7ec68ac1408ddf9faae987af83f74f0140e019250"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\gu.pak",
+    "bytes": 1467892,
+    "sha256": "8b3acc5586cae09a9d33aa1f3e2bb7cf081e4dcae0fbeef618ba269b13267b90"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\he.pak",
+    "bytes": 914748,
+    "sha256": "f49cacec6002a398394e6cbdcf4d30d04e6e7f304657e22bf9218ea424345eb4"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\hi.pak",
+    "bytes": 1556104,
+    "sha256": "73ea28b0e2795cc298644b8065ac3a3dc480abd7de73f343a922090586150136"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\hr.pak",
+    "bytes": 705440,
+    "sha256": "02458438ccbbb1a143ecefec164fb3bd7433a36b11e7b58ad502b5b4b0aa541a"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\hu.pak",
+    "bytes": 754313,
+    "sha256": "88d28c99ddd95059f598c78fe1916a9f35e9f769c9a2bf0b489de5a4db0b77a2"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\id.pak",
+    "bytes": 625835,
+    "sha256": "074dd73e0a16303078a603a4be8b7b3693d76cd4d78f5fccf2d733f99b028859"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\it.pak",
+    "bytes": 683010,
+    "sha256": "49fa1fcd7587582a7c2974b9f80c3e2b50df7adf876a16fe0fff7c17ee8da511"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ja.pak",
+    "bytes": 830701,
+    "sha256": "11260f618fdef4f48edfc9e13bf76097f404cfc89c4fc7d1df24a5cdd93e9a88"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\kn.pak",
+    "bytes": 1690997,
+    "sha256": "fad2a4c82c9df91999b3dbdeaa1e3dd58a952822adb583f139b902c1346c76d3"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ko.pak",
+    "bytes": 710052,
+    "sha256": "a6bc4b4805e3c1f39ce429f6c0385914cd0cae2d57569fe984a0b6cd0c5665b7"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\lt.pak",
+    "bytes": 766342,
+    "sha256": "37f134b36145a279ee3cfc5fad15282685aebc9cd9abe33e8f9f2dbdacf90fff"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\lv.pak",
+    "bytes": 762989,
+    "sha256": "c115d565aa8da5b3f397d6962c2ce2c2d20056c64cdf0678962b178e96df4c54"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ml.pak",
+    "bytes": 1735191,
+    "sha256": "ba73cb8bdf6795c49454f79856b17dc68b3170cbbd2d878b3d2edffa09e4248f"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\mr.pak",
+    "bytes": 1439780,
+    "sha256": "663076516089645b7302b8f26a236e8a71157c43e31c301e343df13754e147af"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ms.pak",
+    "bytes": 659387,
+    "sha256": "1f10264026c9a39e5d3a6a7b7d858186524e667af185fc7be6c96df8af44760d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\nb.pak",
+    "bytes": 628528,
+    "sha256": "14c83d1900ec1d82e4ab41b016825468d0615e9b41d865f4d5e6461ac26524fc"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\nl.pak",
+    "bytes": 654511,
+    "sha256": "0cbc5cc17fe3d1b95ed00adb1b34d8bbebf8f305e9f47d82a2d5fe6ba059f750"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\pl.pak",
+    "bytes": 731191,
+    "sha256": "69bd472cecbc62d1c6e2845a036bf4429402f1dd81a255709f2d09bf693026ee"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\pt-BR.pak",
+    "bytes": 686966,
+    "sha256": "9c51b3fb2bbcac43fb9861bb25ff5bdd5af70211ef33f6a31fda3f23ca4ce355"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\pt-PT.pak",
+    "bytes": 690064,
+    "sha256": "5c5e3bf7d63ad15e142b2cecdb45a96afa66b8c17fdf0e950b1ae8da6d0aa6da"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ro.pak",
+    "bytes": 716127,
+    "sha256": "1a5985313f85dcef0ce945911d57b8b1b2f2ceed0a594421b755049015792154"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ru.pak",
+    "bytes": 1181305,
+    "sha256": "6b889c84260d973e43f4d4f1578001792a729f9d733d2f07bfa5335e74d722d5"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\sk.pak",
+    "bytes": 745852,
+    "sha256": "1b35120ce8db2fa4cd2499df87a724e01b2efed3c007a4460e1b1bf5262e3f3e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\sl.pak",
+    "bytes": 711821,
+    "sha256": "1a53a8db0a7beb251f53112861cef6e62f19d70d94ef09cff5c5188163145d5c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\sr.pak",
+    "bytes": 1094871,
+    "sha256": "77381a544e5bb3a45165c5c62bf2b74b8aeb6addd3168274ab5049047e3e7595"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\sv.pak",
+    "bytes": 637536,
+    "sha256": "76b2c8f18f01ebefc77511396d7610f54615cb084a994bcce367c113f98a66a4"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\sw.pak",
+    "bytes": 673718,
+    "sha256": "a101af307eec1f6a3cb60ed98af467e61dd280adb987a8f885d3d9f11be38357"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ta.pak",
+    "bytes": 1723341,
+    "sha256": "3cf959515d4c46304a296cdc872817781d818fd069e8127dbe6a0c5bfd3e6d8d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\te.pak",
+    "bytes": 1601237,
+    "sha256": "d3457c084b7080a39fb9c4f1c2c5d8226a4bae004450c1a15b44440448edb320"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\th.pak",
+    "bytes": 1338941,
+    "sha256": "b47abc0cc1e855d3f62b287046a5fd5c9b139bff80a58a4a3714ae7a1ba7f680"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\tr.pak",
+    "bytes": 687037,
+    "sha256": "4fd267f006916cd69d81f9b715691ecd46d71847565afbb56ca104ebc8aff995"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\uk.pak",
+    "bytes": 1193177,
+    "sha256": "9a17d275136a937e52ab16d9cdc7adb1346ce63dbe67e3c7750c38feb3a0ccb2"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\ur.pak",
+    "bytes": 1031210,
+    "sha256": "873391e930d0303ebfd2c6bd71f4461b45355c9464f4b7f5c8eee1aa53bd0c3c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\vi.pak",
+    "bytes": 815623,
+    "sha256": "d0554041a00641af650729d8da32a3fcd84b038747c50899555125cadaa803bb"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\zh-CN.pak",
+    "bytes": 584886,
+    "sha256": "b24d61e96005ce680381e771402759a2fff40033c650a33fae7d947bd80943d6"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\locales\\zh-TW.pak",
+    "bytes": 576408,
+    "sha256": "f3a6b6f5418ed1ae3fa6f657e7ae2564a2d50445e4f5ad9f9dbd31ffbb0da846"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\resources\\default_app.asar",
+    "bytes": 112155,
+    "sha256": "c2e50c4c8c65b1c8b5d9e11e4350d48b5b1fd24c721efeeb05987fad8d746561"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\resources.pak",
+    "bytes": 13296873,
+    "sha256": "df176b23f8b420d718c887076767d8e7d41886605eb084eec5d19b25ec90fb29"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\snapshot_blob.bin",
+    "bytes": 378568,
+    "sha256": "1a0d000fc7baaeb3983ac06d2bcf611527b2a074f19cf34bad83b2ed44f30245"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\v8_context_snapshot.bin",
+    "bytes": 757576,
+    "sha256": "a5b7dc7fcca9876a25f6921daf20e73ff4ad4dc90e28c2624eac3459cf095f04"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\version",
+    "bytes": 23,
+    "sha256": "17ccb66b0e67b46e6452b274a5fbcaa6ca1fe0cee76d3ce4780f9304faba1b6e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\vk_swiftshader_icd.json",
+    "bytes": 106,
+    "sha256": "32d83ff113fef532a9f97e0d2831f8656628ab1c99e9060f0332b1532839afd9"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\vk_swiftshader.dll",
+    "bytes": 5429248,
+    "sha256": "1f331346ceea6ed6fd435116ba9995e07ed678f7adf54c90bdc3704c4fbf4e0e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\A\\vulkan-1.dll",
+    "bytes": 956416,
+    "sha256": "49d7b9236364d24dfbff3aea96296298a881bc58221fc7c40330727a7c23c562"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\chrome_100_percent.pak",
+    "bytes": 577908,
+    "sha256": "c866ebbda1fb317451d2b28ff0133813f43923d8df40da4acaf4e9eef90a36a0"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\chrome_200_percent.pak",
+    "bytes": 947725,
+    "sha256": "7e5f0018fd3e876daafa1fa869bcae5d6ef4958035ae90a3acf96436e50f0af9"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\d3dcompiler_47.dll",
+    "bytes": 4753864,
+    "sha256": "f5c95e919b4ffa1ac71049cd45b9f986d2965e6888395ca2806337985334fa56"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\dxcompiler.dll",
+    "bytes": 25723904,
+    "sha256": "482286a19966b6caf68a0bf95ba1921181c612ecf15a69626eec49cf4268ffd8"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\dxil.dll",
+    "bytes": 1503728,
+    "sha256": "88d83e71c4f9f2a60deeaa685a6d034a182ca197b6ec53f86144335f663fd690"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\electron_wer.dll",
+    "bytes": 423936,
+    "sha256": "8e91febebefc110aa0d264b03d05ee4133f7ea3be6ac3d5e56a70fee2d3076d6"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\electron.exe",
+    "bytes": 3077632,
+    "sha256": "7232d641b48b4006157c1f0da40b9497adb083e1be6abef9f83a8b859b3d383a"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\ffmpeg.dll",
+    "bytes": 3098112,
+    "sha256": "3d7eb5781e7c794fa8f1cc9328a1d2432dde11edad579df07fe495cd1b56ff3d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\icudtl.dat",
+    "bytes": 10819840,
+    "sha256": "495c45cc7a65562ec461f860c310c6b66e006acd96833f61d1aa31f77fe18cf1"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\LICENSE",
+    "bytes": 1096,
+    "sha256": "5154e165bd6c2cc0cfbcd8916498c7abab0497923bafcd5cb07673fe8480087d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\LICENSES.chromium.html",
+    "bytes": 9075031,
+    "sha256": "6b99cc51d7caa9c9550892b72796e60168db432cb38ed59e90dd45a332425175"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\af.pak",
+    "bytes": 625416,
+    "sha256": "d2a1ddbfb987f3dfec1e20b22f374f21fe5e6227716dc25efd4c30cf866f0c3e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\am.pak",
+    "bytes": 1009699,
+    "sha256": "9ec904293b29bfd2a386d1c02e1e9abf4e1121c35f07c748ad1082aee0060141"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ar.pak",
+    "bytes": 1114976,
+    "sha256": "02dd2c855b42fe8aee3ec8c1d510179b48619018f808aeba2827b9fc24516c45"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\bg.pak",
+    "bytes": 1157937,
+    "sha256": "6f3038cd16a7ebed31d9c457ec022cb3b36b33d71158c8c52d910514b56494de"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\bn.pak",
+    "bytes": 1485340,
+    "sha256": "9045ea237fd22f3e08db71c3a014dcd10b4ba3bade4775dd595d7a217418c6da"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ca.pak",
+    "bytes": 705866,
+    "sha256": "cfaa5d90dc6ed7b76c87ff9e6a71bf5b3698eb93309a3990dc54267d889c6f61"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\cs.pak",
+    "bytes": 733715,
+    "sha256": "99bc7bed7ba809cdc7cb1a279ea8418e87a7e72be0f3f7f69868b719c9a1a222"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\da.pak",
+    "bytes": 656558,
+    "sha256": "caa95894799e8fc8674977a9c0e5e2776849b79eb45f695129530bc7d7a622e8"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\de.pak",
+    "bytes": 707541,
+    "sha256": "ea770fa3f440778fa05e18234a0fbcbe42a708e937cdd5293c41c9f0f5cd2b72"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\el.pak",
+    "bytes": 1273386,
+    "sha256": "4a82f36b53fe79755b6098db8e8004a3394b9bdd9c10a48a35e8453735b52b22"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\en-GB.pak",
+    "bytes": 570611,
+    "sha256": "c2dcdd5386efe7257e24c4c45d8f0e28853825a217538c0fea22e0393bd0cd3c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\en-US.pak",
+    "bytes": 577947,
+    "sha256": "19ab92930cd64eb34bda3896d1c0158e38174c48dd44835e60c2255303975e9c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\es-419.pak",
+    "bytes": 696808,
+    "sha256": "67e678fdf599182a9d90dd0e5277bcb7ad0ba098678c9c3d59d2c85bc3900678"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\es.pak",
+    "bytes": 692416,
+    "sha256": "1237dcbf09e9236e1ab848f3ee7afa22f148aeaa36e1320421de02f492d76ae5"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\et.pak",
+    "bytes": 632218,
+    "sha256": "2bd5868aa4aab5bf60ccb1b4cf5b197520c443fe37708fb9d030e8c203f254fa"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\fa.pak",
+    "bytes": 1047865,
+    "sha256": "e12637a3303920fce3043adc3e85c1135fbbb954724043e6a48d81248f7c263d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\fi.pak",
+    "bytes": 645646,
+    "sha256": "9fd135756efd4d65b88aed5797bedec6aac4160622540d1d021fb03ac17c888e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\fil.pak",
+    "bytes": 729891,
+    "sha256": "38adca213eb3baf31d367877149705e357d46c78d6bc77b6926210ef3fb11c4c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\fr.pak",
+    "bytes": 753579,
+    "sha256": "a50c8973d0b3d8508c154ab7ec68ac1408ddf9faae987af83f74f0140e019250"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\gu.pak",
+    "bytes": 1467892,
+    "sha256": "8b3acc5586cae09a9d33aa1f3e2bb7cf081e4dcae0fbeef618ba269b13267b90"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\he.pak",
+    "bytes": 914748,
+    "sha256": "f49cacec6002a398394e6cbdcf4d30d04e6e7f304657e22bf9218ea424345eb4"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\hi.pak",
+    "bytes": 1556104,
+    "sha256": "73ea28b0e2795cc298644b8065ac3a3dc480abd7de73f343a922090586150136"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\hr.pak",
+    "bytes": 705440,
+    "sha256": "02458438ccbbb1a143ecefec164fb3bd7433a36b11e7b58ad502b5b4b0aa541a"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\hu.pak",
+    "bytes": 754313,
+    "sha256": "88d28c99ddd95059f598c78fe1916a9f35e9f769c9a2bf0b489de5a4db0b77a2"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\id.pak",
+    "bytes": 625835,
+    "sha256": "074dd73e0a16303078a603a4be8b7b3693d76cd4d78f5fccf2d733f99b028859"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\it.pak",
+    "bytes": 683010,
+    "sha256": "49fa1fcd7587582a7c2974b9f80c3e2b50df7adf876a16fe0fff7c17ee8da511"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ja.pak",
+    "bytes": 830701,
+    "sha256": "11260f618fdef4f48edfc9e13bf76097f404cfc89c4fc7d1df24a5cdd93e9a88"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\kn.pak",
+    "bytes": 1690997,
+    "sha256": "fad2a4c82c9df91999b3dbdeaa1e3dd58a952822adb583f139b902c1346c76d3"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ko.pak",
+    "bytes": 710052,
+    "sha256": "a6bc4b4805e3c1f39ce429f6c0385914cd0cae2d57569fe984a0b6cd0c5665b7"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\lt.pak",
+    "bytes": 766342,
+    "sha256": "37f134b36145a279ee3cfc5fad15282685aebc9cd9abe33e8f9f2dbdacf90fff"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\lv.pak",
+    "bytes": 762989,
+    "sha256": "c115d565aa8da5b3f397d6962c2ce2c2d20056c64cdf0678962b178e96df4c54"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ml.pak",
+    "bytes": 1735191,
+    "sha256": "ba73cb8bdf6795c49454f79856b17dc68b3170cbbd2d878b3d2edffa09e4248f"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\mr.pak",
+    "bytes": 1439780,
+    "sha256": "663076516089645b7302b8f26a236e8a71157c43e31c301e343df13754e147af"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ms.pak",
+    "bytes": 659387,
+    "sha256": "1f10264026c9a39e5d3a6a7b7d858186524e667af185fc7be6c96df8af44760d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\nb.pak",
+    "bytes": 628528,
+    "sha256": "14c83d1900ec1d82e4ab41b016825468d0615e9b41d865f4d5e6461ac26524fc"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\nl.pak",
+    "bytes": 654511,
+    "sha256": "0cbc5cc17fe3d1b95ed00adb1b34d8bbebf8f305e9f47d82a2d5fe6ba059f750"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\pl.pak",
+    "bytes": 731191,
+    "sha256": "69bd472cecbc62d1c6e2845a036bf4429402f1dd81a255709f2d09bf693026ee"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\pt-BR.pak",
+    "bytes": 686966,
+    "sha256": "9c51b3fb2bbcac43fb9861bb25ff5bdd5af70211ef33f6a31fda3f23ca4ce355"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\pt-PT.pak",
+    "bytes": 690064,
+    "sha256": "5c5e3bf7d63ad15e142b2cecdb45a96afa66b8c17fdf0e950b1ae8da6d0aa6da"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ro.pak",
+    "bytes": 716127,
+    "sha256": "1a5985313f85dcef0ce945911d57b8b1b2f2ceed0a594421b755049015792154"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ru.pak",
+    "bytes": 1181305,
+    "sha256": "6b889c84260d973e43f4d4f1578001792a729f9d733d2f07bfa5335e74d722d5"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\sk.pak",
+    "bytes": 745852,
+    "sha256": "1b35120ce8db2fa4cd2499df87a724e01b2efed3c007a4460e1b1bf5262e3f3e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\sl.pak",
+    "bytes": 711821,
+    "sha256": "1a53a8db0a7beb251f53112861cef6e62f19d70d94ef09cff5c5188163145d5c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\sr.pak",
+    "bytes": 1094871,
+    "sha256": "77381a544e5bb3a45165c5c62bf2b74b8aeb6addd3168274ab5049047e3e7595"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\sv.pak",
+    "bytes": 637536,
+    "sha256": "76b2c8f18f01ebefc77511396d7610f54615cb084a994bcce367c113f98a66a4"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\sw.pak",
+    "bytes": 673718,
+    "sha256": "a101af307eec1f6a3cb60ed98af467e61dd280adb987a8f885d3d9f11be38357"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ta.pak",
+    "bytes": 1723341,
+    "sha256": "3cf959515d4c46304a296cdc872817781d818fd069e8127dbe6a0c5bfd3e6d8d"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\te.pak",
+    "bytes": 1601237,
+    "sha256": "d3457c084b7080a39fb9c4f1c2c5d8226a4bae004450c1a15b44440448edb320"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\th.pak",
+    "bytes": 1338941,
+    "sha256": "b47abc0cc1e855d3f62b287046a5fd5c9b139bff80a58a4a3714ae7a1ba7f680"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\tr.pak",
+    "bytes": 687037,
+    "sha256": "4fd267f006916cd69d81f9b715691ecd46d71847565afbb56ca104ebc8aff995"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\uk.pak",
+    "bytes": 1193177,
+    "sha256": "9a17d275136a937e52ab16d9cdc7adb1346ce63dbe67e3c7750c38feb3a0ccb2"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\ur.pak",
+    "bytes": 1031210,
+    "sha256": "873391e930d0303ebfd2c6bd71f4461b45355c9464f4b7f5c8eee1aa53bd0c3c"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\vi.pak",
+    "bytes": 815623,
+    "sha256": "d0554041a00641af650729d8da32a3fcd84b038747c50899555125cadaa803bb"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\zh-CN.pak",
+    "bytes": 584886,
+    "sha256": "b24d61e96005ce680381e771402759a2fff40033c650a33fae7d947bd80943d6"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\locales\\zh-TW.pak",
+    "bytes": 576408,
+    "sha256": "f3a6b6f5418ed1ae3fa6f657e7ae2564a2d50445e4f5ad9f9dbd31ffbb0da846"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\main.dll",
+    "bytes": 248171520,
+    "sha256": "c46195d2752e6aa0eb05364f86de2403a4e04d57040d4ee186709b35cf671a78"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\resources\\default_app.asar",
+    "bytes": 112155,
+    "sha256": "c2e50c4c8c65b1c8b5d9e11e4350d48b5b1fd24c721efeeb05987fad8d746561"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\resources.pak",
+    "bytes": 13296873,
+    "sha256": "df176b23f8b420d718c887076767d8e7d41886605eb084eec5d19b25ec90fb29"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\snapshot_blob.bin",
+    "bytes": 378568,
+    "sha256": "1a0d000fc7baaeb3983ac06d2bcf611527b2a074f19cf34bad83b2ed44f30245"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\v8_context_snapshot.bin",
+    "bytes": 757576,
+    "sha256": "a5b7dc7fcca9876a25f6921daf20e73ff4ad4dc90e28c2624eac3459cf095f04"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\version",
+    "bytes": 23,
+    "sha256": "17ccb66b0e67b46e6452b274a5fbcaa6ca1fe0cee76d3ce4780f9304faba1b6e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\vk_swiftshader_icd.json",
+    "bytes": 106,
+    "sha256": "32d83ff113fef532a9f97e0d2831f8656628ab1c99e9060f0332b1532839afd9"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\vk_swiftshader.dll",
+    "bytes": 5429248,
+    "sha256": "1f331346ceea6ed6fd435116ba9995e07ed678f7adf54c90bdc3704c4fbf4e0e"
+  },
+  {
+    "path": "E:\\ElectronBench\\ElectronBench-d864aded\\C\\vulkan-1.dll",
+    "bytes": 956416,
+    "sha256": "49d7b9236364d24dfbff3aea96296298a881bc58221fc7c40330727a7c23c562"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\app\\clock.cjs",
+    "bytes": 3388,
+    "sha256": "29ba8acedadc965239014e11c8517c352c337514b19dce79d9072f5744ddcdc8"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\app\\index.html",
+    "bytes": 1327,
+    "sha256": "68adcaca3694f3e3f383b3cfbad42a21c1ea6f40b2ee6c353765984a648c438b"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\app\\local-video.mp4",
+    "bytes": 715963,
+    "sha256": "bcb75d3db0a1a5056f4cd5c770ceccdb4cae920f21abb8139b29cd9ad39e3857"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\app\\main.cjs",
+    "bytes": 3664,
+    "sha256": "cae3724b4d7f9d1eae780d92ccc1e4cc92861b9d7ab114aa3c6d213a53c7d658"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\app\\package.json",
+    "bytes": 91,
+    "sha256": "049edd936a5b56537bf1145796b787f5817d03190c52c60d3abd6596fe617cd7"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\app\\preload.cjs",
+    "bytes": 301,
+    "sha256": "cedba5759f69f90fa7f6f659a80729e4498cc058669786c77a3e19e1430fd1a7"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\app\\video.js",
+    "bytes": 2122,
+    "sha256": "3ea9754bcf2541f045f038c6d187c78206820d7f7e93f9ed6fcf66a5885b841a"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\build-clock-anchor.cmd",
+    "bytes": 244,
+    "sha256": "5495f9716fa1f6ca6f284faf62aa8e35372e61cc843f4b4d91d6f322470976e8"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\CHROMIUM-LICENSE",
+    "bytes": 1536,
+    "sha256": "368cca1106be99d39ecd32a38d8305585d802a475effb66380b91ffc9bcf709b"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\clock-anchor.cc",
+    "bytes": 1752,
+    "sha256": "614ff4af3431cdfecb261070c65bfff43c65f911979247d15747877913bfe80d"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\clock-anchor.exe",
+    "bytes": 140800,
+    "sha256": "fb0ebbaa54ec5151b53ced8ca64ce0fde802701465070a1b612b786d865f6913"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\clock-anchor.obj",
+    "bytes": 5412,
+    "sha256": "f0aa8ead8e17502d258c8b8ce84248fc5e18f5be91b0fab981e6116f6e40153d"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\launch.cjs",
+    "bytes": 4215,
+    "sha256": "cdbaa189708cf454142c67f6836894b2f624bd1ea3ac68336a00831477113b78"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\MEDIA.md",
+    "bytes": 1378,
+    "sha256": "1ed40d3def942fc97be2e91e37f5bb062f00b2b6df825293de64d3cb291a1381"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\stderr.cjs",
+    "bytes": 430,
+    "sha256": "0f40297a8adc11ff93d5bc57429c4cd48f8c0f22cae23bb800b6ae02190676cb"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\stderr.test.cjs",
+    "bytes": 604,
+    "sha256": "825ef0d71badef2d0afea8fea736ceff6f349bd36666ec9a1be84cad8713d2db"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\harness\\validate.cjs",
+    "bytes": 3842,
+    "sha256": "599ffc7ade81165d30ee2c326aa7094fee79b6c8fad20c3599a244baf45f228c"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\runner\\control.ps1",
+    "bytes": 9909,
+    "sha256": "42e654f979fbf6b2f4f09cdf000678b9a026963223e74af5dd1c797e6edc1952"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\runner\\control.test.cjs",
+    "bytes": 10415,
+    "sha256": "49df4077d88abde21b44a4aa379ea1fc2095f5ffc211a69ab91200166f735392"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\runner\\copy-tree.cjs",
+    "bytes": 2297,
+    "sha256": "59a2d60315b88df305ca25fbab9195d17c44a52e4c6f084c9fd71157e8a73df7"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\runner\\copy-tree.test.cjs",
+    "bytes": 2561,
+    "sha256": "accf3c8a483787f673590ea290bd7f671eee1a9ff78eca9654b5b29bfd47f8a7"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\runner\\data.cjs",
+    "bytes": 8883,
+    "sha256": "ba9684599a93620df9fdb9072e6b916087fd6776e00555dc2de6634dae17fcff"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\runner\\data.test.cjs",
+    "bytes": 10373,
+    "sha256": "4d5522c63a9afb8a86727f53f9cd89a87eb044d8ce64abb9c623670a9be5d748"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\runner\\desktop.cs",
+    "bytes": 837,
+    "sha256": "fb058356899ee448c7b893790c6044e8e70cd94782a61209a6ff99629749b442"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\runner\\priority.cs",
+    "bytes": 717,
+    "sha256": "4add5815441e6764fac1415b3929736e756c82f092c5e2113356fd5eef3e22a6"
+  },
+  {
+    "path": "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\runner\\system-load.ps1",
+    "bytes": 5047,
+    "sha256": "6029ddd8a67b0e6bbfbc44f68717fb28a45dba7d892dc43aacaf85679ea48c3f"
+  }
+]

@@ -1,0 +1,25 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20260926003337
+用户名: mtianyang_pc\autotest
+RunAs 用户: mtianyang_pc\autotest
+配置名称: 
+计算机: MTIANYANG_PC (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\autotest\AppData\Local\ElectronBench\runs\20260925-212448-6a99b2\runner\control.ps1 -Action Run
+进程 ID: 11960
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+等待系统空闲：cold-018-hdd-C / Waiting for idle: cold-018-hdd-C
+正在测量：cold-018-hdd-C / Measuring: cold-018-hdd-C
+{"variant":"C","valid":true,"parentAppReadyMs":2052.1850999999733,"parentVideoMs":7801.172649999993}
+
+
+即将重启，登录后自动续跑 / Restarting; measurement resumes after login.
+

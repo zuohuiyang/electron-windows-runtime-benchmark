@@ -1,0 +1,36 @@
+﻿{
+    "elevated":  false,
+    "sid":  "S-1-5-21-725251106-1954231564-3521431051-1007",
+    "user":  "mtianyang_pc\\autotest",
+    "boot":  "2026-09-25T14:44:06.5000000Z",
+    "idle":  [
+                 {
+                     "time":  "2026-09-25T22:46:08.7580195+08:00",
+                     "cpu":  2
+                 },
+                 {
+                     "time":  "2026-09-25T22:46:11.0484552+08:00",
+                     "cpu":  1
+                 },
+                 {
+                     "time":  "2026-09-25T22:46:13.3070930+08:00",
+                     "cpu":  0
+                 }
+             ],
+    "sample":  {
+                   "id":  "cold-008-hdd-C",
+                   "phase":  "cold",
+                   "round":  8,
+                   "target":  "hdd-C",
+                   "storage":  "HDD (E:\\)",
+                   "variant":  "C",
+                   "runtime":  "E:\\ElectronBench\\ElectronBench-d864aded\\C\\electron.exe",
+                   "profile":  "C:\\Users\\autotest\\AppData\\Local\\ElectronBench\\runs\\20260925-212448-6a99b2\\profiles\\cold-008-hdd-C"
+               },
+    "controllerPriority":  {
+                               "cpu":  "Normal",
+                               "memory":  5,
+                               "io":  2
+                           },
+    "session":  1
+}
